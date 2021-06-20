@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>CodingBox技术博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="CodingBox"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="CodingBox"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="主线 - 第一章  第一关（前）杜宾：  可恶…… 杜宾：  这里，究竟怎么了？ 整合运动成员：  这边的屋子，也都给我搜干净！ 女性：  放开他……不！你们…… 整合运动成员：  反抗？太迟了！可恨的切尔诺伯格人！ 男性：  快跑！不要管我……孩子就…… 孩童：  妈妈……妈妈……！ 乌萨斯军警：  别管平民！先把阵线守住！这些面具混蛋，人实在是太多了！ 整合运动成员：  别让军警闲着！继续打！"><meta property="og:type" content="blog"><meta property="og:title" content="CodingBox技术博客"><meta property="og:url" content="https://zhouweitong3.github.io/readings/%E6%B8%B8%E6%88%8F%E5%89%A7%E6%83%85/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F/%E7%AC%AC%E4%B8%80%E7%AB%A0.html"><meta property="og:site_name" content="CodingBox技术博客"><meta property="og:description" content="主线 - 第一章  第一关（前）杜宾：  可恶…… 杜宾：  这里，究竟怎么了？ 整合运动成员：  这边的屋子，也都给我搜干净！ 女性：  放开他……不！你们…… 整合运动成员：  反抗？太迟了！可恨的切尔诺伯格人！ 男性：  快跑！不要管我……孩子就…… 孩童：  妈妈……妈妈……！ 乌萨斯军警：  别管平民！先把阵线守住！这些面具混蛋，人实在是太多了！ 整合运动成员：  别让军警闲着！继续打！"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://zhouweitong3.github.io/img/og_image.png"><meta property="article:published_time" content="2021-06-15T12:09:03.902Z"><meta property="article:modified_time" content="2021-06-15T12:09:03.902Z"><meta property="article:author" content="Zhou Weitong"><meta property="article:tag" content="编程"><meta property="article:tag" content="C语言"><meta property="article:tag" content="coding"><meta property="article:tag" content="docker"><meta property="article:tag" content="programming"><meta property="article:tag" content="container"><meta property="article:tag" content="linux"><meta property="article:tag" content="security"><meta property="article:tag" content="bdmv"><meta property="article:tag" content="vapoursynth"><meta property="article:tag" content="python"><meta property="article:tag" content="golang"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><meta property="twitter:creator" content="@objectnf"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhouweitong3.github.io/readings/%E6%B8%B8%E6%88%8F%E5%89%A7%E6%83%85/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F/%E7%AC%AC%E4%B8%80%E7%AB%A0.html"},"headline":"CodingBox技术博客","image":["https://zhouweitong3.github.io/img/og_image.png"],"datePublished":"2021-06-15T12:09:03.902Z","dateModified":"2021-06-15T12:09:03.902Z","author":{"@type":"Person","name":"Zhou Weitong"},"description":"主线 - 第一章  第一关（前）杜宾：  可恶…… 杜宾：  这里，究竟怎么了？ 整合运动成员：  这边的屋子，也都给我搜干净！ 女性：  放开他……不！你们…… 整合运动成员：  反抗？太迟了！可恨的切尔诺伯格人！ 男性：  快跑！不要管我……孩子就…… 孩童：  妈妈……妈妈……！ 乌萨斯军警：  别管平民！先把阵线守住！这些面具混蛋，人实在是太多了！ 整合运动成员：  别让军警闲着！继续打！"}</script><link rel="canonical" href="https://zhouweitong3.github.io/readings/%E6%B8%B8%E6%88%8F%E5%89%A7%E6%83%85/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F/%E7%AC%AC%E4%B8%80%E7%AB%A0.html"><link rel="alternate" href="/rss.xml" title="CodingBox技术博客" type="application/atom+xml"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><script>var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?8b39db53f27bef54cdd7ca6e0f1084ac";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css"><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="data:image/svg+xml;base64,PHN2ZwogICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI5NDkiIGhlaWdodD0iMjU2IiB2aWV3Ym94PSIwIDAgOTQ5IDI1NiI+CiAgICA8cGF0aCBmaWxsPSIjMjM2NmQxIiBkPSJNMTEwLjg1MTI1MTY4NDQwODE0IDEyOEwyMjEuNzAyNTAzMzY4ODE2MjggMTkyTDExMC44NTEyNTE2ODQ0MDgxNCAyNTZMMCAxOTJaIi8+CiAgICA8cGF0aCBmaWxsPSIjNjA5ZGZmIiBkPSJNMTEwLjg1MTI1MTY4NDQwODE0IDY0TDIyMS43MDI1MDMzNjg4MTYyOCAxMjhMMTEwLjg1MTI1MTY4NDQwODE0IDE5MkwwIDEyOFoiLz4KICAgIDxwYXRoIGZpbGw9IiNhNGM3ZmYiIGQ9Ik0xMTAuODUxMjUxNjg0NDA4MTQgMEwyMjEuNzAyNTAzMzY4ODE2MjggNjRMMTEwLjg1MTI1MTY4NDQwODE0IDEyOEwwIDY0WiIvPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzAwLCA1NS42OTUpLCBzY2FsZSgwLjcpIiBmaWxsPSIjMzMzIj4KICAgICAgICA8cGF0aCBkPSJNIDYxMy44ODggMTAuMjQgTCA2MTMuODg4IDEzNy4yMTYgQSA2MC43MDUgNjAuNzA1IDAgMCAwIDYxMy45NTQgMTQwLjA1NSBRIDYxNC41NTMgMTUyLjg0NyA2MjAuNjAyIDE2My4zMTYgQSA1MC4xMzUgNTAuMTM1IDAgMCAwIDYyMS42OTYgMTY1LjEyIEEgNTEuNTk4IDUxLjU5OCAwIDAgMCA2MjQuNTYyIDE2OS4xODUgUSA2MzEuMzU3IDE3Ny44OTcgNjQxLjc2MiAxODMuNDQ5IEEgNjMuMTEgNjMuMTEgMCAwIDAgNjQzLjQ1NiAxODQuMzIgQSA2MS42NDkgNjEuNjQ5IDAgMCAwIDY0OC4zNjkgMTg2LjQ5MiBRIDY1OS40NjcgMTkwLjgzMyA2NzIuODQ2IDE5MS4xOTggQSA5MC44MDkgOTAuODA5IDAgMCAwIDY3NS4zMjggMTkxLjIzMiBBIDkwLjU2MyA5MC41NjMgMCAwIDAgNjc4LjEwNCAxOTEuMTkgUSA2OTIuNzggMTkwLjc0IDcwNC43IDE4NS40ODkgQSA2MS4yNTkgNjEuMjU5IDAgMCAwIDcwNy4yIDE4NC4zMiBRIDcyMS4xNTIgMTc3LjQwOCA3MjkuMDg4IDE2NS4xMiBBIDQ5LjUwMiA0OS41MDIgMCAwIDAgNzMxLjMyMiAxNjEuMjk5IFEgNzM2LjYzIDE1MS4yMDMgNzM2Ljk5NyAxMzkuMDM2IEEgNjAuMzM1IDYwLjMzNSAwIDAgMCA3MzcuMDI0IDEzNy4yMTYgTCA3MzcuMDI0IDEwLjI0IEEgMTAuODU3IDEwLjg1NyAwIDAgMSA3MzcuMDYyIDkuMzE1IFEgNzM3LjMxMyA2LjM4NCA3MzkuMiA0LjYwOCBBIDcuMjU2IDcuMjU2IDAgMCAxIDc0MS45MjUgMi45ODEgUSA3NDMuMTk2IDIuNTYgNzQ0LjcwNCAyLjU2IFEgNzQ2Ljk1NiAyLjU2IDc0OC42MDIgMy4zNjkgQSA2LjQ3MiA2LjQ3MiAwIDAgMSA3NTAuMzM2IDQuNjA4IFEgNzUyLjE2NyA2LjQzOSA3NTIuMzYxIDkuNDk5IEEgMTEuNzI5IDExLjcyOSAwIDAgMSA3NTIuMzg0IDEwLjI0IEwgNzUyLjM4NCAxMzcuMjE2IFEgNzUyLjM4NCAxNTYuODA3IDc0My4xMzUgMTcyLjE5NCBBIDY0LjA3NyA2NC4wNzcgMCAwIDEgNzQyLjUyOCAxNzMuMTg0IFEgNzMyLjY3MiAxODguOTI4IDcxNS4xMzYgMTk3Ljc2IFEgNjk4LjkxMiAyMDUuOTMxIDY3OC42MzUgMjA2LjU0MyBBIDEwOS43MSAxMDkuNzEgMCAwIDEgNjc1LjMyOCAyMDYuNTkyIFEgNjUzLjA1NiAyMDYuNTkyIDYzNS41MiAxOTcuNzYgQSA3Ny44MzUgNzcuODM1IDAgMCAxIDYzMi44MjggMTk2LjMzOCBRIDYxOC45NjMgMTg4LjY2MSA2MTAuMzM3IDE3Ni4zNDYgQSA2NS43NzggNjUuNzc4IDAgMCAxIDYwOC4yNTYgMTczLjE4NCBRIDU5OC41MjggMTU3LjQ0IDU5OC41MjggMTM3LjIxNiBMIDU5OC41MjggMTAuMjQgQSAxMC44NTcgMTAuODU3IDAgMCAxIDU5OC41NjYgOS4zMTUgUSA1OTguODE3IDYuMzg0IDYwMC43MDQgNC42MDggQSA3LjI1NiA3LjI1NiAwIDAgMSA2MDMuNDI5IDIuOTgxIFEgNjA0LjcgMi41NiA2MDYuMjA4IDIuNTYgUSA2MDguNDYgMi41NiA2MTAuMTA2IDMuMzY5IEEgNi40NzIgNi40NzIgMCAwIDEgNjExLjg0IDQuNjA4IFEgNjEzLjY3MSA2LjQzOSA2MTMuODY1IDkuNDk5IEEgMTEuNzI5IDExLjcyOSAwIDAgMSA2MTMuODg4IDEwLjI0IFogTSA4OTUuNDg4IDguOTYgQSA2OS41MDcgNjkuNTA3IDAgMCAwIDg5NC44OCA4LjYxNSBRIDg3OS41MDkgMCA4NjEuMTg0IDAgQSAxMDAuMDA1IDEwMC4wMDUgMCAwIDAgODU4Ljc5IDAuMDI4IFEgODQyLjM0MiAwLjQyMiA4MjkuNTY4IDYuMjcyIEEgNjEuNzUgNjEuNzUgMCAwIDAgODI4LjA3OCA2Ljk3OSBRIDgxNS40NTYgMTMuMTcyIDgwOC4zMiAyMy45MzYgUSA4MDAuNzY4IDM1LjMyOCA4MDAuNzY4IDUwLjE3NiBRIDgwMC43NjggNjkuNjk3IDgxNS4xNzUgODMuNjU5IEEgNTkuMjIyIDU5LjIyMiAwIDAgMCA4MTcuMDI0IDg1LjM3NiBBIDYwLjYzIDYwLjYzIDAgMCAwIDgxOS42OCA4Ny42MDYgUSA4MzQuNzI3IDk5LjUyNiA4NTkuMDU5IDEwMy41MjkgQSAxMzMuOTEgMTMzLjkxIDAgMCAwIDg2MS42OTYgMTAzLjkzNiBRIDg4NC4xMTYgMTA3LjAwNCA4OTYuNDE5IDExNi45MjUgQSA0MS42MSA0MS42MSAwIDAgMSA4OTguNDMyIDExOC42NTYgQSA0My41OTIgNDMuNTkyIDAgMCAxIDg5OS4yOCAxMTkuNDU1IFEgOTEwLjg0OCAxMzAuNjUzIDkxMC44NDggMTQ3LjQ1NiBRIDkxMC44NDggMTY3LjY4IDg5OC4xNzYgMTc4LjY4OCBBIDM5LjI4MSAzOS4yODEgMCAwIDEgODkzLjcyIDE4Mi4wMzQgUSA4ODIuNTIyIDE4OS4yNjYgODY1LjUzMSAxODkuNjcyIEEgODUuNDgxIDg1LjQ4MSAwIDAgMSA4NjMuNDg4IDE4OS42OTYgQSAxMDIuMTggMTAyLjE4IDAgMCAxIDg2MS4zIDE4OS42NzMgUSA4NDUuNTY3IDE4OS4zMzYgODMzLjY1NCAxODQuMTEyIEEgNTUuMDk3IDU1LjA5NyAwIDAgMSA4MzAuNTkyIDE4Mi42NTYgQSA1Ni42MTkgNTYuNjE5IDAgMCAxIDgyOS4wNjYgMTgxLjg0MiBRIDgxOC4yNzQgMTc1Ljg3MSA4MTEuOTQgMTY2LjExNCBBIDQ3LjUyOCA0Ny41MjggMCAwIDEgODA5Ljk4NCAxNjIuODE2IEEgMTIuMTE1IDEyLjExNSAwIDAgMCA4MDkuODA4IDE2Mi40NiBRIDgwNy43MzQgMTU4LjQyOCA4MDMuNTcxIDE1OC4wMDIgQSA5Ljk0MiA5Ljk0MiAwIDAgMCA4MDIuNTYgMTU3Ljk1MiBBIDEyLjE5NCAxMi4xOTQgMCAwIDAgODAyLjIxNyAxNTcuOTU3IFEgNzk4Ljg3MSAxNTguMDUxIDc5Ni44IDE2MCBBIDcuNDQ5IDcuNDQ5IDAgMCAwIDc5Ni4xMTkgMTYwLjczMSBRIDc5NC45MzQgMTYyLjE5MSA3OTQuNjg4IDE2NC4wOTQgQSA4LjAwMyA4LjAwMyAwIDAgMCA3OTQuNjI0IDE2NS4xMiBBIDYuMjE4IDYuMjE4IDAgMCAwIDc5NC43MDggMTY2LjEzNyBRIDc5NC44MDMgMTY2LjcwOCA3OTUuMDA0IDE2Ny4yOCBBIDcuODk1IDcuODk1IDAgMCAwIDc5NS4zOTIgMTY4LjE5MiBBIDY1LjA0NCA2NS4wNDQgMCAwIDAgNzk2LjA5OSAxNjkuNTQ2IFEgODA0LjA5MSAxODQuNDE5IDgxOS4wNTUgMTkzLjYxNSBBIDc0LjQgNzQuNCAwIDAgMCA4MjEuNzYgMTk1LjIgUSA4MzkuNDI0IDIwNS4wNTYgODYzLjQ4OCAyMDUuMDU2IFEgODc5LjU0OCAyMDUuMDU2IDg5Mi4yOTkgMTk5Ljk1MSBBIDYyLjAzNiA2Mi4wMzYgMCAwIDAgODk2LjM4NCAxOTguMTQ0IFEgOTEwLjU5MiAxOTEuMjMyIDkxOC40IDE3OC4xNzYgQSA1MS4xODYgNTEuMTg2IDAgMCAwIDkyMC41MzMgMTc0LjIyNSBRIDkyNi4yMDggMTYyLjUxNSA5MjYuMjA4IDE0Ny40NTYgQSA3Mi44MTEgNzIuODExIDAgMCAwIDkyNi4xNzggMTQ1LjM1NCBRIDkyNS41OTIgMTI1LjA2MSA5MTMuNTg5IDExMS43NTUgQSA0OS44IDQ5LjggMCAwIDAgOTExLjM2IDEwOS40NCBRIDg5Ni41MTIgOTQuOTc2IDg2NC4yNTYgODkuNiBBIDE1Ny44ODIgMTU3Ljg4MiAwIDAgMSA4NjIuNDQ2IDg5LjI4OCBRIDgzOS4yNDIgODUuMTQyIDgyNy45MDQgNzUuNzc2IEEgNDEuMjE4IDQxLjIxOCAwIDAgMSA4MjYuOTc3IDc0Ljk4NyBRIDgxNi4xMjggNjUuNDcyIDgxNi4xMjggNTEuNzEyIEEgNDkuMjkzIDQ5LjI5MyAwIDAgMSA4MTYuMTI4IDUxLjU3OCBRIDgxNi4xNzUgMzQuNTIyIDgyOC4wMzIgMjQuOTYgQSAzNS4yMzQgMzUuMjM0IDAgMCAxIDgyOC44OTEgMjQuMjg5IFEgODQwLjExOCAxNS43OTQgODU5LjIxMyAxNS4zODEgQSA5MS4xOTQgOTEuMTk0IDAgMCAxIDg2MS4xODQgMTUuMzYgQSA3My4wNDQgNzMuMDQ0IDAgMCAxIDg2Mi4wMzcgMTUuMzY1IFEgODg4Ljc0NyAxNS42NzcgOTAzLjUxNCAzNS41OTMgQSA1OS4zNyA1OS4zNyAwIDAgMSA5MDQuOTYgMzcuNjMyIFEgOTA3LjIyIDQxLjAyMiA5MTEuMDc2IDQxLjQxOSBBIDEwLjI2MSAxMC4yNjEgMCAwIDAgOTEyLjEyOCA0MS40NzIgQSAxNC41NDMgMTQuNTQzIDAgMCAwIDkxMi43NDMgNDEuNDU5IFEgOTE0LjMzNiA0MS4zOTIgOTE1LjIgNDAuOTYgQSAxMC42NTUgMTAuNjU1IDAgMCAwIDkxNS4zMzYgNDAuODkxIFEgOTE2LjM0OCA0MC4zNjYgOTE3LjEzNSAzOS42ODEgQSA3LjYwNyA3LjYwNyAwIDAgMCA5MTguNCAzOC4yNzIgUSA5MTkuMTk3IDM3LjEyMiA5MTkuNDQyIDM1Ljc4NyBBIDYuNzYxIDYuNzYxIDAgMCAwIDkxOS41NTIgMzQuNTYgUSA5MTkuNTUyIDMyLjI1NiA5MTguNTI4IDMwLjQ2NCBRIDkxMS4xMDQgMTcuOTIgODk1LjQ4OCA4Ljk2IFogTSAxNjAuMzExIDAuMDY4IEEgMTEwLjY0OCAxMTAuNjQ4IDAgMCAwIDE1Ni40MTYgMCBRIDEzMS41NjUgMCAxMTAuNDAyIDExLjQ4MyBBIDk5LjM0MyA5OS4zNDMgMCAwIDAgMTA2LjExMiAxMy45NTIgQSAxMDkuMDA5IDEwOS4wMDkgMCAwIDAgMTA0LjU0MyAxNC45MjYgUSA4NC42NzcgMjcuNDg5IDcyLjE0IDQ3LjQ3OSBBIDExMS4zOTMgMTExLjM5MyAwIDAgMCA2OS43NiA1MS40NTYgUSA1Ni4zMiA3NS4wMDggNTYuMzIgMTAyLjQgUSA1Ni4zMiAxMjcuMzMxIDY3LjU2IDE0OS4xODcgQSAxMDcuNTkyIDEwNy41OTIgMCAwIDAgNjkuODg4IDE1My40NzIgUSA4My40NTYgMTc3LjE1MiAxMDYuNDk2IDE5MS4xMDQgQSAxMDMuNDQ0IDEwMy40NDQgMCAwIDAgMTA4LjA4MiAxOTIuMDQ1IFEgMTMwLjQ1OSAyMDUuMDU2IDE1Ni40MTYgMjA1LjA1NiBRIDE5Ny4zNzYgMjA1LjA1NiAyMTkuMzkyIDE4My4wNCBRIDIyMC45MTggMTgxLjI5NiAyMjEuMTQ1IDE3OC42MjQgQSAxMS4zNjQgMTEuMzY0IDAgMCAwIDIyMS4xODQgMTc3LjY2NCBRIDIyMS4xODQgMTc0LjkwNiAyMTkuNTE0IDE3Mi44NTIgQSA4LjYxNCA4LjYxNCAwIDAgMCAyMTguNzUyIDE3Mi4wMzIgQSAxMC41MDEgMTAuNTAxIDAgMCAwIDIxOC42MzggMTcxLjkyNSBRIDIxNi4yNDggMTY5LjcyOCAyMTMuMjQ4IDE2OS43MjggQSA2LjI0NCA2LjI0NCAwIDAgMCAyMTEuNTQ5IDE2OS45NjEgUSAyMTAuOTA2IDE3MC4xNDEgMjEwLjI5MSAxNzAuNDYzIEEgNy41MDggNy41MDggMCAwIDAgMjA5LjQwOCAxNzEuMDA4IFEgMTg2LjYyNCAxODkuNjk2IDE1Ni40MTYgMTg5LjY5NiBRIDEzNS43NjUgMTg5LjY5NiAxMTcuNzQzIDE4MC4wMjIgQSA4Ny4yMzcgODcuMjM3IDAgMCAxIDExNC4wNDggMTc3LjkyIFEgOTQuNDY0IDE2Ni4xNDQgODMuMDcyIDE0Ni4wNDggUSA3Mi43MDQgMTI3Ljc1OCA3MS43NzIgMTA2LjYwNCBBIDk1LjU0OSA5NS41NDkgMCAwIDEgNzEuNjggMTAyLjQgUSA3MS42OCA3OS42MTYgODMuMiA1OS41MiBBIDk3LjM0OCA5Ny4zNDggMCAwIDEgODMuMzUgNTkuMjYgUSA5NC44NDcgMzkuMzQ2IDExNC4zMDQgMjcuMzkyIEEgODguMDU2IDg4LjA1NiAwIDAgMSAxMTcuMTU1IDI1LjcxMyBRIDEzMy42NjMgMTYuNDA2IDE1Mi4yMTggMTUuNDY2IEEgODIuOTExIDgyLjkxMSAwIDAgMSAxNTYuNDE2IDE1LjM2IEEgMTE3LjIxMiAxMTcuMjEyIDAgMCAxIDE1Ni44MTcgMTUuMzYxIFEgMTgwLjE4NCAxNS40NDEgMTk2LjgyOSAyNC44NDggQSA2My4wMSA2My4wMSAwIDAgMSAyMDcuODcyIDMyLjc2OCBBIDIzLjAzNCAyMy4wMzQgMCAwIDAgMjA4LjMzOSAzMy4xNTggUSAyMTEuNjQxIDM1Ljg0IDIxNC4yNzIgMzUuODQgQSA5Ljk3NCA5Ljk3NCAwIDAgMCAyMTQuOTExIDM1LjgyIFEgMjE3LjM0MyAzNS42NjQgMjE5LjAwOSAzNC4yOTYgQSA2Ljg3MyA2Ljg3MyAwIDAgMCAyMTkuOTA0IDMzLjQwOCBBIDkuOTk0IDkuOTk0IDAgMCAwIDIyMC4xMzMgMzMuMTI2IFEgMjIxLjk1MiAzMC43OTkgMjIxLjk1MiAyNy45MDQgQSA4Ljk4OCA4Ljk4OCAwIDAgMCAyMjEuOTI5IDI3LjI1OSBRIDIyMS43MjQgMjQuMzk4IDIxOS42NDggMjIuNzg0IEEgMTEwLjg4MSAxMTAuODgxIDAgMCAwIDIxOS41NDMgMjIuNjk3IFEgMTkzLjY4NiAxLjI0NCAxNjAuMzExIDAuMDY4IFogTSA1NTEuMTY4IDE5OC40IEwgNTA0LjA2NCAxMjMuMTM2IEwgNDk5LjQ1NiAxMjMuMTM2IEwgNDU4LjI0IDEyMy4xMzYgTCA0NTguMjQgMTk0LjgxNiBRIDQ1OC4yNCAxOTguMTQ0IDQ1Ni4xOTIgMjAwLjMyIFEgNDU0LjIzMiAyMDIuNDAzIDQ1MC44NjUgMjAyLjQ5MiBBIDExLjQ4NyAxMS40ODcgMCAwIDEgNDUwLjU2IDIwMi40OTYgUSA0NDcuNDUyIDIwMi40OTYgNDQ1LjM0OSAyMDAuNTk4IEEgNy44NzEgNy44NzEgMCAwIDEgNDQ1LjA1NiAyMDAuMzIgQSA3LjUyNSA3LjUyNSAwIDAgMSA0NDQuMTgyIDE5OS4yNzUgUSA0NDIuODg5IDE5Ny40MDMgNDQyLjg4IDE5NC44NSBBIDEwLjE3OSAxMC4xNzkgMCAwIDEgNDQyLjg4IDE5NC44MTYgTCA0NDIuODggMTAuMjQgQSAxMC44NTcgMTAuODU3IDAgMCAxIDQ0Mi45MTggOS4zMTUgUSA0NDMuMTY5IDYuMzg0IDQ0NS4wNTYgNC42MDggQSA3LjI1NiA3LjI1NiAwIDAgMSA0NDcuNzgxIDIuOTgxIFEgNDQ5LjA1MiAyLjU2IDQ1MC41NiAyLjU2IEwgNDk5LjQ1NiAyLjU2IFEgNTE3Ljg4OCAyLjU2IDUzMi40OCAxMC4yNCBRIDU0NS45NTQgMTcuMzMyIDU1My45NzEgMjkuNjYyIEEgNTguOTY4IDU4Ljk2OCAwIDAgMSA1NTUuMjY0IDMxLjc0NCBBIDU2LjczNyA1Ni43MzcgMCAwIDEgNTYwLjQxNCA0My4xMyBRIDU2My40NTYgNTIuNDY4IDU2My40NTYgNjMuMjMyIFEgNTYzLjQ1NiA4Mi4yIDU1My45NDYgOTYuNDY1IEEgNTYuNjkyIDU2LjY5MiAwIDAgMSA1NTEuODA4IDk5LjQ1NiBBIDU4Ljg0OSA1OC44NDkgMCAwIDEgNTQ5LjIxMiAxMDIuNjE4IFEgNTM4LjYyMSAxMTQuNjM3IDUyMi4yNTMgMTE5Ljc3OSBBIDcyLjE5NSA3Mi4xOTUgMCAwIDEgNTIwLjQ0OCAxMjAuMzIgTCA1NjQuNDggMTkwLjcyIFEgNTY2LjUyOCAxOTQuMzA0IDU2Ni41MjggMTk2LjYwOCBBIDYuNTk5IDYuNTk5IDAgMCAxIDU2Ni40NzggMTk3LjQzNiBRIDU2Ni4yNTMgMTk5LjIwOCA1NjUuMDM1IDIwMC4zOTUgQSA1LjYyNSA1LjYyNSAwIDAgMSA1NjQuMzUyIDIwMC45NiBBIDYuNDczIDYuNDczIDAgMCAxIDU2My41NDcgMjAxLjQ0MyBRIDU2MS40NzIgMjAyLjQ5NiA1NTguMDggMjAyLjQ5NiBRIDU1NS43NTEgMjAyLjQ5NiA1NTQuMjcgMjAxLjY0OSBBIDQuOTExIDQuOTExIDAgMCAxIDU1My45ODQgMjAxLjQ3MiBRIDU1Mi42NTQgMjAwLjU4NSA1NTEuNTE1IDE5OC45MyBBIDE0LjQ0NyAxNC40NDcgMCAwIDEgNTUxLjE2OCAxOTguNCBaIE0gMzk5LjEwNCAxOTcuNjMyIEwgMzgwLjE2IDE1Mi4zMiBMIDI3NS45NjggMTUyLjMyIEwgMjU3LjAyNCAxOTcuNjMyIFEgMjU1LjMyNCAyMDIuMjQ4IDI1MC4zOTYgMjAyLjQ4MyBBIDExLjI5NyAxMS4yOTcgMCAwIDEgMjQ5Ljg1NiAyMDIuNDk2IEEgMTAuMjU4IDEwLjI1OCAwIDAgMSAyNDguOTMxIDIwMi40NTUgUSAyNDYuMTQzIDIwMi4yMDMgMjQ0LjQgMjAwLjM4MyBBIDYuOTk3IDYuOTk3IDAgMCAxIDI0NC4yMjQgMjAwLjE5MiBBIDguNjc4IDguNjc4IDAgMCAxIDI0My40NzcgMTk5LjIyNCBRIDI0Mi4xNzYgMTk3LjI2NCAyNDIuMTc2IDE5NC44MTYgQSA3LjgwNSA3LjgwNSAwIDAgMSAyNDIuMjgyIDE5My41MjEgQSA3LjE4MSA3LjE4MSAwIDAgMSAyNDIuOTQ0IDE5MS40ODggTCAzMjAuNTEyIDcuOTM2IEEgMTIuMTk2IDEyLjE5NiAwIDAgMSAzMjAuODUyIDcuMTI5IFEgMzIyLjgwNSAyLjkzNiAzMjcuMTQgMi41OTEgQSAxMC4wMzggMTAuMDM4IDAgMCAxIDMyNy45MzYgMi41NiBBIDkuMDA0IDkuMDA0IDAgMCAxIDMyOC45NDcgMi42MTUgUSAzMzMuMjkgMy4xMDYgMzM1LjM2IDcuOTM2IEwgNDEzLjE4NCAxOTEuNDg4IFEgNDEzLjk1MiAxOTMuMDI0IDQxMy45NTIgMTk0LjgxNiBBIDcuNjQgNy42NCAwIDAgMSA0MTMuODQ2IDE5Ni4xMDEgUSA0MTMuNDU3IDE5OC4zODMgNDExLjY0OCAyMDAuMTkyIEEgOS4wNDQgOS4wNDQgMCAwIDEgNDEwLjg3MSAyMDAuODg2IFEgNDA5LjA4MyAyMDIuMzAzIDQwNi44NzkgMjAyLjQ3MyBBIDcuOTA4IDcuOTA4IDAgMCAxIDQwNi4yNzIgMjAyLjQ5NiBBIDkuOTMgOS45MyAwIDAgMSA0MDUuMzM5IDIwMi40NTMgUSA0MDAuOTYgMjAyLjA0IDM5OS4xMDQgMTk3LjYzMiBaIE0gMTUuMzYgMTAuMjQgTCAxNS4zNiAxOTQuODE2IFEgMTUuMzYgMTk3LjkyNCAxMy40NjIgMjAwLjAyNyBBIDcuODcxIDcuODcxIDAgMCAxIDEzLjE4NCAyMDAuMzIgQSA3LjUyNSA3LjUyNSAwIDAgMSAxMi4xMzkgMjAxLjE5NCBRIDEwLjI2NyAyMDIuNDg3IDcuNzE0IDIwMi40OTYgQSAxMC4xNzkgMTAuMTc5IDAgMCAxIDcuNjggMjAyLjQ5NiBRIDQuNTcyIDIwMi40OTYgMi40NjkgMjAwLjU5OCBBIDcuODcxIDcuODcxIDAgMCAxIDIuMTc2IDIwMC4zMiBBIDcuNTI1IDcuNTI1IDAgMCAxIDEuMzAyIDE5OS4yNzUgUSAwLjAwOSAxOTcuNDAzIDAgMTk0Ljg1IEEgMTAuMTc5IDEwLjE3OSAwIDAgMSAwIDE5NC44MTYgTCAwIDEwLjI0IFEgMCA3LjEzMiAxLjg5OCA1LjAyOSBBIDcuODcxIDcuODcxIDAgMCAxIDIuMTc2IDQuNzM2IEEgNy41MjUgNy41MjUgMCAwIDEgMy4yMjEgMy44NjIgUSA1LjA5MyAyLjU2OSA3LjY0NiAyLjU2IEEgMTAuMTc5IDEwLjE3OSAwIDAgMSA3LjY4IDIuNTYgUSAxMC43ODggMi41NiAxMi44OTEgNC40NTggQSA3Ljg3MSA3Ljg3MSAwIDAgMSAxMy4xODQgNC43MzYgQSA3LjUyNSA3LjUyNSAwIDAgMSAxNC4wNTggNS43ODEgUSAxNS4zNTEgNy42NTMgMTUuMzYgMTAuMjA2IEEgMTAuMTc5IDEwLjE3OSAwIDAgMSAxNS4zNiAxMC4yNCBaIE0gMjgxLjg1NiAxMzguNDk2IEwgMzc0LjI3MiAxMzguNDk2IEwgMzI3LjkzNiAyNy45MDQgTCAyODEuODU2IDEzOC40OTYgWiBNIDQ1OC4yNCAxMDcuNzc2IEwgNDk5LjQ1NiAxMDcuNzc2IFEgNTEwLjQxOCAxMDcuNzc2IDUxOS41MTkgMTA0LjM2MiBBIDQ4LjE3NSA0OC4xNzUgMCAwIDAgNTI0LjU0NCAxMDIuMTQ0IEEgNDcuNDcxIDQ3LjQ3MSAwIDAgMCA1MjcuMDU5IDEwMC43NjEgUSA1MzQuNzUgOTYuMjE5IDUzOS44NzggODkuMTgzIEEgNDMuNjc4IDQzLjY3OCAwIDAgMCA1NDEuODI0IDg2LjI3MiBRIDU0Ny40MzYgNzcuMTA5IDU0OC4wMjcgNjUuODk2IEEgNTAuNjczIDUwLjY3MyAwIDAgMCA1NDguMDk2IDYzLjIzMiBRIDU0OC4wOTYgNTAuMTc2IDU0MS44MjQgMzkuODA4IFEgNTM1LjU1MiAyOS40NCA1MjQuNTQ0IDIzLjY4IFEgNTEzLjUzNiAxNy45MiA0OTkuNDU2IDE3LjkyIEwgNDU4LjI0IDE3LjkyIEwgNDU4LjI0IDEwNy43NzYgWiIgdmVjdG9yLWVmZmVjdD0ibm9uLXNjYWxpbmctc3Ryb2tlIi8+CiAgICA8L2c+Cjwvc3ZnPg==" alt="CodingBox技术博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/tags/%E5%AE%8C%E6%88%90%E7%BC%96%E5%86%99/">已写完的文章</a><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">存档</a><a class="navbar-item" href="/wiki">个人知识库</a><a class="navbar-item" href="/readings">阅读与摘抄</a><a class="navbar-item" href="/blogrol">友链</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><h1 class="title is-3 is-size-4-mobile"> </h1><div class="content"><link rel="stylesheet" type="text&#x2F;css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.2.1/css/hint.min.css"><h1 id="主线 - 第一章"><a href="# 主线 - 第一章" class="headerlink" title="主线 - 第一章"></a>主线 - 第一章 </h1><h2 id="第一关（前）"><a href="# 第一关（前）" class="headerlink" title="第一关（前）"></a> 第一关（前）</h2><p>杜宾：  可恶……</p>
+<p>杜宾：  这里，究竟怎么了？</p>
+<p>整合运动成员：  这边的屋子，也都给我搜干净！</p>
+<p>女性：  放开他……不！你们……</p>
+<p>整合运动成员：  反抗？太迟了！可恨的切尔诺伯格人！</p>
+<p>男性：  快跑！不要管我……孩子就……</p>
+<p>孩童：  妈妈……妈妈……！</p>
+<p>乌萨斯军警：  别管平民！先把阵线守住！这些面具混蛋，人实在是太多了！</p>
+<p>整合运动成员：  别让军警闲着！继续打！</p>
+<p>乌萨斯军警：  增援怎么还没到！我们要……</p>
+<p>整合运动成员：  上啊，上啊！！</p>
+<p>阿米娅：  怎么回事……？！为什么，为什么整合运动会……</p>
+<p>杜宾：  遮遮掩掩这么多年，还是露出本性了吗？</p>
+<p>医疗干员：  感，感染者……在袭击乌萨斯人……</p>
+<p>近卫干员：  为，为什么！感染者这样去骚扰乌萨斯政府的话，会死无葬身之地的……！</p>
+<p>杜宾：  不，他们的攻势相当猛烈。这绝对是有预谋的行动。</p>
+<p>杜宾：  之前我们救出博士的位置，相当机密……就连那里都被他们渗入了。</p>
+<p>杜宾：  可能切尔诺伯格各处，都已经遭到了整合运动的袭击。</p>
+<p>近卫干员：  啊……这，怎么会……</p>
+<p>阿米娅：  嘘！</p>
+<p>整合运动成员 A：  还有逃脱的切尔诺伯格人吗？</p>
+<p>整合运动成员 B：  我在搜！</p>
+<p>整合运动成员 A：  一个也别漏掉！</p>
+<p>整合运动成员 A：  切尔诺伯格的冷血动物……刻在我父辈身上的痛苦，这次，就让我全都还给你们！</p>
+<p>医疗干员：  （咳……）</p>
+<p>整合运动成员 A：  什么声音？</p>
+<p>整合运动成员 B：  在那里！</p>
+<p>医疗干员：  （唔！）</p>
+<p>医疗干员：  （他，他们，发……）</p>
+<p>杜宾：  （安静！）</p>
+<p>医疗干员：  （唔……！）</p>
+<p>女性：  ……呜……</p>
+<p>整合运动成员 A：  在这儿！找到了！</p>
+<p>女性：  ……呜哇哇哇！！！</p>
+<p>女性：  啊！不，别……</p>
+<p>整合运动成员 B：  ……！</p>
+<p>整合运动成员 B：  躲在巷子里？</p>
+<p>整合运动成员 B：  出来。</p>
+<p>女性：  啊，啊啊……！</p>
+<p>整合运动成员 B：  躲在那里，就有用吗……</p>
+<p>女性：  对，对不起！对不起啊！！至少，至少饶了我的儿子！！</p>
+<p>整合运动成员 B：  ……</p>
+<p>阿米娅：  ……我们应该，立刻突袭整合运动。</p>
+<p>杜宾：  ……阿米娅……</p>
+<p>阿米娅：  我知道有风险，杜宾教官。</p>
+<p>阿米娅：  只是，等这些整合运动解散后再行动……会耗费大量时间。</p>
+<p>阿米娅：  何况，谁知道现在的状况，会持续到什么时候……</p>
+<p>阿米娅：  那么，就应该迅速击溃敌人并转移。我说的，没错吧？</p>
+<p>杜宾：  ——————</p>
+<p>杜宾：  明白了，我服从你的命令。</p>
+<p>杜宾：  各小组，听好。</p>
+<p>杜宾：  这些整合运动，还没有意识到我们的存在。</p>
+<p>杜宾：  记住，果断、迅速地解决掉！</p>
+<p>杜宾：  博士，调集队伍吧，现在是你证明自己的时候了。</p>
+<p>杜宾：  现在的局势，可不允许我们有所保留。</p>
+<p>[Decision(options=”早就该交给我了！;……; 简单，我会轻松解决的。”, values=”1;2;3”)]</p>
+<p>杜宾：  呵。</p>
+<p>杜宾：  阿米娅，看你的了。</p>
+<p>阿米娅：  我明白。</p>
+<p>阿米娅：   ……“如果争端能够避免，那我们应当沉默——</p>
+<p>阿米娅：   ——如果战斗是必要的，那就战斗到最后！”</p>
+<p>阿米娅：  罗德岛的信条……从来没有改变过！</p>
+<h2 id="第一关（后）"><a href="# 第一关（后）" class="headerlink" title="第一关（后）"></a>第一关（后）</h2><p>整合运动成员：  呃 ……</p>
+<p>整合运动成员：  你们不是……乌萨斯……人……</p>
+<p>近卫干员：   呼，呼……</p>
+<p>杜宾：  看来，他们没来及联络同伙。</p>
+<p>杜宾：  ……做的不错，博士。</p>
+<p>杜宾：  是该客观评价你的能力了。</p>
+<p>医疗干员：  咦，阿米娅……她去……</p>
+<p>阿米娅：   没事吧？</p>
+<p>女性：   啊？谢，谢……</p>
+<p>阿米娅：   没事的，这是我们……</p>
+<p>女性：   ……你，你也是感染者？</p>
+<p>女性：   你们要做什么！我，我的孩子……别伤害我们，求你了，我……</p>
+<p>阿米娅：   ……</p>
+<p>阿米娅：   去找个安全的地方藏身。</p>
+<p>女性：   呜，呜……宽恕我们……饶了我……</p>
+<p>医疗干员：  ……</p>
+<p>阿米娅：   各位休息好了吗？</p>
+<p>医疗干员：  啊，没事……</p>
+<p>[Decision(options=”她为什么害怕你？”, values=”1”)]</p>
+<p>阿米娅：   ……</p>
+<p>阿米娅：   博士……</p>
+<p>阿米娅：   类似的问题，你以前也问过呢。</p>
+<p>[Decision(options=”……”, values=”1”)]</p>
+<p>阿米娅：   因为我，得了病。</p>
+<p>阿米娅：   我，还有杜宾，罗德岛的大多数人，都得了病。</p>
+<p>阿米娅：   就连刚才那些整合运动的成员也是……</p>
+<p>阿米娅：   我们得了很重的病，让人害怕的病……</p>
+<p>阿米娅：   “矿石病”。</p>
+<p>杜宾：  ……得了矿石病的人，就是感染者。</p>
+<p>阿米娅：   杜宾……</p>
+<p>杜宾：  乌萨斯向来对感染者十分严苛。</p>
+<p>杜宾：  说起来，谁又不是呢。只是乌萨斯在这方面的举措，尤为冷酷罢了。</p>
+<p>杜宾：  宣传上让民众恐惧感染者，到了抓捕感染者的时候，民众自然就习以为常，甚至拍手称快。</p>
+<p>杜宾：  所以，整合运动才选择了这里……</p>
+<p>阿米娅：   只是……这次，似乎不再是简单的示威游行了。</p>
+<p>杜宾：  这一次，他们开始大规模地使用暴力。</p>
+<p>杜宾：  等到乌萨斯政府平息了事件，切尔诺伯格的感染者，只会遭到更残酷的对待。</p>
+<p>杜宾：  ……与之相反，有了博士你，罗德岛的处境，也许能有所改善。</p>
+<p>[Decision(options=”……这和我也有关系？;……; 那我还挺重要的。”, values=”1;2;3”)]</p>
+<p>杜宾：  凯尔希和阿米娅都和我说过，你是最顶尖的矿石病研究学者。</p>
+<p>杜宾：  ……现在，你陷入了记忆丧失的困境，我很怀疑，你还能不能再派上用场。</p>
+<p>阿米娅：   唔唔，杜宾教官，这么说好过分！</p>
+<p>杜宾：  ……也许就和指挥一样，等你稍作复习，说不定就能重新掌握那些理论？</p>
+<p>杜宾：  毕竟你还是前线指挥官……</p>
+<p>杜宾：  其实之前，我怎么也没法把神经学博士和战术家联系在一起……</p>
+<p>杜宾：  看到你本人后，似乎好理解了一些。</p>
+<p>杜宾：  毕竟罗德岛本身就很像你的专业。</p>
+<p>医疗干员：   喂！你！别跑！该注射药剂了！</p>
+<p>近卫干员：   啊？啊？我没事，我没事呀！我，我还不需要治疗！</p>
+<p>医疗干员：   是定量药剂，延缓感染症状的！</p>
+<p>医疗干员：   你刚才不是还说头晕吗！</p>
+<p>近卫干员：   那不是同一种症状吧！</p>
+<p>医疗干员：   要是一会儿你的身体又出了问题，再碰上战斗怎么办？</p>
+<p>医疗干员：   为了大家的安全你也该好好注意！</p>
+<p>近卫干员：   ……</p>
+<p>医疗干员：   别动！我要扎了！</p>
+<p>近卫干员：   啊！！</p>
+<p>杜宾：  ……</p>
+<p>杜宾：  ……罗德岛就是这样，既要找出治疗感染者的办法，又要减少感染者带来的问题。</p>
+<p>阿米娅：   ——是的。光是研究治疗方法，或者仅仅去平息种种争端，都是不够的。</p>
+<p>阿米娅：   我们必须直面感染者带来的所有问题。</p>
+<p>阿米娅：   只有这样，罗德岛才能替感染者争取到一线生机……</p>
+<p>杜宾：  作为感染者，我们也比普通人更能理解感染者。</p>
+<p>杜宾：  无论是普通人还是感染者，无论是和平还是纷争，罗德岛想要解决问题，而不是任由仇恨和疾病蔓延肆虐。</p>
+<p>杜宾：  博士，这可能也会是你职责的一部分。</p>
+<p>杜宾：  ……至少，这是我粗浅的请求。</p>
+<p>[Decision(options=”你在说什么？？;……; 我需要更慎重地思索一下。”, values=”1;2;3”)]</p>
+<p>杜宾：  我们会留给你很多时间的，你可以慢慢理解。</p>
+<p>杜宾：  只不过，给我们的时间却不多了。</p>
+<p>杜宾：  整顿队伍，出发！</p>
+<p>杜宾：  前往汇合点的路上，还不知道有什么等着我们！</p>
+<p>杜宾：  （阿米娅……）</p>
+<p>杜宾：  （切尔诺伯格现在的情况非常复杂，我们不能给整支救援队伍带去心理压力。但是……）</p>
+<p>阿米娅：  （我们……还有多长时间？）</p>
+<p>杜宾：  （……三小时。）</p>
+<p>杜宾：  （三小时之后，天灾将会吞没这个城市。）</p>
+<p>杜宾：  （等到天灾降临，一切就都完了。）</p>
+<p>？？？：  ……</p>
+<p>？？？：  不确定因素。</p>
+<p>？？？：  去，通知其他人。</p>
+<p>？？？：  我们追。</p>
+<h2 id="第二关（前）"><a href="# 第二关（前）" class="headerlink" title="第二关（前）"></a>第二关（前）</h2><p>杜宾：  ……这终归还是，太超乎我的想象了。</p>
+<p>杜宾：  爆炸，骚乱，火光，巷战……</p>
+<p>杜宾：  难道整个切尔诺伯格，都陷入了这种混乱吗？</p>
+<p>电视主持人：   在切尔诺伯格军警的团结协作与迅速反应之下……</p>
+<p>电视主持人：   ……情况已经被控制，大部分区域的意外事件已经被镇压。</p>
+<p>电视主持人：   目前，切尔诺伯格军警已经包围了盘踞在瓦舒克大道上的暴徒……</p>
+<p>电视主持人：   可见，这一次无谋的袭击，将很快结束。</p>
+<p>电视主持人：   请各位不要惊慌，待在屋中，等待切尔诺伯格的又一场胜利……</p>
+<p>电视主持人：   乌萨斯的荣光保佑着陛下和他的人民！</p>
+<p>整合运动成员：   ……</p>
+<p>乌萨斯军警：   可恶，他们，他们……那些武器和装备，究竟是哪里来的！</p>
+<p>乌萨斯军警队长：   不要畏缩！就算穿上护甲，懦夫依旧是懦夫！不过是些缺乏训练的暴徒！</p>
+<p>乌萨斯军警：   可是，可是他们的数量……！！</p>
+<p>乌萨斯军警队长：   我们已经干掉了我们数量三倍之多的敌人！再干掉三倍的敌人，战斗就结束了！</p>
+<p>整合运动成员：   少口出狂言了，切尔诺伯格的混蛋！</p>
+<p>乌萨斯军警队长：   感染者渣滓，也配和我们为敌？！</p>
+<p>乌萨斯军警队长：   逮捕你们和你们肮脏的爹妈时就该把你们全部当场处死，而不是流放和苦役！</p>
+<p>整合运动成员：   你们这些家伙……！！</p>
+<p>乌萨斯军警：   呃……！他们在冲击防线，前卫没法再支撑多长时间了！</p>
+<p>乌萨斯军警队长：   为了陛下！给我顶住！！</p>
+<p>乌萨斯军警：   我，我要……坚持不住了……！</p>
+<p>乌萨斯军警队长：   退后的人，统统处死！</p>
+<p>乌萨斯军警：   咳……</p>
+<p>近卫干员：  我们……</p>
+<p>杜宾：  呆在这里别动！我们还不能暴露！</p>
+<p>阿米娅：   乌萨斯的军警队伍……居然被整合运动压制住了？</p>
+<p>杜宾：  哼……电视上播放的内容，和现实完全不一样。</p>
+<p>杜宾：  切尔诺伯格当局，到了这个时候，还在耍这种手段吗。</p>
+<p>杜宾：  不过，对于我们来说，事情也同样在变糟。指望通过更加隐秘的手段离开，已经不现实了。</p>
+<p>阿米娅：   糟糕的路况和敌人的封锁……我们已经没办法再利用载具分别行动了……</p>
+<p>杜宾：  是的，救援小队只有在具备一定规模时，才能有效消灭盘踞在要道上的整合运动敌人。</p>
+<p>杜宾：  再切分小队，只会是自取灭亡。</p>
+<p>近卫干员：  这些乌萨斯军警……</p>
+<p>近卫干员：  即使他们的装备很精良，看起来也很有实力，但整合运动……</p>
+<p>近卫干员：  无论是人数还是士气，都占压倒性的优势！</p>
+<p>杜宾：  和我们对切尔诺伯格进行初步侦察时完全不同……</p>
+<p>杜宾：  在我们潜入时，切尔诺伯格军警与驻扎部队的数量、分布、以及状态，处在一个非常古怪的状态。</p>
+<p>杜宾：  只是在那个时候，我们没办法确定原因而已。</p>
+<p>近卫干员：  难道整合运动，已经秘密地消灭了切尔诺伯格的大部分防卫力量吗？</p>
+<p>杜宾：  没有任何证据可以证明，整合运动的力量真的庞大到如此地步，还能够谋划这么大规模的战略……</p>
+<p>杜宾：  现在，我怕是只能庆幸，被包围的是那些军警，而不是我们。</p>
+<p>杜宾：  当然，我们也必须提防四周的情况，等到陷入危机，就已经晚了——</p>
+<p>阿米娅：   ……博士，快召集各小队。</p>
+<p>阿米娅：   侦查干员发现了整合运动，他们马上就要和我们的救援队伍接触了！</p>
+<p>杜宾：  ——至少，我们现在的优势，也就只有谨小慎微这一点了。</p>
+<p>整合运动成员：   嗯？</p>
+<p>整合运动成员：   这，这里也有武装力量？！</p>
+<p>杜宾：  各小队，作战准备！不要给他们反击的机会！</p>
+<h2 id="第二关（后）"><a href="# 第二关（后）" class="headerlink" title="第二关（后）"></a>第二关（后）</h2><p>近卫干员：  哈，哈……</p>
+<p>近卫干员：  整合运动还真是……精力旺盛！</p>
+<p>乌萨斯军警队长：  你们，是什么人？</p>
+<p>乌萨斯军警队长：  怎么会这个时候，出现在切尔诺伯格！</p>
+<p>近卫干员：  哈？怎，怎么回事——</p>
+<p>乌萨斯军警队长：  间谍吗！</p>
+<p>杜宾：  （如果泄露了身份，被乌萨斯当局盯上，后果不堪设想！）</p>
+<p>杜宾：  （必要的话……！）</p>
+<p>阿米娅：   先生。</p>
+<p>乌萨斯军警队长：  ——小女孩？</p>
+<p>乌萨斯军警队长：  你……感染者？</p>
+<p>乌萨斯军警队长：  别动！放下武器！</p>
+<p>杜宾：  （做好防护准备，一旦对方有敌对倾向……）</p>
+<p>杜宾：  （烟雾？从哪里……）</p>
+<p>阿米娅：   先生，对我们抱有敌意的人究竟是谁，你应该很清楚！</p>
+<p>阿米娅：   杜宾！</p>
+<p>杜宾：  重装干员！敌袭！</p>
+<p>乌萨斯军警队长：  什，什么？！</p>
+<p>？？？：  ……</p>
+<p>阿米娅：   ……整合运动。</p>
+<p>杜宾：  阿米娅，小心……</p>
+<p>杜宾：  她和那些普通的感染者暴徒，不是一回事！</p>
+<p>？？？：  哼，逃跑……</p>
+<p>？？？：  又能逃到哪里？</p>
+<p>？？？：  去，撕碎他们。</p>
+<p>整合运动成员：  ——————</p>
+<p>杜宾：  就连手下的整合运动成员也是一副训练有素的样子……</p>
+<p>杜宾：  难道是，整合运动的头目吗？</p>
+<p>阿米娅：   雾气越来越浓了……想借助雾气发动奇袭吗？</p>
+<p>阿米娅：   军警先生，我们必须立刻撤离这个区域！</p>
+<p>阿米娅：   如果让封锁了我们的退路，我们就……</p>
+<p>乌萨斯军警队长：  ——</p>
+<p>乌萨斯军警队长：  你们这些感染者，都给我滚。</p>
+<p>阿米娅：   ……</p>
+<p>乌萨斯军警队长：  我得到的命令是防卫这条大街。</p>
+<p>乌萨斯军警队长：  感染兔子，我不管你们来这里有什么目的，想干什么。</p>
+<p>乌萨斯军警队长：  如果你们是来破坏我们的城市的，自然会有人惩罚你们。乌萨斯的愤怒是无休止的。</p>
+<p>乌萨斯军警队长：  如果不是，那这里发生的事情，和你没有关系。</p>
+<p>阿米娅：   ——我知道了。</p>
+<p>乌萨斯军警队长：  每个乌萨斯人都知道，不把背脊朝向敌人。</p>
+<p>乌萨斯军警队长：  快滚！我们没空理你们。</p>
+<p>阿米娅：   ——</p>
+<p>阿米娅：   谢谢。</p>
+<p>阿米娅：   杜宾！</p>
+<p>杜宾：  走！去第一汇合点！</p>
+<p>杜宾：  各小队！动作要快！快！</p>
+<p>？？？：  ……</p>
+<p>乌萨斯军警队长：  来啊！感染者混球！</p>
+<p>乌萨斯军警队长：  你们就这点本事吗？只会站在那里看着吗？</p>
+<p>？？？：  切尔诺伯格人……</p>
+<p>？？？：  该死。</p>
+<h2 id="第三关（前）"><a href="# 第三关（前）" class="headerlink" title="第三关（前）"></a>第三关（前）</h2><p>杜宾：  Ace！</p>
+<p>Ace：  看来，你们都平安无事。</p>
+<p>杜宾：  这里还没到汇合点……怎么只有你一个人？</p>
+<p>整合运动成员：   他们就是那支从核心区出逃的人！别放他们走！</p>
+<p>杜宾：  呿，穷追不舍！</p>
+<p>杜宾：  E2 小队，应敌——</p>
+<p>Ace：   杜宾，不要恋战，优先后撤！</p>
+<p>Ace：   阿米娅，博士！快！</p>
+<p>杜宾：  这里也不安全。</p>
+<p>Ace：  是的，我们还要继续向下一个汇合点移动。</p>
+<p>杜宾：  你的小队呢？</p>
+<p>整合运动成员：   藏到哪去了？把他们找出来！</p>
+<p>杜宾：  又来了吗！</p>
+<p>Ace：  博士，请下命令吧。</p>
+<p>Ace：  就像以前那样。</p>
+<p>[Decision(options=”……？”, values=”1”)]</p>
+<p>阿米娅：   啊，Ace……</p>
+<p>阿米娅：   其实有些，小小的变故。</p>
+<p>阿米娅：   博士……意外失去了记忆。</p>
+<p>Ace：   ……原来如此。</p>
+<p>阿米娅：   抱歉，Ace……事情和以前相比，有不小的区别。</p>
+<p>Ace：   是吗。你没必要向我道歉。</p>
+<p>Ace：   博士的指挥能力，有没有因为失忆受到影响？</p>
+<p>阿米娅：   ……和以前一样。</p>
+<p>阿米娅：   博士的决策依旧十分可靠，我保证。</p>
+<p>Ace：   那就好。我听从博士的指挥。</p>
+<p>Ace：   失去了的东西是可以找回来的。</p>
+<p>Ace：   眼下有更棘手的问题等着我们去解决。</p>
+<p>整合运动成员：   他们在这儿！快，快攻击！！</p>
+<p>杜宾：  聊天还没结束？我已经开始战斗了！</p>
+<p>Ace：   博士，请下命令吧。</p>
+<p>整合运动成员：   放，把那些畜生放出来，让他们尝尝被撕咬的滋味！</p>
+<p>杜宾：  博士！Ace！敌人近在眼前了！</p>
+<p>Ace：   ——</p>
+<p>[Decision(options=”立刻出动！;……好的。; 趁现在，破坏敌人的计划吧。”, values=”1;2;3”)]</p>
+<p>Ace：   明白。</p>
+<p>Ace：   E3 小队！支援杜宾！</p>
+<p>整合运动成员：   埋伏？！！</p>
+<p>杜宾：   E3 小队……一直隐藏着行踪，就是等着和我们配合，夹击敌人吗。</p>
+<p>Ace：   在通讯受到干扰的情况下，小队应该在汇合点附近行动，这样，即使是我或者侦查干员发生了意外……</p>
+<p>Ace：   整体的撤退计划，依然能够正常实施。这是我的判断。</p>
+<p>杜宾：  也就是说，Ace 你把小队留在汇合点，一个人……</p>
+<p>Ace：   毕竟最重要的，是去除汇合点周围的威胁。</p>
+<p>Ace：   优先确认你们的状况是一种冒险。我不能带上整个小队一起。</p>
+<p>Ace：   小队存在的目的，本来就是为了让战术更有效，而不是固步自封，成为拖累。</p>
+<p>杜宾：  哈。接下来，用实战去解决了整合运动再说吧！</p>
+<p>Ace：   阿米娅，拜托你。</p>
+<p>阿米娅：   知道了！我会辅佐博士，通过法术支援你们的！</p>
+<p>Ace：   终于……</p>
+<p>Ace：   博士，请你，指挥罗德岛。</p>
+<h2 id="第三关（后）"><a href="# 第三关（后）" class="headerlink" title="第三关（后）"></a>第三关（后）</h2><p>杜宾：  哈，哈……</p>
+<p>杜宾：  整合运动这帮丧心病狂的家伙！居然用，居然用……</p>
+<p>近卫干员：  那些野兽……</p>
+<p>近卫干员：  是，是整合运动，布置的吗……</p>
+<p>阿米娅：   感染的野兽，被整合运动当做士兵驱使……</p>
+<p>杜宾：  不，那不只是野兽那么简单。</p>
+<p>杜宾：  我能感受到，那种……</p>
+<p>杜宾：  那不是单纯的野兽，它们比起野兽，更像我们……</p>
+<p>近卫干员：  杜宾教官……</p>
+<p>杜宾：  ……</p>
+<p>近卫干员：  头儿……我们，该怎么办？</p>
+<p>Ace：   帮它们从痛苦中解脱。</p>
+<p>近卫干员：  头儿……</p>
+<p>Ace：   战斗已经结束了，杜宾。</p>
+<p>Ace：   我们同样也和整合运动发生了冲突。</p>
+<p>Ace：   天灾已经盘旋在我们头顶，随时都可能坠落。</p>
+<p>Ace：   即使是切尔诺伯格城，在天灾的直接冲击下，也会化作一摊废墟。</p>
+<p>阿米娅：   整合运动在这个时候闹事，确实会制造更大的混乱。</p>
+<p>Ace：   杜宾，没时间了。</p>
+<p>Ace：   罗德岛能躲过整合运动的袭击，也能瞒着乌萨斯帝国行动，但面对天灾，我们终归是脆弱的。</p>
+<p>杜宾：  ……</p>
+<p>杜宾：  够了，走吧。</p>
+<p>杜宾：  无论整合运动的计划有多疯狂，对于我们来说……</p>
+<p>阿米娅：   各位的安全才是最重要的。</p>
+<p>杜宾：  是。</p>
+<p>阿米娅：   整合运动的领袖，可能把这次的事件看作一个标志，一种手段……</p>
+<p>阿米娅：   对我来说，只是罗德岛的处境，变得越来越危险。</p>
+<p>Ace：   在这个时间点挑起事端——</p>
+<p>Ace：   整合运动不是足够狠毒，就是足够疯狂。</p>
+<p>杜宾：  也许，两者兼有。</p>
+<h2 id="第四关（前）"><a href="# 第四关（前）" class="headerlink" title="第四关（前）"></a>第四关（前）</h2><p>阿米娅：   ——天空越来越暗淡了。</p>
+<p>阿米娅：   天际线仿佛被云层捏住了一样……</p>
+<p>阿米娅：   明明空气很通透，乌云却静止不动，好像在把各处的压抑感通通抽出，凝聚在一处。</p>
+<p>阿米娅：   连风都停下了……</p>
+<p>杜宾：  天灾确实，即将降临在这座城市。</p>
+<p>杜宾：  看来，切尔诺伯格已经被整合运动彻底瘫痪了。</p>
+<p>杜宾：  不过，哪怕是要拆分移动城市，也应该提前数周就完成准备工作。</p>
+<p>杜宾：  难道在那时候，整合运动就……？</p>
+<p>Ace：   不太现实。</p>
+<p>Ace：   现在的整合运动，并没有体现出秘密接管所需要的精英部队素质。</p>
+<p>近卫干员：   整合运动的大多数成员……不过是在街头游荡，向切尔诺伯格人寻仇。</p>
+<p>阿米娅：   仅仅是在各处重复着杀戮和战斗，使整个城市陷入战火。</p>
+<p>杜宾：  天灾降临时，就连无比坚固的切尔诺伯格都会被撕得粉碎——</p>
+<p>杜宾：  变成布满源石的巨型废墟。</p>
+<p>杜宾：  无论整合运动想要的是资源还是名望，都只会一败涂地。</p>
+<p>阿米娅：   他们真能和乌萨斯军方正面对抗吗？即使乌萨斯的指挥系统陷入了混乱……</p>
+<p>阿米娅：   乌萨斯的军事力量，怎么还没有集结反攻？</p>
+<p>杜宾：  从我的经验来说，一般暴乱发生后，不出片刻，暴徒就会被全副武装的军警清剿。</p>
+<p>杜宾：  虽然，我们刚才也见证了一小撮军警被整合运动围攻的景象……</p>
+<p>阿米娅：   ……</p>
+<p>杜宾：  那个蒙面的整合运动头目，即使是有一点不同……但她也没有能够吞没一城的水平。</p>
+<p>杜宾：  除非……</p>
+<p>阿米娅：   除非什么？</p>
+<p>杜宾：  我以前经历的战争中……</p>
+<p>杜宾：  也有行为与整合运动的掌控者如出一辙的领袖。</p>
+<p>杜宾：  于他而言，士兵不过是棋子，达到目的后就可以随意丢弃。</p>
+<p>杜宾：  既合理高效的运用兵力，又在不需要的时候放纵其自生自灭……</p>
+<p>杜宾：  因为训练与管理的成本太高了。</p>
+<p>Ace：   所以，他只是放养他们？</p>
+<p>杜宾：  对。大多数时候，他只要把仇恨和恐慌当做口粮，喂养他们……</p>
+<p>杜宾：  只需在必要时，轻轻的推一下——追随者就会振臂高呼。</p>
+<p>杜宾：  如果整合运动的运作，真如他们宣传的那般……</p>
+<p>近卫干员：   唔……</p>
+<p>近卫干员：   穿上衣服，戴上标志，所有的感染者都可以是整合运动？</p>
+<p>杜宾：  是的。</p>
+<p>杜宾：  他们确实……将源源不断。</p>
+<p>杜宾：  被压迫、想要呼喊的感染者太多了。这时候，无论整合运动给出的是怎样的出路……</p>
+<p>杜宾：  只要在铁屋子上钻个口，哪怕外面就是一片火海，里面的人依然会互相推搡着探出身子。</p>
+<p>医疗干员：   唔……</p>
+<p>杜宾：  博士.</p>
+<p>杜宾：  这和你我不同。即使我还没有完全信任你，但至少我信任你的能力。</p>
+<p>[Decision(options=”……”, values=”1”)]</p>
+<p>杜宾：  与你完全不同……</p>
+<p>杜宾：  这种领袖并不是指挥官。</p>
+<p>杜宾：  践踏敌人，同时也践踏同伴，又或者说，“随从”，的生命。</p>
+<p>杜宾：  也许连随从都算不上，整合运动的暴徒，不过是领袖的棋子。</p>
+<p>杜宾：  这样的人，是暴君。</p>
+<p>Ace：   无论敌人是谁，我们都会完成任务。</p>
+<p>Ace：   以前有人训导过我和我的队友——</p>
+<p>Ace：   “如果是棋子，那就吃掉；如果是堡垒，那就攻陷；如果是王权，那就推翻”。</p>
+<p>杜宾：  Ace……稍等一下。</p>
+<p>Ace：   博士，正前方，盘踞着敌人的轻装甲部队。</p>
+<p>阿米娅：   我们被发现了吗？</p>
+<p>Ace：   还没有。</p>
+<p>杜宾：  但是……</p>
+<p>Ace：   我们避不开。这是这条路径中的最短路线，如果我们迂回，就会损失时间。</p>
+<p>杜宾：  那没什么好说的了。无论他们是棋子还是暴徒，只要从战场上赶出去就好！</p>
+<h2 id="第四关（后）"><a href="# 第四关（后）" class="headerlink" title="第四关（后）"></a>第四关（后）</h2><p>杜宾：  依照既定路线，我们已经很接近切城南边的中城区了。</p>
+<p>杜宾：  穿过这个公园，就是汇合点。不出意外的话，临光和 E4 小队应该已经在那里等着我们了。</p>
+<p>近卫干员：   可是……</p>
+<p>近卫干员：   要是临光……被袭击了，会怎么样？</p>
+<p>近卫干员：   要是他们原本想用通讯设施警告我们，却发现信号遭到干扰……</p>
+<p>近卫干员：   我们该怎么办？</p>
+<p>杜宾：  ……</p>
+<p>阿米娅：   我们会去确认。</p>
+<p>近卫干员：   ……啊。</p>
+<p>Ace：   我们要亲眼确认事件之后，才会做出揣测。</p>
+<p>Ace：   不要用怀疑恐吓自己。</p>
+<p>近卫干员：   明，明白了……</p>
+<p>杜宾：  失去联络手段所带来的恐慌情绪，比想象中蔓延的快得多……</p>
+<p>杜宾：  特别是……在这个天灾仿佛近在眼前的时候。</p>
+<p>杜宾：  我们得赶紧加快速度了。</p>
+<p>阿米娅：    ……</p>
+<p>阿米娅：    欸……这阵雾气……？</p>
+<p>阿米娅：   ——难道——</p>
+<p>阿米娅：   小心！！</p>
+<p>？？？：  干掉他们。</p>
+<p>杜宾：  敌军的射击！！</p>
+<p>阿米娅：   这是陷阱……！</p>
+<p>整合运动成员：   ————！！</p>
+<p>近卫干员：   不好，我们的后方也出现了整合运动的追兵……！</p>
+<p>阿米娅：   侦查干员呢！</p>
+<p>近卫干员：   被战场分割了！</p>
+<p>？？？：  罗德岛……</p>
+<p>？？？：  追上你们了。</p>
+<p>整合运动成员：   ——！</p>
+<p>整合运动成员：   杀！！</p>
+<p>？？？：  这次，就让你们粉身碎骨。</p>
+<p>阿米娅：   杜宾！</p>
+<p>杜宾：  狙击干员！压制敌人的冲锋！</p>
+<p>杜宾：  重装干员，防御姿态，随时准备向前顶上！</p>
+<p>杜宾：  Ace，准备————</p>
+<p>？？？：  等一下，等一下——</p>
+<p>阿米娅：   ？！</p>
+<p>？？？：  在清剿了东南要塞之后，我一听到你的消息，可是立刻就赶过来了。</p>
+<p>？？？：  这里已经是我的处理范围咯，弑君者。</p>
+<p>弑君者：  ……</p>
+<p>弑君者： 你来做什么？</p>
+<p>？？？：  该把他们，交给我了吧？</p>
+<h2 id="第五关（前）"><a href="# 第五关（前）" class="headerlink" title="第五关（前）"></a>第五关（前）</h2><p>弑君者：    ……</p>
+<p>弑君者：    梅菲斯特？</p>
+<p>？？？：    你没有拒绝的理由吧？一些不小心飞进来的小虫子……值得你亲自追击吗？</p>
+<p>？？？：    我的部队已经接到了你的情报，你已经尽到了你的责任。</p>
+<p>？？？：    接下来，请你回去吧。毕竟你负责的是核心能源区及其外围……</p>
+<p>弑君者：    少做多余的事……！</p>
+<p>？？？：    你还有其他事情要做，对吧？</p>
+<p>弑君者：    ——</p>
+<p>弑君者：    好。随便你。</p>
+<p>弑君者：    我已经等不及要观赏你的惨败了。</p>
+<p>？？？：    哦……</p>
+<p>弑君者：    收队。</p>
+<p>整合运动成员：  ——</p>
+<p>阿米娅：    ……敌人的头目……带着一部分整合运动的部队，撤离了？</p>
+<p>杜宾：    这小子，在做什么？</p>
+<p>杜宾：    不能放松警惕……敌人的数量，依然是我们的数倍之多！</p>
+<p>？？？：    唉唉，弑君者的口气一直不是很礼貌，请允许我代她道歉。</p>
+<p>梅菲斯特：    你们可以称呼我，梅菲斯特。</p>
+<p>杜宾：    你们整合运动，究竟要做什么？</p>
+<p>梅菲斯特：    也没什么。其实，放你们离开也无所谓。毕竟刚开始，你们也不算是整合运动的目标。</p>
+<p>阿米娅：    既然我们不是整合运动的目标，那为什么……</p>
+<p>梅菲斯特：    不过，我有幸观赏了你们的战斗。</p>
+<p>梅菲斯特：    你们的作战方式和你们的人员配置，很有趣哦。</p>
+<p>医疗干员：    ……有趣？</p>
+<p>医疗干员：    说战场的厮杀……有趣？</p>
+<p>梅菲斯特：    罗德岛……我看过你们的资料。</p>
+<p>梅菲斯特：    原本，我只把你们当作是普通企业。</p>
+<p>梅菲斯特：    现在看来，你们所涉猎的，可远远超出了摆弄试管的范畴哦？</p>
+<p>梅菲斯特：    要是让你们轻轻松松地离开，就没什么意思了吧？</p>
+<p>梅菲斯特：    我想和各位，来一场祭祀式的竞赛。</p>
+<p>杜宾：    ……我们没工夫和心智不全的小孩子浪费时间。</p>
+<p>杜宾：    （阿米娅，准备好，我们可能要强行突围了。）</p>
+<p>杜宾：    （我来吸引他的注意力……！）</p>
+<p>阿米娅：    （啊，嗯！）</p>
+<p>梅菲斯特：    ……刚刚那是什么？你是向谁，打了什么信号吗？</p>
+<p>杜宾：    与你无关，小子。</p>
+<p>杜宾：    （阿米娅？）</p>
+<p>梅菲斯特：    哎呀，都是些企业人士了，连谈话时要注意礼节这个道理，都不明白吗？</p>
+<p>杜宾：    就是因为这世界上像你这样的人越来越多，才导致我不得不多学些能够形容你们的词汇！</p>
+<p>杜宾：    （阿米娅，发生什么了？）</p>
+<p>阿米娅：    （杜宾……我们的撤退路线，都被他的部队封锁了！）</p>
+<p>杜宾：    （怎么会！短短几分钟内，他——）</p>
+<p>梅菲斯特：    这样不好。</p>
+<p>梅菲斯特：    我诚心诚意地邀请你们……</p>
+<p>梅菲斯特：    你们却只想着——</p>
+<p>梅菲斯特：    ——逃之夭夭？</p>
+<p>杜宾：    呿！</p>
+<p>梅菲斯特：    其实，只要你们赢了，就可以安全地离开我的猎场。</p>
+<p>梅菲斯特：    接下来，我的这些朋友们，会不断地尝试杀掉你们。</p>
+<p>梅菲斯特：    你们只要活下来，就是胜利！怎么样，规则，很简单吧？</p>
+<p>杜宾：    Ace！</p>
+<p>Ace：    已经做好了强行突围的准备！</p>
+<p>Ace：    但我们要先扛过这次围攻！</p>
+<p>阿米娅：    ——</p>
+<p>阿米娅：    为什么，明明天灾就要来了！再不撤出切城，所有人都会——</p>
+<p>梅菲斯特：    你在说什么……</p>
+<p>梅菲斯特：    正因为是天灾降临……这可是，一个最该被好好庆祝的时刻了呀。</p>
+<p>阿米娅：    ……你……</p>
+<p>梅菲斯特：    我高贵的客人们，能邀请你们参加游戏，我感到十分荣幸。</p>
+<p>整合运动成员：    啊……啊……！</p>
+<p>整合运动成员：    杀……杀！！杀了……他们！！</p>
+<p>杜宾：    阿米娅！小心！</p>
+<p>梅菲斯特：    对了，对了……</p>
+<p>梅菲斯特：    其实，我们是知道你们在核心区里做了什么的。</p>
+<p>阿米娅：    ——！</p>
+<p>梅菲斯特：    那个你们从核心区里救出来的，一直遮住面庞的家伙……令人非常，非常在意呢。</p>
+<p>阿米娅：    ——？！</p>
+<p>梅菲斯特：    弑君者只关心你们之后要做什么，要去哪里。</p>
+<p>梅菲斯特：    我不一样。我只关心……</p>
+<p>梅菲斯特：    你，是什么？从哪里来？</p>
+<p>梅菲斯特：    对，你，就是现在，盯着我看的你……你和我们有点不一样。</p>
+<p>梅菲斯特：    那个设施里，究竟是什么装置，有着保存生命的功能呢？</p>
+<p>梅菲斯特：    我非常，非常好奇。</p>
+<p>梅菲斯特：    我也不是那种冷血的人……</p>
+<p>梅菲斯特：    来吧，罗德岛的客人们，把这个家伙当成见面礼留给我吧？</p>
+<p>梅菲斯特：    那样的话，虽然令人惋惜，但我放你们离开，也是可以的哦？</p>
+<p>阿米娅：    博士——</p>
+<p>阿米娅：    ——退到我身后！！</p>
+<h2 id="第五关（后）"><a href="# 第五关（后）" class="headerlink" title="第五关（后）"></a>第五关（后）</h2><p>医疗干员：   咿——！</p>
+<p>近卫干员：  小心！！</p>
+<p>医疗干员：  我没事，只是擦伤而已，不要紧……</p>
+<p>阿米娅：  还不够……再这样下去，包围圈会越来越小。</p>
+<p>杜宾：  我们已经找到了可突破口，但没有增援，我们只能采取守势，没法突围！</p>
+<p>阿米娅：  ……请再坚持一下！优先用火力压制敌方射手！</p>
+<p>阿米娅：  敌人的先锋，就由我们术师来处理！</p>
+<p>梅菲斯特：  没错，没错！就该这样！接下来，f3，e5！</p>
+<p>杜宾：   可憎的小子……！</p>
+<p>梅菲斯特：  很好！那么，b4，b5！</p>
+<p>近卫干员：  敌人正在向我们侧后方迂回！</p>
+<p>阿米娅：  调两位重装干员和一位狙击干员！只要能牵制他们就足够了！</p>
+<p>梅菲斯特：  之后！h2，h6！</p>
+<p>医疗干员：   他们，他们在冲击我们的阵线！</p>
+<p>Ace：   近卫干员，把敌人赶出掩体！</p>
+<p>梅菲斯特：  没错，再让我多看一会儿，你们挣扎的样子！</p>
+<p>梅菲斯特：  现在，术师，c7，吃掉敌人的战车吧！</p>
+<p>阿米娅：  敌人的术师现身了……！之前，一直躲在重装干员身后吗！</p>
+<p>杜宾：   来不及了！趴下！</p>
+<p>医疗干员：   呜啊啊啊！</p>
+<p>近卫干员：  咳……</p>
+<p>梅菲斯特：  然后就去死吧，就像雨夜中的火星一样！</p>
+<p>阿米娅：  他，是在指挥自己的队伍吗……！仅仅运用象棋走法，就能下达精准的命令？</p>
+<p>阿米娅：  明明都是些狂暴的感染者，战斗却完全由他一人指挥……！</p>
+<p>阿米娅：  再这样下去，他会把指挥优势发挥到极致——</p>
+<p>杜宾：   相应的，只要能压制他的话，也就没什么大不了！</p>
+<p>杜宾：   不要让整合运动打开哪怕一丁点缺口！</p>
+<p>杜宾：   混账，我们的时间越来越少了！</p>
+<p>阿米娅：  不能再让整合运动拖延我们的脚步了！</p>
+<p>阿米娅：  有什么，有什么办法能迅速打开局面吗……！</p>
+<p>阿米娅：  如果继续拖下去，博士和大家就……！</p>
+<p>整合运动成员：  唔唔唔唔唔啊啊啊！！！</p>
+<p>梅菲斯特：  什么？</p>
+<p>梅菲斯特：  ……唔唔……怎么回事？怎么有人被……撞飞起来了？</p>
+<p>梅菲斯特：  这……</p>
+<p>梅菲斯特：  ……什么啊？</p>
+<p>？？？：   你们的速度比我估算的慢上太多了，我可是连平民都顺手安顿好了。</p>
+<p>阿米娅：  ——？！！</p>
+<p>？？？：   别挡道！</p>
+<p>整合运动成员：  呜啊！</p>
+<p>？？？：   加大进攻力度！别给敌人重整阵形的机会！</p>
+<p>阿米娅：  临光小姐！！</p>
+<p>临光：  我在。</p>
+<p>临光：  你没事就好，阿米娅。快撤。</p>
+<p>杜宾：   幸亏这次作战，有你参加。</p>
+<p>临光：  信号弹的定位很有效。看来你们遇到的麻烦确实不小。</p>
+<p>临光：  ——</p>
+<p>临光：  您就是 {@nickname} 博士吧？</p>
+<p>临光：  耀骑士临光，前来迎接你们了。</p>
+<h2 id="第六关（后）"><a href="# 第六关（后）" class="headerlink" title="第六关（后）"></a>第六关（后）</h2><p>梅菲斯特：   这女人……怎么回事……</p>
+<p>临光：   ————你。</p>
+<p>临光：   制压切尔诺伯格军事据点的整合运动像机器一样高效——</p>
+<p>临光：   而你领着的这批各个都像神经错乱的暴徒。</p>
+<p>临光：   屠杀，纵火，围猎……只不过是为了满足你自己残忍的趣味而已吧？</p>
+<p>临光：   会在这时煽动如此不堪之事的人，没可能策划出足以击溃整座城市的方案。</p>
+<p>临光：   你的指挥官大概是命令你制造混乱，而你，顺应着自己低劣的品味肆意妄为。</p>
+<p>梅菲斯特：   ——</p>
+<p>梅菲斯特：   ——浮士德。</p>
+<p>梅菲斯特：   把她那张嘴给我打穿。</p>
+<p>浮士德：   ……</p>
+<p>临光：   ！</p>
+<p>临光：   咳，咳……</p>
+<p>阿米娅：  临光！</p>
+<p>杜宾：  敌人的狙击手……很强！</p>
+<p>杜宾：  临光再被击中的话，一定会失去防御能力！</p>
+<p>阿米娅：  临光，快退后！</p>
+<p>临光：   不行……威力太大了。如果击中我方小队，后果不堪设想。</p>
+<p>临光：   我必须防住他的炮火！</p>
+<p>梅菲斯特：  挡开了浮士德的弩炮？凭盾牌——？！</p>
+<p>梅菲斯特：  不可能……不可能！</p>
+<p>梅菲斯特：  再来！！把她……打成碎渣！</p>
+<p>浮士德：    ————！</p>
+<p>临光：  居然……右侧？！</p>
+<p>杜宾：  糟了！快闪开————</p>
+<p>Ace：  不会让你得逞！</p>
+<p>阿米娅：  Ace！</p>
+<p>Ace：   狙击干员，准备！</p>
+<p>Ace：   ——目标，南侧高台，齐射！</p>
+<p>浮士德：   ……！</p>
+<p>梅菲斯特：  什么！你们居然敢，居然敢……！</p>
+<p>阿米娅：  打中了吗？</p>
+<p>Ace：  没那么容易，这只能……稍稍压制他而已。</p>
+<p>Ace：  没时间再去了解敌人的构成了！</p>
+<p>杜宾：  兼具机动性和威力，越拖下去，我们安全挡下他弩弹的几率就越小！</p>
+<p>临光：  别给他喘息的机会……！趁着 E3 小队狙击干员干扰他们的时候，阿米娅！</p>
+<p>阿米娅：  了解！</p>
+<p>阿米娅：  E1 小队射手，和我一起，压制整合运动！</p>
+<p>阿米娅：  E2 小队，用最大火力，撕开整合运动的防线！</p>
+<p>梅菲斯特：  你们这些家伙……</p>
+<p>梅菲斯特：  为什么不肯老老实实的去死？</p>
+<p>梅菲斯特：  你们的命运，为什么就不能在这里落下帷幕？</p>
+<p>梅菲斯特：  ——————我要把你们，通通————</p>
+<p>Ace：  临光，趁现在，快！</p>
+<p>临光：   E4 全体，随我冲击敌方阵形！</p>
+<p>临光：   一次性击溃前方的阻挡目标！</p>
+<p>临光：   狂奔起来！！</p>
+<p>整合运动成员：  射击！射击！别让她靠近……</p>
+<p>整合运动成员：  啊……？</p>
+<p>整合运动成员：  啊？？她刚刚不是还在二十米之外……</p>
+<p>整合运动成员：  咕咳——唔啊啊啊啊！</p>
+<p>临光：   想要对抗卡西米尔骑士——再去训练个几十年再说！</p>
+<p>临光：   杜宾！跟上我！</p>
+<p>杜宾：  了解！</p>
+<h2 id="第六关（后）-1"><a href="# 第六关（后）-1" class="headerlink" title="第六关（后）"></a>第六关（后）</h2><p>杜宾：  侦查完毕，确认敌追击部队已被我方全歼。</p>
+<p>杜宾：  我们成功突围，现在已经基本脱离了切尔诺伯格上城区。</p>
+<p>Ace：    虽然我们消灭的，只是包围阵势中一小部分的兵力……</p>
+<p>Ace：    但至少，我们暂时安全了。</p>
+<p>临光：  谢谢你刚才的援助，临光不会忘记这份恩情。</p>
+<p>Ace：    请别这么说。我可没资格让耀骑士还我人情。</p>
+<p>Ace：    说说刚才那个狙击手吧，临光。</p>
+<p>临光：  好。</p>
+<p>临光：  除却那把弩炮巨大的威力——</p>
+<p>临光：  我认为……他可能预设了其他火力点，以及自动射击器械。</p>
+<p>临光：  我遭到了交叉火力的射击……我们却只观测到了一个狙击手。</p>
+<p>Ace：    我也有同样感觉。</p>
+<p>Ace：    第一发弹药和第二发弹药爆炸的时间点虽然非常接近，实际上却有着有相当微妙的时差。</p>
+<p>Ace：    那并不是连射弩弦的功劳。至少，我发动火力压制时，对抗的，并不是第一位狙击手。</p>
+<p>临光：   ——你意识到了什么，Ace？</p>
+<p>Ace：    说不准。如果敌人不是飞速地移动……就是同时存在于许多地方。</p>
+<p>临光：  敌人狙击手的机动性……怎么也不可能达到这种程度。我不能想象这样的移动手段。</p>
+<p>临光：  整合运动比我认知中更加危险。</p>
+<p>杜宾：  是那个凶狠的臭小子下令狙击你的。他在指挥围攻我们的时候，甚至没动用狙击手的力量……</p>
+<p>临光：  看来那么恶劣的性格，是有同样危险的力量支撑着的。</p>
+<p>Ace：    但他一直没有出手，哪怕是在暴怒的情况下。</p>
+<p>杜宾：  要么，在战斗上他是个废物；要么，现在还不到他展现实力的时候。</p>
+<p>杜宾：  当然，他展现出的指挥能力……已经很令人怀疑了。</p>
+<p>杜宾：   他的部队，就像是完全被他操纵着一样……</p>
+<p>临光：   不管怎么说，我们已经脱离了他的控制区域。</p>
+<p>阿米娅：  临光……谢谢你。</p>
+<p>阿米娅：  没有你及时赶到的话，我们很可能就要深陷危机了。</p>
+<p>临光：  这都是我们战前的作战计划的方针而已。</p>
+<p>临光：  让我和 Ace 他根据局势采取不同计划的，是你。</p>
+<p>临光：  是你解决了自己的问题。</p>
+<p>临光：  一路上，我看到了整合运动的暴行，也对他们的实力产生过怀疑。</p>
+<p>临光：  如果我在那时，停下来去与他们战斗呢？</p>
+<p>临光：  如果我去帮助乌萨斯人抵御整合运动呢？</p>
+<p>临光：  如果我原地坚守，只是等着你们撤退到我面前呢？</p>
+<p>临光：  ——如果按照我自己的想法来做，也许会招致更糟的后果。</p>
+<p>临光：  我不擅长预见，不断战斗是我达到目的的方式。</p>
+<p>临光：  所以，阿米娅，你有自己解决危机的实力，而我只是履行了自己的职责。</p>
+<p>临光：  这是你通过自己的努力摘下的果实，再自信点。</p>
+<p>阿米娅：  临光小姐……</p>
+<p>临光：  嘿嘿。</p>
+<p>临光：  你身边这位，就是博士了吧。</p>
+<p>阿米娅：  是的。只是……</p>
+<p>杜宾：  ——我们每遇到一个人就要和她说说博士失忆了的事，这也太麻烦了。</p>
+<p>临光：   博士吗……</p>
+<p>临光：   我的一个朋友同样也失去了记忆，你一定会和她很合得来的。</p>
+<p>临光：   毕竟对于你来说，没有什么比“现在”更重要了。</p>
+<p>阿米娅：  嗯……嗯！</p>
+<p>临光：  走吧，各位。</p>
+<p>临光：  我们，还要把博士护送到罗德岛。</p>
+<p>浮士德：   对不起……我失手了。</p>
+<p>梅菲斯特：  不，不要道歉。是我的错，我太冲动了。</p>
+<p>梅菲斯特：  能帮我追踪罗德岛他们吗？我会去把情况通报给塔露拉姐姐。</p>
+<p>梅菲斯特：  她应该也已经压制住了切尔诺伯格的核心指挥塔。</p>
+<p>梅菲斯特：  ——就让她来决定这些虫子的生死吧。</p>
+<p>浮士德：   ……明白了。</p>
+<p>梅菲斯特：  小心点，优先保护好自己，好吗？</p>
+<p>浮士德：   ……好。</p>
+<p>梅菲斯特：   ……我的任务也完成了。</p>
+<p>梅菲斯特：   同胞们，该走了。</p>
+<p>梅菲斯特：   去迎接属于我们的时代吧！！</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p><a href="https://zhouweitong3.github.io/readings/游戏剧情/明日方舟/第一章.html">https://zhouweitong3.github.io/readings/游戏剧情/明日方舟/第一章.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Zhou Weitong</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-06-15</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-06-15</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icon" rel="noopener" target="_blank" title="知识共享(Creative Commons)" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="知识共享-署名 4.0 国际许可协议(Attribution 4.0 International)" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p></div></div></div></div></div><div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a><a class="a2a_button_facebook"></a><a class="a2a_button_twitter"></a><a class="a2a_button_telegram"></a><a class="a2a_button_whatsapp"></a><a class="a2a_button_reddit"></a></div><script src="https://static.addtoany.com/menu/page.js" defer></script></article></div><!--!--><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script>new Valine({
+            el: '#valine-thread' ,
+            appId: "xFF1y8N0rb2Tmyw7o0VfpqNV-gzGzoHsz",
+            appKey: "qe2G1D7EpJhJeXuKr8hkv32a",
+            
+            avatar: "mm",
+            
+            meta: ["nick","mail","link"],
+            pageSize: 10,
+            lang: "zh-CN",
+            
+            highlight: true,
+            
+            
+            
+            
+            
+            requiredFields: [],
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/images/git-avatar.jpg" alt="Zhou Weitong"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Zhou Weitong</p><p class="is-size-6 is-block">思维改变世界</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>杭州市, 浙江省, 中国</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">20</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">20</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://blog.csdn.net/weixin_44911246" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/zhouweitong3"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Docker" href="https://hub.docker.com/u/zhouweitong"><i class="fab fa-docker"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com/weitong_zhou"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="mailto:xml@live.com"><i class="fas fa-at"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS源" href="/rss.xml"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://zhouweitong3.github.io/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">博客GitHub镜像</span></span><span class="level-right"><span class="level-item tag">zhouweitong3.github.io</span></span></a></li><li><a class="level is-mobile" href="https://github.com/zhouweitong3/small-creation" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">杂物堆</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://gitee.com/zhouweitong3" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Gitee主页</span></span><span class="level-right"><span class="level-item tag">gitee.com</span></span></a></li><li><a class="level is-mobile" href="/notebook.html" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">生词本</span></span><span class="level-right"><span class="level-item tag">/notebook.html</span></span></a></li><li><a class="level is-mobile" href="http://direct.zhouweitong.site:40804/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">书库（受邀访问）</span></span><span class="level-right"><span class="level-item tag">direct.zhouweitong.site</span></span></a></li><li><a class="level is-mobile" href="http://direct.zhouweitong.site:40801/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">笔记速记（受邀访问）</span></span><span class="level-right"><span class="level-item tag">direct.zhouweitong.site</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-06-19T10:00:00.000Z">2021-06-19</time></p><p class="title"><a href="/2021/06/19/011-rime-1-intro/">【WIP】Rime（1）：介绍与安装</a></p><p class="categories"><a href="/categories/%E8%BE%93%E5%85%A5%E6%B3%95/">输入法</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-30T05:00:00.000Z">2021-03-30</time></p><p class="title"><a href="/2021/03/30/027-cmu-cg-note-1/">【WIP】CMU 15-462 笔记 Part.1</a></p><p class="categories"><a href="/categories/CG/">CG</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-29T08:30:00.000Z">2021-03-29</time></p><p class="title"><a href="/2021/03/29/020-asus-c302-linux-installation/">ASUS C302CA Chromebook 安装 Linux 和 Windows</a></p><p class="categories"><a href="/categories/%E8%87%AA%E7%94%B1%E6%8E%A2%E7%B4%A2/">自由探索</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-26T07:00:00.000Z">2021-03-26</time></p><p class="title"><a href="/2021/03/26/028-c-programming-gaps-filling/">【WIP】C 语言拾遗 Part.1</a></p><p class="categories"><a href="/categories/%E5%BC%80%E5%8F%91%E4%B8%8E%E4%BB%A3%E7%A0%81/">开发与代码</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-26T05:00:00.000Z">2021-03-26</time></p><p class="title"><a href="/2021/03/26/031-dip-note/">【WIP】数字图像处理 笔记 Part.1</a></p><p class="categories"><a href="/categories/%E5%BC%80%E5%8F%91%E4%B8%8E%E4%BB%A3%E7%A0%81/">开发与代码</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/06/"><span class="level-start"><span class="level-item">六月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/03/"><span class="level-start"><span class="level-item">三月 2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/12/"><span class="level-start"><span class="level-item">十二月 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/11/"><span class="level-start"><span class="level-item">十一月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/10/"><span class="level-start"><span class="level-item">十月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/07/"><span class="level-start"><span class="level-item">七月 2019</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/06/"><span class="level-start"><span class="level-item">六月 2019</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/04/"><span class="level-start"><span class="level-item">四月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/02/"><span class="level-start"><span class="level-item">二月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/01/"><span class="level-start"><span class="level-item">一月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CG/"><span class="tag">CG</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSAPP/"><span class="tag">CSAPP</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CTF/"><span class="tag">CTF</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/IDS/"><span class="tag">IDS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/IPS/"><span class="tag">IPS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/PHP%E7%9B%B8%E5%85%B3/"><span class="tag">PHP相关</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Rime/"><span class="tag">Rime</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Snort/"><span class="tag">Snort</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/WIP/"><span class="tag">WIP</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/WriteUp/"><span class="tag">WriteUp</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8E%8B%E5%88%B6%E6%8A%80%E6%9C%AF/"><span class="tag">压制技术</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AA%92%E4%BD%93%E5%88%86%E4%BA%AB/"><span class="tag">媒体分享</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AE%8C%E6%88%90%E7%BC%96%E5%86%99/"><span class="tag">完成编写</span><span class="tag">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%B0%8Ftricks/"><span class="tag">小tricks</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%90%9E%E6%9C%BA%E7%8E%A9%E5%AE%B6/"><span class="tag">搞机玩家</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%B8%B8%E6%88%8F%E8%A7%A3%E5%8C%85/"><span class="tag">游戏解包</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AC%94%E8%AE%B0/"><span class="tag">笔记</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag">1</span></a></div></div></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#主线 - 第一章"><span class="level-left"><span class="level-item">1</span><span class="level-item">主线 - 第一章 </span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#第一关（前）"><span class="level-left"><span class="level-item">1.1</span><span class="level-item"> 第一关（前）</span></span></a></li><li><a class="level is-mobile" href="#第一关（后）"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">第一关（后）</span></span></a></li><li><a class="level is-mobile" href="#第二关（前）"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">第二关（前）</span></span></a></li><li><a class="level is-mobile" href="#第二关（后）"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">第二关（后）</span></span></a></li><li><a class="level is-mobile" href="#第三关（前）"><span class="level-left"><span class="level-item">1.5</span><span class="level-item">第三关（前）</span></span></a></li><li><a class="level is-mobile" href="#第三关（后）"><span class="level-left"><span class="level-item">1.6</span><span class="level-item">第三关（后）</span></span></a></li><li><a class="level is-mobile" href="#第四关（前）"><span class="level-left"><span class="level-item">1.7</span><span class="level-item">第四关（前）</span></span></a></li><li><a class="level is-mobile" href="#第四关（后）"><span class="level-left"><span class="level-item">1.8</span><span class="level-item">第四关（后）</span></span></a></li><li><a class="level is-mobile" href="#第五关（前）"><span class="level-left"><span class="level-item">1.9</span><span class="level-item">第五关（前）</span></span></a></li><li><a class="level is-mobile" href="#第五关（后）"><span class="level-left"><span class="level-item">1.10</span><span class="level-item">第五关（后）</span></span></a></li><li><a class="level is-mobile" href="#第六关（后）"><span class="level-left"><span class="level-item">1.11</span><span class="level-item">第六关（后）</span></span></a></li><li><a class="level is-mobile" href="#第六关（后）-1"><span class="level-left"><span class="level-item">1.12</span><span class="level-item">第六关（后）</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/CG/"><span class="level-start"><span class="level-item">CG</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%AA%92%E4%BD%93%E6%8A%80%E6%9C%AF/"><span class="level-start"><span class="level-item">媒体技术</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%BC%80%E5%8F%91%E4%B8%8E%E4%BB%A3%E7%A0%81/"><span class="level-start"><span class="level-item">开发与代码</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%9D%82%E8%B0%88/"><span class="level-start"><span class="level-item">杂谈</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"><span class="level-start"><span class="level-item">网络安全</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/%E8%87%AA%E7%94%B1%E6%8E%A2%E7%B4%A2/"><span class="level-start"><span class="level-item">自由探索</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/%E8%BE%93%E5%85%A5%E6%B3%95/"><span class="level-start"><span class="level-item">输入法</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="data:image/svg+xml;base64,PHN2ZwogICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI5NDkiIGhlaWdodD0iMjU2IiB2aWV3Ym94PSIwIDAgOTQ5IDI1NiI+CiAgICA8cGF0aCBmaWxsPSIjMjM2NmQxIiBkPSJNMTEwLjg1MTI1MTY4NDQwODE0IDEyOEwyMjEuNzAyNTAzMzY4ODE2MjggMTkyTDExMC44NTEyNTE2ODQ0MDgxNCAyNTZMMCAxOTJaIi8+CiAgICA8cGF0aCBmaWxsPSIjNjA5ZGZmIiBkPSJNMTEwLjg1MTI1MTY4NDQwODE0IDY0TDIyMS43MDI1MDMzNjg4MTYyOCAxMjhMMTEwLjg1MTI1MTY4NDQwODE0IDE5MkwwIDEyOFoiLz4KICAgIDxwYXRoIGZpbGw9IiNhNGM3ZmYiIGQ9Ik0xMTAuODUxMjUxNjg0NDA4MTQgMEwyMjEuNzAyNTAzMzY4ODE2MjggNjRMMTEwLjg1MTI1MTY4NDQwODE0IDEyOEwwIDY0WiIvPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzAwLCA1NS42OTUpLCBzY2FsZSgwLjcpIiBmaWxsPSIjMzMzIj4KICAgICAgICA8cGF0aCBkPSJNIDYxMy44ODggMTAuMjQgTCA2MTMuODg4IDEzNy4yMTYgQSA2MC43MDUgNjAuNzA1IDAgMCAwIDYxMy45NTQgMTQwLjA1NSBRIDYxNC41NTMgMTUyLjg0NyA2MjAuNjAyIDE2My4zMTYgQSA1MC4xMzUgNTAuMTM1IDAgMCAwIDYyMS42OTYgMTY1LjEyIEEgNTEuNTk4IDUxLjU5OCAwIDAgMCA2MjQuNTYyIDE2OS4xODUgUSA2MzEuMzU3IDE3Ny44OTcgNjQxLjc2MiAxODMuNDQ5IEEgNjMuMTEgNjMuMTEgMCAwIDAgNjQzLjQ1NiAxODQuMzIgQSA2MS42NDkgNjEuNjQ5IDAgMCAwIDY0OC4zNjkgMTg2LjQ5MiBRIDY1OS40NjcgMTkwLjgzMyA2NzIuODQ2IDE5MS4xOTggQSA5MC44MDkgOTAuODA5IDAgMCAwIDY3NS4zMjggMTkxLjIzMiBBIDkwLjU2MyA5MC41NjMgMCAwIDAgNjc4LjEwNCAxOTEuMTkgUSA2OTIuNzggMTkwLjc0IDcwNC43IDE4NS40ODkgQSA2MS4yNTkgNjEuMjU5IDAgMCAwIDcwNy4yIDE4NC4zMiBRIDcyMS4xNTIgMTc3LjQwOCA3MjkuMDg4IDE2NS4xMiBBIDQ5LjUwMiA0OS41MDIgMCAwIDAgNzMxLjMyMiAxNjEuMjk5IFEgNzM2LjYzIDE1MS4yMDMgNzM2Ljk5NyAxMzkuMDM2IEEgNjAuMzM1IDYwLjMzNSAwIDAgMCA3MzcuMDI0IDEzNy4yMTYgTCA3MzcuMDI0IDEwLjI0IEEgMTAuODU3IDEwLjg1NyAwIDAgMSA3MzcuMDYyIDkuMzE1IFEgNzM3LjMxMyA2LjM4NCA3MzkuMiA0LjYwOCBBIDcuMjU2IDcuMjU2IDAgMCAxIDc0MS45MjUgMi45ODEgUSA3NDMuMTk2IDIuNTYgNzQ0LjcwNCAyLjU2IFEgNzQ2Ljk1NiAyLjU2IDc0OC42MDIgMy4zNjkgQSA2LjQ3MiA2LjQ3MiAwIDAgMSA3NTAuMzM2IDQuNjA4IFEgNzUyLjE2NyA2LjQzOSA3NTIuMzYxIDkuNDk5IEEgMTEuNzI5IDExLjcyOSAwIDAgMSA3NTIuMzg0IDEwLjI0IEwgNzUyLjM4NCAxMzcuMjE2IFEgNzUyLjM4NCAxNTYuODA3IDc0My4xMzUgMTcyLjE5NCBBIDY0LjA3NyA2NC4wNzcgMCAwIDEgNzQyLjUyOCAxNzMuMTg0IFEgNzMyLjY3MiAxODguOTI4IDcxNS4xMzYgMTk3Ljc2IFEgNjk4LjkxMiAyMDUuOTMxIDY3OC42MzUgMjA2LjU0MyBBIDEwOS43MSAxMDkuNzEgMCAwIDEgNjc1LjMyOCAyMDYuNTkyIFEgNjUzLjA1NiAyMDYuNTkyIDYzNS41MiAxOTcuNzYgQSA3Ny44MzUgNzcuODM1IDAgMCAxIDYzMi44MjggMTk2LjMzOCBRIDYxOC45NjMgMTg4LjY2MSA2MTAuMzM3IDE3Ni4zNDYgQSA2NS43NzggNjUuNzc4IDAgMCAxIDYwOC4yNTYgMTczLjE4NCBRIDU5OC41MjggMTU3LjQ0IDU5OC41MjggMTM3LjIxNiBMIDU5OC41MjggMTAuMjQgQSAxMC44NTcgMTAuODU3IDAgMCAxIDU5OC41NjYgOS4zMTUgUSA1OTguODE3IDYuMzg0IDYwMC43MDQgNC42MDggQSA3LjI1NiA3LjI1NiAwIDAgMSA2MDMuNDI5IDIuOTgxIFEgNjA0LjcgMi41NiA2MDYuMjA4IDIuNTYgUSA2MDguNDYgMi41NiA2MTAuMTA2IDMuMzY5IEEgNi40NzIgNi40NzIgMCAwIDEgNjExLjg0IDQuNjA4IFEgNjEzLjY3MSA2LjQzOSA2MTMuODY1IDkuNDk5IEEgMTEuNzI5IDExLjcyOSAwIDAgMSA2MTMuODg4IDEwLjI0IFogTSA4OTUuNDg4IDguOTYgQSA2OS41MDcgNjkuNTA3IDAgMCAwIDg5NC44OCA4LjYxNSBRIDg3OS41MDkgMCA4NjEuMTg0IDAgQSAxMDAuMDA1IDEwMC4wMDUgMCAwIDAgODU4Ljc5IDAuMDI4IFEgODQyLjM0MiAwLjQyMiA4MjkuNTY4IDYuMjcyIEEgNjEuNzUgNjEuNzUgMCAwIDAgODI4LjA3OCA2Ljk3OSBRIDgxNS40NTYgMTMuMTcyIDgwOC4zMiAyMy45MzYgUSA4MDAuNzY4IDM1LjMyOCA4MDAuNzY4IDUwLjE3NiBRIDgwMC43NjggNjkuNjk3IDgxNS4xNzUgODMuNjU5IEEgNTkuMjIyIDU5LjIyMiAwIDAgMCA4MTcuMDI0IDg1LjM3NiBBIDYwLjYzIDYwLjYzIDAgMCAwIDgxOS42OCA4Ny42MDYgUSA4MzQuNzI3IDk5LjUyNiA4NTkuMDU5IDEwMy41MjkgQSAxMzMuOTEgMTMzLjkxIDAgMCAwIDg2MS42OTYgMTAzLjkzNiBRIDg4NC4xMTYgMTA3LjAwNCA4OTYuNDE5IDExNi45MjUgQSA0MS42MSA0MS42MSAwIDAgMSA4OTguNDMyIDExOC42NTYgQSA0My41OTIgNDMuNTkyIDAgMCAxIDg5OS4yOCAxMTkuNDU1IFEgOTEwLjg0OCAxMzAuNjUzIDkxMC44NDggMTQ3LjQ1NiBRIDkxMC44NDggMTY3LjY4IDg5OC4xNzYgMTc4LjY4OCBBIDM5LjI4MSAzOS4yODEgMCAwIDEgODkzLjcyIDE4Mi4wMzQgUSA4ODIuNTIyIDE4OS4yNjYgODY1LjUzMSAxODkuNjcyIEEgODUuNDgxIDg1LjQ4MSAwIDAgMSA4NjMuNDg4IDE4OS42OTYgQSAxMDIuMTggMTAyLjE4IDAgMCAxIDg2MS4zIDE4OS42NzMgUSA4NDUuNTY3IDE4OS4zMzYgODMzLjY1NCAxODQuMTEyIEEgNTUuMDk3IDU1LjA5NyAwIDAgMSA4MzAuNTkyIDE4Mi42NTYgQSA1Ni42MTkgNTYuNjE5IDAgMCAxIDgyOS4wNjYgMTgxLjg0MiBRIDgxOC4yNzQgMTc1Ljg3MSA4MTEuOTQgMTY2LjExNCBBIDQ3LjUyOCA0Ny41MjggMCAwIDEgODA5Ljk4NCAxNjIuODE2IEEgMTIuMTE1IDEyLjExNSAwIDAgMCA4MDkuODA4IDE2Mi40NiBRIDgwNy43MzQgMTU4LjQyOCA4MDMuNTcxIDE1OC4wMDIgQSA5Ljk0MiA5Ljk0MiAwIDAgMCA4MDIuNTYgMTU3Ljk1MiBBIDEyLjE5NCAxMi4xOTQgMCAwIDAgODAyLjIxNyAxNTcuOTU3IFEgNzk4Ljg3MSAxNTguMDUxIDc5Ni44IDE2MCBBIDcuNDQ5IDcuNDQ5IDAgMCAwIDc5Ni4xMTkgMTYwLjczMSBRIDc5NC45MzQgMTYyLjE5MSA3OTQuNjg4IDE2NC4wOTQgQSA4LjAwMyA4LjAwMyAwIDAgMCA3OTQuNjI0IDE2NS4xMiBBIDYuMjE4IDYuMjE4IDAgMCAwIDc5NC43MDggMTY2LjEzNyBRIDc5NC44MDMgMTY2LjcwOCA3OTUuMDA0IDE2Ny4yOCBBIDcuODk1IDcuODk1IDAgMCAwIDc5NS4zOTIgMTY4LjE5MiBBIDY1LjA0NCA2NS4wNDQgMCAwIDAgNzk2LjA5OSAxNjkuNTQ2IFEgODA0LjA5MSAxODQuNDE5IDgxOS4wNTUgMTkzLjYxNSBBIDc0LjQgNzQuNCAwIDAgMCA4MjEuNzYgMTk1LjIgUSA4MzkuNDI0IDIwNS4wNTYgODYzLjQ4OCAyMDUuMDU2IFEgODc5LjU0OCAyMDUuMDU2IDg5Mi4yOTkgMTk5Ljk1MSBBIDYyLjAzNiA2Mi4wMzYgMCAwIDAgODk2LjM4NCAxOTguMTQ0IFEgOTEwLjU5MiAxOTEuMjMyIDkxOC40IDE3OC4xNzYgQSA1MS4xODYgNTEuMTg2IDAgMCAwIDkyMC41MzMgMTc0LjIyNSBRIDkyNi4yMDggMTYyLjUxNSA5MjYuMjA4IDE0Ny40NTYgQSA3Mi44MTEgNzIuODExIDAgMCAwIDkyNi4xNzggMTQ1LjM1NCBRIDkyNS41OTIgMTI1LjA2MSA5MTMuNTg5IDExMS43NTUgQSA0OS44IDQ5LjggMCAwIDAgOTExLjM2IDEwOS40NCBRIDg5Ni41MTIgOTQuOTc2IDg2NC4yNTYgODkuNiBBIDE1Ny44ODIgMTU3Ljg4MiAwIDAgMSA4NjIuNDQ2IDg5LjI4OCBRIDgzOS4yNDIgODUuMTQyIDgyNy45MDQgNzUuNzc2IEEgNDEuMjE4IDQxLjIxOCAwIDAgMSA4MjYuOTc3IDc0Ljk4NyBRIDgxNi4xMjggNjUuNDcyIDgxNi4xMjggNTEuNzEyIEEgNDkuMjkzIDQ5LjI5MyAwIDAgMSA4MTYuMTI4IDUxLjU3OCBRIDgxNi4xNzUgMzQuNTIyIDgyOC4wMzIgMjQuOTYgQSAzNS4yMzQgMzUuMjM0IDAgMCAxIDgyOC44OTEgMjQuMjg5IFEgODQwLjExOCAxNS43OTQgODU5LjIxMyAxNS4zODEgQSA5MS4xOTQgOTEuMTk0IDAgMCAxIDg2MS4xODQgMTUuMzYgQSA3My4wNDQgNzMuMDQ0IDAgMCAxIDg2Mi4wMzcgMTUuMzY1IFEgODg4Ljc0NyAxNS42NzcgOTAzLjUxNCAzNS41OTMgQSA1OS4zNyA1OS4zNyAwIDAgMSA5MDQuOTYgMzcuNjMyIFEgOTA3LjIyIDQxLjAyMiA5MTEuMDc2IDQxLjQxOSBBIDEwLjI2MSAxMC4yNjEgMCAwIDAgOTEyLjEyOCA0MS40NzIgQSAxNC41NDMgMTQuNTQzIDAgMCAwIDkxMi43NDMgNDEuNDU5IFEgOTE0LjMzNiA0MS4zOTIgOTE1LjIgNDAuOTYgQSAxMC42NTUgMTAuNjU1IDAgMCAwIDkxNS4zMzYgNDAuODkxIFEgOTE2LjM0OCA0MC4zNjYgOTE3LjEzNSAzOS42ODEgQSA3LjYwNyA3LjYwNyAwIDAgMCA5MTguNCAzOC4yNzIgUSA5MTkuMTk3IDM3LjEyMiA5MTkuNDQyIDM1Ljc4NyBBIDYuNzYxIDYuNzYxIDAgMCAwIDkxOS41NTIgMzQuNTYgUSA5MTkuNTUyIDMyLjI1NiA5MTguNTI4IDMwLjQ2NCBRIDkxMS4xMDQgMTcuOTIgODk1LjQ4OCA4Ljk2IFogTSAxNjAuMzExIDAuMDY4IEEgMTEwLjY0OCAxMTAuNjQ4IDAgMCAwIDE1Ni40MTYgMCBRIDEzMS41NjUgMCAxMTAuNDAyIDExLjQ4MyBBIDk5LjM0MyA5OS4zNDMgMCAwIDAgMTA2LjExMiAxMy45NTIgQSAxMDkuMDA5IDEwOS4wMDkgMCAwIDAgMTA0LjU0MyAxNC45MjYgUSA4NC42NzcgMjcuNDg5IDcyLjE0IDQ3LjQ3OSBBIDExMS4zOTMgMTExLjM5MyAwIDAgMCA2OS43NiA1MS40NTYgUSA1Ni4zMiA3NS4wMDggNTYuMzIgMTAyLjQgUSA1Ni4zMiAxMjcuMzMxIDY3LjU2IDE0OS4xODcgQSAxMDcuNTkyIDEwNy41OTIgMCAwIDAgNjkuODg4IDE1My40NzIgUSA4My40NTYgMTc3LjE1MiAxMDYuNDk2IDE5MS4xMDQgQSAxMDMuNDQ0IDEwMy40NDQgMCAwIDAgMTA4LjA4MiAxOTIuMDQ1IFEgMTMwLjQ1OSAyMDUuMDU2IDE1Ni40MTYgMjA1LjA1NiBRIDE5Ny4zNzYgMjA1LjA1NiAyMTkuMzkyIDE4My4wNCBRIDIyMC45MTggMTgxLjI5NiAyMjEuMTQ1IDE3OC42MjQgQSAxMS4zNjQgMTEuMzY0IDAgMCAwIDIyMS4xODQgMTc3LjY2NCBRIDIyMS4xODQgMTc0LjkwNiAyMTkuNTE0IDE3Mi44NTIgQSA4LjYxNCA4LjYxNCAwIDAgMCAyMTguNzUyIDE3Mi4wMzIgQSAxMC41MDEgMTAuNTAxIDAgMCAwIDIxOC42MzggMTcxLjkyNSBRIDIxNi4yNDggMTY5LjcyOCAyMTMuMjQ4IDE2OS43MjggQSA2LjI0NCA2LjI0NCAwIDAgMCAyMTEuNTQ5IDE2OS45NjEgUSAyMTAuOTA2IDE3MC4xNDEgMjEwLjI5MSAxNzAuNDYzIEEgNy41MDggNy41MDggMCAwIDAgMjA5LjQwOCAxNzEuMDA4IFEgMTg2LjYyNCAxODkuNjk2IDE1Ni40MTYgMTg5LjY5NiBRIDEzNS43NjUgMTg5LjY5NiAxMTcuNzQzIDE4MC4wMjIgQSA4Ny4yMzcgODcuMjM3IDAgMCAxIDExNC4wNDggMTc3LjkyIFEgOTQuNDY0IDE2Ni4xNDQgODMuMDcyIDE0Ni4wNDggUSA3Mi43MDQgMTI3Ljc1OCA3MS43NzIgMTA2LjYwNCBBIDk1LjU0OSA5NS41NDkgMCAwIDEgNzEuNjggMTAyLjQgUSA3MS42OCA3OS42MTYgODMuMiA1OS41MiBBIDk3LjM0OCA5Ny4zNDggMCAwIDEgODMuMzUgNTkuMjYgUSA5NC44NDcgMzkuMzQ2IDExNC4zMDQgMjcuMzkyIEEgODguMDU2IDg4LjA1NiAwIDAgMSAxMTcuMTU1IDI1LjcxMyBRIDEzMy42NjMgMTYuNDA2IDE1Mi4yMTggMTUuNDY2IEEgODIuOTExIDgyLjkxMSAwIDAgMSAxNTYuNDE2IDE1LjM2IEEgMTE3LjIxMiAxMTcuMjEyIDAgMCAxIDE1Ni44MTcgMTUuMzYxIFEgMTgwLjE4NCAxNS40NDEgMTk2LjgyOSAyNC44NDggQSA2My4wMSA2My4wMSAwIDAgMSAyMDcuODcyIDMyLjc2OCBBIDIzLjAzNCAyMy4wMzQgMCAwIDAgMjA4LjMzOSAzMy4xNTggUSAyMTEuNjQxIDM1Ljg0IDIxNC4yNzIgMzUuODQgQSA5Ljk3NCA5Ljk3NCAwIDAgMCAyMTQuOTExIDM1LjgyIFEgMjE3LjM0MyAzNS42NjQgMjE5LjAwOSAzNC4yOTYgQSA2Ljg3MyA2Ljg3MyAwIDAgMCAyMTkuOTA0IDMzLjQwOCBBIDkuOTk0IDkuOTk0IDAgMCAwIDIyMC4xMzMgMzMuMTI2IFEgMjIxLjk1MiAzMC43OTkgMjIxLjk1MiAyNy45MDQgQSA4Ljk4OCA4Ljk4OCAwIDAgMCAyMjEuOTI5IDI3LjI1OSBRIDIyMS43MjQgMjQuMzk4IDIxOS42NDggMjIuNzg0IEEgMTEwLjg4MSAxMTAuODgxIDAgMCAwIDIxOS41NDMgMjIuNjk3IFEgMTkzLjY4NiAxLjI0NCAxNjAuMzExIDAuMDY4IFogTSA1NTEuMTY4IDE5OC40IEwgNTA0LjA2NCAxMjMuMTM2IEwgNDk5LjQ1NiAxMjMuMTM2IEwgNDU4LjI0IDEyMy4xMzYgTCA0NTguMjQgMTk0LjgxNiBRIDQ1OC4yNCAxOTguMTQ0IDQ1Ni4xOTIgMjAwLjMyIFEgNDU0LjIzMiAyMDIuNDAzIDQ1MC44NjUgMjAyLjQ5MiBBIDExLjQ4NyAxMS40ODcgMCAwIDEgNDUwLjU2IDIwMi40OTYgUSA0NDcuNDUyIDIwMi40OTYgNDQ1LjM0OSAyMDAuNTk4IEEgNy44NzEgNy44NzEgMCAwIDEgNDQ1LjA1NiAyMDAuMzIgQSA3LjUyNSA3LjUyNSAwIDAgMSA0NDQuMTgyIDE5OS4yNzUgUSA0NDIuODg5IDE5Ny40MDMgNDQyLjg4IDE5NC44NSBBIDEwLjE3OSAxMC4xNzkgMCAwIDEgNDQyLjg4IDE5NC44MTYgTCA0NDIuODggMTAuMjQgQSAxMC44NTcgMTAuODU3IDAgMCAxIDQ0Mi45MTggOS4zMTUgUSA0NDMuMTY5IDYuMzg0IDQ0NS4wNTYgNC42MDggQSA3LjI1NiA3LjI1NiAwIDAgMSA0NDcuNzgxIDIuOTgxIFEgNDQ5LjA1MiAyLjU2IDQ1MC41NiAyLjU2IEwgNDk5LjQ1NiAyLjU2IFEgNTE3Ljg4OCAyLjU2IDUzMi40OCAxMC4yNCBRIDU0NS45NTQgMTcuMzMyIDU1My45NzEgMjkuNjYyIEEgNTguOTY4IDU4Ljk2OCAwIDAgMSA1NTUuMjY0IDMxLjc0NCBBIDU2LjczNyA1Ni43MzcgMCAwIDEgNTYwLjQxNCA0My4xMyBRIDU2My40NTYgNTIuNDY4IDU2My40NTYgNjMuMjMyIFEgNTYzLjQ1NiA4Mi4yIDU1My45NDYgOTYuNDY1IEEgNTYuNjkyIDU2LjY5MiAwIDAgMSA1NTEuODA4IDk5LjQ1NiBBIDU4Ljg0OSA1OC44NDkgMCAwIDEgNTQ5LjIxMiAxMDIuNjE4IFEgNTM4LjYyMSAxMTQuNjM3IDUyMi4yNTMgMTE5Ljc3OSBBIDcyLjE5NSA3Mi4xOTUgMCAwIDEgNTIwLjQ0OCAxMjAuMzIgTCA1NjQuNDggMTkwLjcyIFEgNTY2LjUyOCAxOTQuMzA0IDU2Ni41MjggMTk2LjYwOCBBIDYuNTk5IDYuNTk5IDAgMCAxIDU2Ni40NzggMTk3LjQzNiBRIDU2Ni4yNTMgMTk5LjIwOCA1NjUuMDM1IDIwMC4zOTUgQSA1LjYyNSA1LjYyNSAwIDAgMSA1NjQuMzUyIDIwMC45NiBBIDYuNDczIDYuNDczIDAgMCAxIDU2My41NDcgMjAxLjQ0MyBRIDU2MS40NzIgMjAyLjQ5NiA1NTguMDggMjAyLjQ5NiBRIDU1NS43NTEgMjAyLjQ5NiA1NTQuMjcgMjAxLjY0OSBBIDQuOTExIDQuOTExIDAgMCAxIDU1My45ODQgMjAxLjQ3MiBRIDU1Mi42NTQgMjAwLjU4NSA1NTEuNTE1IDE5OC45MyBBIDE0LjQ0NyAxNC40NDcgMCAwIDEgNTUxLjE2OCAxOTguNCBaIE0gMzk5LjEwNCAxOTcuNjMyIEwgMzgwLjE2IDE1Mi4zMiBMIDI3NS45NjggMTUyLjMyIEwgMjU3LjAyNCAxOTcuNjMyIFEgMjU1LjMyNCAyMDIuMjQ4IDI1MC4zOTYgMjAyLjQ4MyBBIDExLjI5NyAxMS4yOTcgMCAwIDEgMjQ5Ljg1NiAyMDIuNDk2IEEgMTAuMjU4IDEwLjI1OCAwIDAgMSAyNDguOTMxIDIwMi40NTUgUSAyNDYuMTQzIDIwMi4yMDMgMjQ0LjQgMjAwLjM4MyBBIDYuOTk3IDYuOTk3IDAgMCAxIDI0NC4yMjQgMjAwLjE5MiBBIDguNjc4IDguNjc4IDAgMCAxIDI0My40NzcgMTk5LjIyNCBRIDI0Mi4xNzYgMTk3LjI2NCAyNDIuMTc2IDE5NC44MTYgQSA3LjgwNSA3LjgwNSAwIDAgMSAyNDIuMjgyIDE5My41MjEgQSA3LjE4MSA3LjE4MSAwIDAgMSAyNDIuOTQ0IDE5MS40ODggTCAzMjAuNTEyIDcuOTM2IEEgMTIuMTk2IDEyLjE5NiAwIDAgMSAzMjAuODUyIDcuMTI5IFEgMzIyLjgwNSAyLjkzNiAzMjcuMTQgMi41OTEgQSAxMC4wMzggMTAuMDM4IDAgMCAxIDMyNy45MzYgMi41NiBBIDkuMDA0IDkuMDA0IDAgMCAxIDMyOC45NDcgMi42MTUgUSAzMzMuMjkgMy4xMDYgMzM1LjM2IDcuOTM2IEwgNDEzLjE4NCAxOTEuNDg4IFEgNDEzLjk1MiAxOTMuMDI0IDQxMy45NTIgMTk0LjgxNiBBIDcuNjQgNy42NCAwIDAgMSA0MTMuODQ2IDE5Ni4xMDEgUSA0MTMuNDU3IDE5OC4zODMgNDExLjY0OCAyMDAuMTkyIEEgOS4wNDQgOS4wNDQgMCAwIDEgNDEwLjg3MSAyMDAuODg2IFEgNDA5LjA4MyAyMDIuMzAzIDQwNi44NzkgMjAyLjQ3MyBBIDcuOTA4IDcuOTA4IDAgMCAxIDQwNi4yNzIgMjAyLjQ5NiBBIDkuOTMgOS45MyAwIDAgMSA0MDUuMzM5IDIwMi40NTMgUSA0MDAuOTYgMjAyLjA0IDM5OS4xMDQgMTk3LjYzMiBaIE0gMTUuMzYgMTAuMjQgTCAxNS4zNiAxOTQuODE2IFEgMTUuMzYgMTk3LjkyNCAxMy40NjIgMjAwLjAyNyBBIDcuODcxIDcuODcxIDAgMCAxIDEzLjE4NCAyMDAuMzIgQSA3LjUyNSA3LjUyNSAwIDAgMSAxMi4xMzkgMjAxLjE5NCBRIDEwLjI2NyAyMDIuNDg3IDcuNzE0IDIwMi40OTYgQSAxMC4xNzkgMTAuMTc5IDAgMCAxIDcuNjggMjAyLjQ5NiBRIDQuNTcyIDIwMi40OTYgMi40NjkgMjAwLjU5OCBBIDcuODcxIDcuODcxIDAgMCAxIDIuMTc2IDIwMC4zMiBBIDcuNTI1IDcuNTI1IDAgMCAxIDEuMzAyIDE5OS4yNzUgUSAwLjAwOSAxOTcuNDAzIDAgMTk0Ljg1IEEgMTAuMTc5IDEwLjE3OSAwIDAgMSAwIDE5NC44MTYgTCAwIDEwLjI0IFEgMCA3LjEzMiAxLjg5OCA1LjAyOSBBIDcuODcxIDcuODcxIDAgMCAxIDIuMTc2IDQuNzM2IEEgNy41MjUgNy41MjUgMCAwIDEgMy4yMjEgMy44NjIgUSA1LjA5MyAyLjU2OSA3LjY0NiAyLjU2IEEgMTAuMTc5IDEwLjE3OSAwIDAgMSA3LjY4IDIuNTYgUSAxMC43ODggMi41NiAxMi44OTEgNC40NTggQSA3Ljg3MSA3Ljg3MSAwIDAgMSAxMy4xODQgNC43MzYgQSA3LjUyNSA3LjUyNSAwIDAgMSAxNC4wNTggNS43ODEgUSAxNS4zNTEgNy42NTMgMTUuMzYgMTAuMjA2IEEgMTAuMTc5IDEwLjE3OSAwIDAgMSAxNS4zNiAxMC4yNCBaIE0gMjgxLjg1NiAxMzguNDk2IEwgMzc0LjI3MiAxMzguNDk2IEwgMzI3LjkzNiAyNy45MDQgTCAyODEuODU2IDEzOC40OTYgWiBNIDQ1OC4yNCAxMDcuNzc2IEwgNDk5LjQ1NiAxMDcuNzc2IFEgNTEwLjQxOCAxMDcuNzc2IDUxOS41MTkgMTA0LjM2MiBBIDQ4LjE3NSA0OC4xNzUgMCAwIDAgNTI0LjU0NCAxMDIuMTQ0IEEgNDcuNDcxIDQ3LjQ3MSAwIDAgMCA1MjcuMDU5IDEwMC43NjEgUSA1MzQuNzUgOTYuMjE5IDUzOS44NzggODkuMTgzIEEgNDMuNjc4IDQzLjY3OCAwIDAgMCA1NDEuODI0IDg2LjI3MiBRIDU0Ny40MzYgNzcuMTA5IDU0OC4wMjcgNjUuODk2IEEgNTAuNjczIDUwLjY3MyAwIDAgMCA1NDguMDk2IDYzLjIzMiBRIDU0OC4wOTYgNTAuMTc2IDU0MS44MjQgMzkuODA4IFEgNTM1LjU1MiAyOS40NCA1MjQuNTQ0IDIzLjY4IFEgNTEzLjUzNiAxNy45MiA0OTkuNDU2IDE3LjkyIEwgNDU4LjI0IDE3LjkyIEwgNDU4LjI0IDEwNy43NzYgWiIgdmVjdG9yLWVmZmVjdD0ibm9uLXNjYWxpbmctc3Ryb2tlIi8+CiAgICA8L2c+Cjwvc3ZnPg==" alt="CodingBox技术博客" height="28"></a><p class="is-size-7"><span>&copy; 2021 Zhou Weitong</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>  ICP证： <a href="http://www.beian.miit.gov.cn/" target="_blank">浙ICP备19034170号</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="知识共享(Creative Commons)" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="知识共享-署名 4.0 国际许可协议(Attribution 4.0 International)" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

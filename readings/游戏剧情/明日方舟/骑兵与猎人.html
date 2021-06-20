@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>CodingBox技术博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="CodingBox"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="CodingBox"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="活动剧情：骑兵与猎人  第一关（前）？？？：   …… ？？？：   ……好热…… ？？？：   好痛…… 赏金猎人：   这女人，还不肯说吗？ ？？？：   好渴……喉咙像是被火烤着…… ？？？：   ……究竟有多长时间了……？ 赏金猎人：   真厉害啊，都被吊在这一天多了，真亏她能忍得住啊。 粗暴的赏金猎人：   喂，你们可别把她搞死了，宝藏的位置她还没说呢！ 可萝尔：   ……我不会….."><meta property="og:type" content="blog"><meta property="og:title" content="CodingBox技术博客"><meta property="og:url" content="https://zhouweitong3.github.io/readings/%E6%B8%B8%E6%88%8F%E5%89%A7%E6%83%85/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F/%E9%AA%91%E5%85%B5%E4%B8%8E%E7%8C%8E%E4%BA%BA.html"><meta property="og:site_name" content="CodingBox技术博客"><meta property="og:description" content="活动剧情：骑兵与猎人  第一关（前）？？？：   …… ？？？：   ……好热…… ？？？：   好痛…… 赏金猎人：   这女人，还不肯说吗？ ？？？：   好渴……喉咙像是被火烤着…… ？？？：   ……究竟有多长时间了……？ 赏金猎人：   真厉害啊，都被吊在这一天多了，真亏她能忍得住啊。 粗暴的赏金猎人：   喂，你们可别把她搞死了，宝藏的位置她还没说呢！ 可萝尔：   ……我不会….."><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://zhouweitong3.github.io/img/og_image.png"><meta property="article:published_time" content="2021-06-15T12:09:03.904Z"><meta property="article:modified_time" content="2021-06-15T12:09:03.904Z"><meta property="article:author" content="Zhou Weitong"><meta property="article:tag" content="编程"><meta property="article:tag" content="C语言"><meta property="article:tag" content="coding"><meta property="article:tag" content="docker"><meta property="article:tag" content="programming"><meta property="article:tag" content="container"><meta property="article:tag" content="linux"><meta property="article:tag" content="security"><meta property="article:tag" content="bdmv"><meta property="article:tag" content="vapoursynth"><meta property="article:tag" content="python"><meta property="article:tag" content="golang"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><meta property="twitter:creator" content="@objectnf"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhouweitong3.github.io/readings/%E6%B8%B8%E6%88%8F%E5%89%A7%E6%83%85/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F/%E9%AA%91%E5%85%B5%E4%B8%8E%E7%8C%8E%E4%BA%BA.html"},"headline":"CodingBox技术博客","image":["https://zhouweitong3.github.io/img/og_image.png"],"datePublished":"2021-06-15T12:09:03.904Z","dateModified":"2021-06-15T12:09:03.904Z","author":{"@type":"Person","name":"Zhou Weitong"},"description":"活动剧情：骑兵与猎人  第一关（前）？？？：   …… ？？？：   ……好热…… ？？？：   好痛…… 赏金猎人：   这女人，还不肯说吗？ ？？？：   好渴……喉咙像是被火烤着…… ？？？：   ……究竟有多长时间了……？ 赏金猎人：   真厉害啊，都被吊在这一天多了，真亏她能忍得住啊。 粗暴的赏金猎人：   喂，你们可别把她搞死了，宝藏的位置她还没说呢！ 可萝尔：   ……我不会….."}</script><link rel="canonical" href="https://zhouweitong3.github.io/readings/%E6%B8%B8%E6%88%8F%E5%89%A7%E6%83%85/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F/%E9%AA%91%E5%85%B5%E4%B8%8E%E7%8C%8E%E4%BA%BA.html"><link rel="alternate" href="/rss.xml" title="CodingBox技术博客" type="application/atom+xml"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><script>var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?8b39db53f27bef54cdd7ca6e0f1084ac";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css"><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><meta name="generator" content="Hexo 5.4.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="data:image/svg+xml;base64,PHN2ZwogICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI5NDkiIGhlaWdodD0iMjU2IiB2aWV3Ym94PSIwIDAgOTQ5IDI1NiI+CiAgICA8cGF0aCBmaWxsPSIjMjM2NmQxIiBkPSJNMTEwLjg1MTI1MTY4NDQwODE0IDEyOEwyMjEuNzAyNTAzMzY4ODE2MjggMTkyTDExMC44NTEyNTE2ODQ0MDgxNCAyNTZMMCAxOTJaIi8+CiAgICA8cGF0aCBmaWxsPSIjNjA5ZGZmIiBkPSJNMTEwLjg1MTI1MTY4NDQwODE0IDY0TDIyMS43MDI1MDMzNjg4MTYyOCAxMjhMMTEwLjg1MTI1MTY4NDQwODE0IDE5MkwwIDEyOFoiLz4KICAgIDxwYXRoIGZpbGw9IiNhNGM3ZmYiIGQ9Ik0xMTAuODUxMjUxNjg0NDA4MTQgMEwyMjEuNzAyNTAzMzY4ODE2MjggNjRMMTEwLjg1MTI1MTY4NDQwODE0IDEyOEwwIDY0WiIvPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzAwLCA1NS42OTUpLCBzY2FsZSgwLjcpIiBmaWxsPSIjMzMzIj4KICAgICAgICA8cGF0aCBkPSJNIDYxMy44ODggMTAuMjQgTCA2MTMuODg4IDEzNy4yMTYgQSA2MC43MDUgNjAuNzA1IDAgMCAwIDYxMy45NTQgMTQwLjA1NSBRIDYxNC41NTMgMTUyLjg0NyA2MjAuNjAyIDE2My4zMTYgQSA1MC4xMzUgNTAuMTM1IDAgMCAwIDYyMS42OTYgMTY1LjEyIEEgNTEuNTk4IDUxLjU5OCAwIDAgMCA2MjQuNTYyIDE2OS4xODUgUSA2MzEuMzU3IDE3Ny44OTcgNjQxLjc2MiAxODMuNDQ5IEEgNjMuMTEgNjMuMTEgMCAwIDAgNjQzLjQ1NiAxODQuMzIgQSA2MS42NDkgNjEuNjQ5IDAgMCAwIDY0OC4zNjkgMTg2LjQ5MiBRIDY1OS40NjcgMTkwLjgzMyA2NzIuODQ2IDE5MS4xOTggQSA5MC44MDkgOTAuODA5IDAgMCAwIDY3NS4zMjggMTkxLjIzMiBBIDkwLjU2MyA5MC41NjMgMCAwIDAgNjc4LjEwNCAxOTEuMTkgUSA2OTIuNzggMTkwLjc0IDcwNC43IDE4NS40ODkgQSA2MS4yNTkgNjEuMjU5IDAgMCAwIDcwNy4yIDE4NC4zMiBRIDcyMS4xNTIgMTc3LjQwOCA3MjkuMDg4IDE2NS4xMiBBIDQ5LjUwMiA0OS41MDIgMCAwIDAgNzMxLjMyMiAxNjEuMjk5IFEgNzM2LjYzIDE1MS4yMDMgNzM2Ljk5NyAxMzkuMDM2IEEgNjAuMzM1IDYwLjMzNSAwIDAgMCA3MzcuMDI0IDEzNy4yMTYgTCA3MzcuMDI0IDEwLjI0IEEgMTAuODU3IDEwLjg1NyAwIDAgMSA3MzcuMDYyIDkuMzE1IFEgNzM3LjMxMyA2LjM4NCA3MzkuMiA0LjYwOCBBIDcuMjU2IDcuMjU2IDAgMCAxIDc0MS45MjUgMi45ODEgUSA3NDMuMTk2IDIuNTYgNzQ0LjcwNCAyLjU2IFEgNzQ2Ljk1NiAyLjU2IDc0OC42MDIgMy4zNjkgQSA2LjQ3MiA2LjQ3MiAwIDAgMSA3NTAuMzM2IDQuNjA4IFEgNzUyLjE2NyA2LjQzOSA3NTIuMzYxIDkuNDk5IEEgMTEuNzI5IDExLjcyOSAwIDAgMSA3NTIuMzg0IDEwLjI0IEwgNzUyLjM4NCAxMzcuMjE2IFEgNzUyLjM4NCAxNTYuODA3IDc0My4xMzUgMTcyLjE5NCBBIDY0LjA3NyA2NC4wNzcgMCAwIDEgNzQyLjUyOCAxNzMuMTg0IFEgNzMyLjY3MiAxODguOTI4IDcxNS4xMzYgMTk3Ljc2IFEgNjk4LjkxMiAyMDUuOTMxIDY3OC42MzUgMjA2LjU0MyBBIDEwOS43MSAxMDkuNzEgMCAwIDEgNjc1LjMyOCAyMDYuNTkyIFEgNjUzLjA1NiAyMDYuNTkyIDYzNS41MiAxOTcuNzYgQSA3Ny44MzUgNzcuODM1IDAgMCAxIDYzMi44MjggMTk2LjMzOCBRIDYxOC45NjMgMTg4LjY2MSA2MTAuMzM3IDE3Ni4zNDYgQSA2NS43NzggNjUuNzc4IDAgMCAxIDYwOC4yNTYgMTczLjE4NCBRIDU5OC41MjggMTU3LjQ0IDU5OC41MjggMTM3LjIxNiBMIDU5OC41MjggMTAuMjQgQSAxMC44NTcgMTAuODU3IDAgMCAxIDU5OC41NjYgOS4zMTUgUSA1OTguODE3IDYuMzg0IDYwMC43MDQgNC42MDggQSA3LjI1NiA3LjI1NiAwIDAgMSA2MDMuNDI5IDIuOTgxIFEgNjA0LjcgMi41NiA2MDYuMjA4IDIuNTYgUSA2MDguNDYgMi41NiA2MTAuMTA2IDMuMzY5IEEgNi40NzIgNi40NzIgMCAwIDEgNjExLjg0IDQuNjA4IFEgNjEzLjY3MSA2LjQzOSA2MTMuODY1IDkuNDk5IEEgMTEuNzI5IDExLjcyOSAwIDAgMSA2MTMuODg4IDEwLjI0IFogTSA4OTUuNDg4IDguOTYgQSA2OS41MDcgNjkuNTA3IDAgMCAwIDg5NC44OCA4LjYxNSBRIDg3OS41MDkgMCA4NjEuMTg0IDAgQSAxMDAuMDA1IDEwMC4wMDUgMCAwIDAgODU4Ljc5IDAuMDI4IFEgODQyLjM0MiAwLjQyMiA4MjkuNTY4IDYuMjcyIEEgNjEuNzUgNjEuNzUgMCAwIDAgODI4LjA3OCA2Ljk3OSBRIDgxNS40NTYgMTMuMTcyIDgwOC4zMiAyMy45MzYgUSA4MDAuNzY4IDM1LjMyOCA4MDAuNzY4IDUwLjE3NiBRIDgwMC43NjggNjkuNjk3IDgxNS4xNzUgODMuNjU5IEEgNTkuMjIyIDU5LjIyMiAwIDAgMCA4MTcuMDI0IDg1LjM3NiBBIDYwLjYzIDYwLjYzIDAgMCAwIDgxOS42OCA4Ny42MDYgUSA4MzQuNzI3IDk5LjUyNiA4NTkuMDU5IDEwMy41MjkgQSAxMzMuOTEgMTMzLjkxIDAgMCAwIDg2MS42OTYgMTAzLjkzNiBRIDg4NC4xMTYgMTA3LjAwNCA4OTYuNDE5IDExNi45MjUgQSA0MS42MSA0MS42MSAwIDAgMSA4OTguNDMyIDExOC42NTYgQSA0My41OTIgNDMuNTkyIDAgMCAxIDg5OS4yOCAxMTkuNDU1IFEgOTEwLjg0OCAxMzAuNjUzIDkxMC44NDggMTQ3LjQ1NiBRIDkxMC44NDggMTY3LjY4IDg5OC4xNzYgMTc4LjY4OCBBIDM5LjI4MSAzOS4yODEgMCAwIDEgODkzLjcyIDE4Mi4wMzQgUSA4ODIuNTIyIDE4OS4yNjYgODY1LjUzMSAxODkuNjcyIEEgODUuNDgxIDg1LjQ4MSAwIDAgMSA4NjMuNDg4IDE4OS42OTYgQSAxMDIuMTggMTAyLjE4IDAgMCAxIDg2MS4zIDE4OS42NzMgUSA4NDUuNTY3IDE4OS4zMzYgODMzLjY1NCAxODQuMTEyIEEgNTUuMDk3IDU1LjA5NyAwIDAgMSA4MzAuNTkyIDE4Mi42NTYgQSA1Ni42MTkgNTYuNjE5IDAgMCAxIDgyOS4wNjYgMTgxLjg0MiBRIDgxOC4yNzQgMTc1Ljg3MSA4MTEuOTQgMTY2LjExNCBBIDQ3LjUyOCA0Ny41MjggMCAwIDEgODA5Ljk4NCAxNjIuODE2IEEgMTIuMTE1IDEyLjExNSAwIDAgMCA4MDkuODA4IDE2Mi40NiBRIDgwNy43MzQgMTU4LjQyOCA4MDMuNTcxIDE1OC4wMDIgQSA5Ljk0MiA5Ljk0MiAwIDAgMCA4MDIuNTYgMTU3Ljk1MiBBIDEyLjE5NCAxMi4xOTQgMCAwIDAgODAyLjIxNyAxNTcuOTU3IFEgNzk4Ljg3MSAxNTguMDUxIDc5Ni44IDE2MCBBIDcuNDQ5IDcuNDQ5IDAgMCAwIDc5Ni4xMTkgMTYwLjczMSBRIDc5NC45MzQgMTYyLjE5MSA3OTQuNjg4IDE2NC4wOTQgQSA4LjAwMyA4LjAwMyAwIDAgMCA3OTQuNjI0IDE2NS4xMiBBIDYuMjE4IDYuMjE4IDAgMCAwIDc5NC43MDggMTY2LjEzNyBRIDc5NC44MDMgMTY2LjcwOCA3OTUuMDA0IDE2Ny4yOCBBIDcuODk1IDcuODk1IDAgMCAwIDc5NS4zOTIgMTY4LjE5MiBBIDY1LjA0NCA2NS4wNDQgMCAwIDAgNzk2LjA5OSAxNjkuNTQ2IFEgODA0LjA5MSAxODQuNDE5IDgxOS4wNTUgMTkzLjYxNSBBIDc0LjQgNzQuNCAwIDAgMCA4MjEuNzYgMTk1LjIgUSA4MzkuNDI0IDIwNS4wNTYgODYzLjQ4OCAyMDUuMDU2IFEgODc5LjU0OCAyMDUuMDU2IDg5Mi4yOTkgMTk5Ljk1MSBBIDYyLjAzNiA2Mi4wMzYgMCAwIDAgODk2LjM4NCAxOTguMTQ0IFEgOTEwLjU5MiAxOTEuMjMyIDkxOC40IDE3OC4xNzYgQSA1MS4xODYgNTEuMTg2IDAgMCAwIDkyMC41MzMgMTc0LjIyNSBRIDkyNi4yMDggMTYyLjUxNSA5MjYuMjA4IDE0Ny40NTYgQSA3Mi44MTEgNzIuODExIDAgMCAwIDkyNi4xNzggMTQ1LjM1NCBRIDkyNS41OTIgMTI1LjA2MSA5MTMuNTg5IDExMS43NTUgQSA0OS44IDQ5LjggMCAwIDAgOTExLjM2IDEwOS40NCBRIDg5Ni41MTIgOTQuOTc2IDg2NC4yNTYgODkuNiBBIDE1Ny44ODIgMTU3Ljg4MiAwIDAgMSA4NjIuNDQ2IDg5LjI4OCBRIDgzOS4yNDIgODUuMTQyIDgyNy45MDQgNzUuNzc2IEEgNDEuMjE4IDQxLjIxOCAwIDAgMSA4MjYuOTc3IDc0Ljk4NyBRIDgxNi4xMjggNjUuNDcyIDgxNi4xMjggNTEuNzEyIEEgNDkuMjkzIDQ5LjI5MyAwIDAgMSA4MTYuMTI4IDUxLjU3OCBRIDgxNi4xNzUgMzQuNTIyIDgyOC4wMzIgMjQuOTYgQSAzNS4yMzQgMzUuMjM0IDAgMCAxIDgyOC44OTEgMjQuMjg5IFEgODQwLjExOCAxNS43OTQgODU5LjIxMyAxNS4zODEgQSA5MS4xOTQgOTEuMTk0IDAgMCAxIDg2MS4xODQgMTUuMzYgQSA3My4wNDQgNzMuMDQ0IDAgMCAxIDg2Mi4wMzcgMTUuMzY1IFEgODg4Ljc0NyAxNS42NzcgOTAzLjUxNCAzNS41OTMgQSA1OS4zNyA1OS4zNyAwIDAgMSA5MDQuOTYgMzcuNjMyIFEgOTA3LjIyIDQxLjAyMiA5MTEuMDc2IDQxLjQxOSBBIDEwLjI2MSAxMC4yNjEgMCAwIDAgOTEyLjEyOCA0MS40NzIgQSAxNC41NDMgMTQuNTQzIDAgMCAwIDkxMi43NDMgNDEuNDU5IFEgOTE0LjMzNiA0MS4zOTIgOTE1LjIgNDAuOTYgQSAxMC42NTUgMTAuNjU1IDAgMCAwIDkxNS4zMzYgNDAuODkxIFEgOTE2LjM0OCA0MC4zNjYgOTE3LjEzNSAzOS42ODEgQSA3LjYwNyA3LjYwNyAwIDAgMCA5MTguNCAzOC4yNzIgUSA5MTkuMTk3IDM3LjEyMiA5MTkuNDQyIDM1Ljc4NyBBIDYuNzYxIDYuNzYxIDAgMCAwIDkxOS41NTIgMzQuNTYgUSA5MTkuNTUyIDMyLjI1NiA5MTguNTI4IDMwLjQ2NCBRIDkxMS4xMDQgMTcuOTIgODk1LjQ4OCA4Ljk2IFogTSAxNjAuMzExIDAuMDY4IEEgMTEwLjY0OCAxMTAuNjQ4IDAgMCAwIDE1Ni40MTYgMCBRIDEzMS41NjUgMCAxMTAuNDAyIDExLjQ4MyBBIDk5LjM0MyA5OS4zNDMgMCAwIDAgMTA2LjExMiAxMy45NTIgQSAxMDkuMDA5IDEwOS4wMDkgMCAwIDAgMTA0LjU0MyAxNC45MjYgUSA4NC42NzcgMjcuNDg5IDcyLjE0IDQ3LjQ3OSBBIDExMS4zOTMgMTExLjM5MyAwIDAgMCA2OS43NiA1MS40NTYgUSA1Ni4zMiA3NS4wMDggNTYuMzIgMTAyLjQgUSA1Ni4zMiAxMjcuMzMxIDY3LjU2IDE0OS4xODcgQSAxMDcuNTkyIDEwNy41OTIgMCAwIDAgNjkuODg4IDE1My40NzIgUSA4My40NTYgMTc3LjE1MiAxMDYuNDk2IDE5MS4xMDQgQSAxMDMuNDQ0IDEwMy40NDQgMCAwIDAgMTA4LjA4MiAxOTIuMDQ1IFEgMTMwLjQ1OSAyMDUuMDU2IDE1Ni40MTYgMjA1LjA1NiBRIDE5Ny4zNzYgMjA1LjA1NiAyMTkuMzkyIDE4My4wNCBRIDIyMC45MTggMTgxLjI5NiAyMjEuMTQ1IDE3OC42MjQgQSAxMS4zNjQgMTEuMzY0IDAgMCAwIDIyMS4xODQgMTc3LjY2NCBRIDIyMS4xODQgMTc0LjkwNiAyMTkuNTE0IDE3Mi44NTIgQSA4LjYxNCA4LjYxNCAwIDAgMCAyMTguNzUyIDE3Mi4wMzIgQSAxMC41MDEgMTAuNTAxIDAgMCAwIDIxOC42MzggMTcxLjkyNSBRIDIxNi4yNDggMTY5LjcyOCAyMTMuMjQ4IDE2OS43MjggQSA2LjI0NCA2LjI0NCAwIDAgMCAyMTEuNTQ5IDE2OS45NjEgUSAyMTAuOTA2IDE3MC4xNDEgMjEwLjI5MSAxNzAuNDYzIEEgNy41MDggNy41MDggMCAwIDAgMjA5LjQwOCAxNzEuMDA4IFEgMTg2LjYyNCAxODkuNjk2IDE1Ni40MTYgMTg5LjY5NiBRIDEzNS43NjUgMTg5LjY5NiAxMTcuNzQzIDE4MC4wMjIgQSA4Ny4yMzcgODcuMjM3IDAgMCAxIDExNC4wNDggMTc3LjkyIFEgOTQuNDY0IDE2Ni4xNDQgODMuMDcyIDE0Ni4wNDggUSA3Mi43MDQgMTI3Ljc1OCA3MS43NzIgMTA2LjYwNCBBIDk1LjU0OSA5NS41NDkgMCAwIDEgNzEuNjggMTAyLjQgUSA3MS42OCA3OS42MTYgODMuMiA1OS41MiBBIDk3LjM0OCA5Ny4zNDggMCAwIDEgODMuMzUgNTkuMjYgUSA5NC44NDcgMzkuMzQ2IDExNC4zMDQgMjcuMzkyIEEgODguMDU2IDg4LjA1NiAwIDAgMSAxMTcuMTU1IDI1LjcxMyBRIDEzMy42NjMgMTYuNDA2IDE1Mi4yMTggMTUuNDY2IEEgODIuOTExIDgyLjkxMSAwIDAgMSAxNTYuNDE2IDE1LjM2IEEgMTE3LjIxMiAxMTcuMjEyIDAgMCAxIDE1Ni44MTcgMTUuMzYxIFEgMTgwLjE4NCAxNS40NDEgMTk2LjgyOSAyNC44NDggQSA2My4wMSA2My4wMSAwIDAgMSAyMDcuODcyIDMyLjc2OCBBIDIzLjAzNCAyMy4wMzQgMCAwIDAgMjA4LjMzOSAzMy4xNTggUSAyMTEuNjQxIDM1Ljg0IDIxNC4yNzIgMzUuODQgQSA5Ljk3NCA5Ljk3NCAwIDAgMCAyMTQuOTExIDM1LjgyIFEgMjE3LjM0MyAzNS42NjQgMjE5LjAwOSAzNC4yOTYgQSA2Ljg3MyA2Ljg3MyAwIDAgMCAyMTkuOTA0IDMzLjQwOCBBIDkuOTk0IDkuOTk0IDAgMCAwIDIyMC4xMzMgMzMuMTI2IFEgMjIxLjk1MiAzMC43OTkgMjIxLjk1MiAyNy45MDQgQSA4Ljk4OCA4Ljk4OCAwIDAgMCAyMjEuOTI5IDI3LjI1OSBRIDIyMS43MjQgMjQuMzk4IDIxOS42NDggMjIuNzg0IEEgMTEwLjg4MSAxMTAuODgxIDAgMCAwIDIxOS41NDMgMjIuNjk3IFEgMTkzLjY4NiAxLjI0NCAxNjAuMzExIDAuMDY4IFogTSA1NTEuMTY4IDE5OC40IEwgNTA0LjA2NCAxMjMuMTM2IEwgNDk5LjQ1NiAxMjMuMTM2IEwgNDU4LjI0IDEyMy4xMzYgTCA0NTguMjQgMTk0LjgxNiBRIDQ1OC4yNCAxOTguMTQ0IDQ1Ni4xOTIgMjAwLjMyIFEgNDU0LjIzMiAyMDIuNDAzIDQ1MC44NjUgMjAyLjQ5MiBBIDExLjQ4NyAxMS40ODcgMCAwIDEgNDUwLjU2IDIwMi40OTYgUSA0NDcuNDUyIDIwMi40OTYgNDQ1LjM0OSAyMDAuNTk4IEEgNy44NzEgNy44NzEgMCAwIDEgNDQ1LjA1NiAyMDAuMzIgQSA3LjUyNSA3LjUyNSAwIDAgMSA0NDQuMTgyIDE5OS4yNzUgUSA0NDIuODg5IDE5Ny40MDMgNDQyLjg4IDE5NC44NSBBIDEwLjE3OSAxMC4xNzkgMCAwIDEgNDQyLjg4IDE5NC44MTYgTCA0NDIuODggMTAuMjQgQSAxMC44NTcgMTAuODU3IDAgMCAxIDQ0Mi45MTggOS4zMTUgUSA0NDMuMTY5IDYuMzg0IDQ0NS4wNTYgNC42MDggQSA3LjI1NiA3LjI1NiAwIDAgMSA0NDcuNzgxIDIuOTgxIFEgNDQ5LjA1MiAyLjU2IDQ1MC41NiAyLjU2IEwgNDk5LjQ1NiAyLjU2IFEgNTE3Ljg4OCAyLjU2IDUzMi40OCAxMC4yNCBRIDU0NS45NTQgMTcuMzMyIDU1My45NzEgMjkuNjYyIEEgNTguOTY4IDU4Ljk2OCAwIDAgMSA1NTUuMjY0IDMxLjc0NCBBIDU2LjczNyA1Ni43MzcgMCAwIDEgNTYwLjQxNCA0My4xMyBRIDU2My40NTYgNTIuNDY4IDU2My40NTYgNjMuMjMyIFEgNTYzLjQ1NiA4Mi4yIDU1My45NDYgOTYuNDY1IEEgNTYuNjkyIDU2LjY5MiAwIDAgMSA1NTEuODA4IDk5LjQ1NiBBIDU4Ljg0OSA1OC44NDkgMCAwIDEgNTQ5LjIxMiAxMDIuNjE4IFEgNTM4LjYyMSAxMTQuNjM3IDUyMi4yNTMgMTE5Ljc3OSBBIDcyLjE5NSA3Mi4xOTUgMCAwIDEgNTIwLjQ0OCAxMjAuMzIgTCA1NjQuNDggMTkwLjcyIFEgNTY2LjUyOCAxOTQuMzA0IDU2Ni41MjggMTk2LjYwOCBBIDYuNTk5IDYuNTk5IDAgMCAxIDU2Ni40NzggMTk3LjQzNiBRIDU2Ni4yNTMgMTk5LjIwOCA1NjUuMDM1IDIwMC4zOTUgQSA1LjYyNSA1LjYyNSAwIDAgMSA1NjQuMzUyIDIwMC45NiBBIDYuNDczIDYuNDczIDAgMCAxIDU2My41NDcgMjAxLjQ0MyBRIDU2MS40NzIgMjAyLjQ5NiA1NTguMDggMjAyLjQ5NiBRIDU1NS43NTEgMjAyLjQ5NiA1NTQuMjcgMjAxLjY0OSBBIDQuOTExIDQuOTExIDAgMCAxIDU1My45ODQgMjAxLjQ3MiBRIDU1Mi42NTQgMjAwLjU4NSA1NTEuNTE1IDE5OC45MyBBIDE0LjQ0NyAxNC40NDcgMCAwIDEgNTUxLjE2OCAxOTguNCBaIE0gMzk5LjEwNCAxOTcuNjMyIEwgMzgwLjE2IDE1Mi4zMiBMIDI3NS45NjggMTUyLjMyIEwgMjU3LjAyNCAxOTcuNjMyIFEgMjU1LjMyNCAyMDIuMjQ4IDI1MC4zOTYgMjAyLjQ4MyBBIDExLjI5NyAxMS4yOTcgMCAwIDEgMjQ5Ljg1NiAyMDIuNDk2IEEgMTAuMjU4IDEwLjI1OCAwIDAgMSAyNDguOTMxIDIwMi40NTUgUSAyNDYuMTQzIDIwMi4yMDMgMjQ0LjQgMjAwLjM4MyBBIDYuOTk3IDYuOTk3IDAgMCAxIDI0NC4yMjQgMjAwLjE5MiBBIDguNjc4IDguNjc4IDAgMCAxIDI0My40NzcgMTk5LjIyNCBRIDI0Mi4xNzYgMTk3LjI2NCAyNDIuMTc2IDE5NC44MTYgQSA3LjgwNSA3LjgwNSAwIDAgMSAyNDIuMjgyIDE5My41MjEgQSA3LjE4MSA3LjE4MSAwIDAgMSAyNDIuOTQ0IDE5MS40ODggTCAzMjAuNTEyIDcuOTM2IEEgMTIuMTk2IDEyLjE5NiAwIDAgMSAzMjAuODUyIDcuMTI5IFEgMzIyLjgwNSAyLjkzNiAzMjcuMTQgMi41OTEgQSAxMC4wMzggMTAuMDM4IDAgMCAxIDMyNy45MzYgMi41NiBBIDkuMDA0IDkuMDA0IDAgMCAxIDMyOC45NDcgMi42MTUgUSAzMzMuMjkgMy4xMDYgMzM1LjM2IDcuOTM2IEwgNDEzLjE4NCAxOTEuNDg4IFEgNDEzLjk1MiAxOTMuMDI0IDQxMy45NTIgMTk0LjgxNiBBIDcuNjQgNy42NCAwIDAgMSA0MTMuODQ2IDE5Ni4xMDEgUSA0MTMuNDU3IDE5OC4zODMgNDExLjY0OCAyMDAuMTkyIEEgOS4wNDQgOS4wNDQgMCAwIDEgNDEwLjg3MSAyMDAuODg2IFEgNDA5LjA4MyAyMDIuMzAzIDQwNi44NzkgMjAyLjQ3MyBBIDcuOTA4IDcuOTA4IDAgMCAxIDQwNi4yNzIgMjAyLjQ5NiBBIDkuOTMgOS45MyAwIDAgMSA0MDUuMzM5IDIwMi40NTMgUSA0MDAuOTYgMjAyLjA0IDM5OS4xMDQgMTk3LjYzMiBaIE0gMTUuMzYgMTAuMjQgTCAxNS4zNiAxOTQuODE2IFEgMTUuMzYgMTk3LjkyNCAxMy40NjIgMjAwLjAyNyBBIDcuODcxIDcuODcxIDAgMCAxIDEzLjE4NCAyMDAuMzIgQSA3LjUyNSA3LjUyNSAwIDAgMSAxMi4xMzkgMjAxLjE5NCBRIDEwLjI2NyAyMDIuNDg3IDcuNzE0IDIwMi40OTYgQSAxMC4xNzkgMTAuMTc5IDAgMCAxIDcuNjggMjAyLjQ5NiBRIDQuNTcyIDIwMi40OTYgMi40NjkgMjAwLjU5OCBBIDcuODcxIDcuODcxIDAgMCAxIDIuMTc2IDIwMC4zMiBBIDcuNTI1IDcuNTI1IDAgMCAxIDEuMzAyIDE5OS4yNzUgUSAwLjAwOSAxOTcuNDAzIDAgMTk0Ljg1IEEgMTAuMTc5IDEwLjE3OSAwIDAgMSAwIDE5NC44MTYgTCAwIDEwLjI0IFEgMCA3LjEzMiAxLjg5OCA1LjAyOSBBIDcuODcxIDcuODcxIDAgMCAxIDIuMTc2IDQuNzM2IEEgNy41MjUgNy41MjUgMCAwIDEgMy4yMjEgMy44NjIgUSA1LjA5MyAyLjU2OSA3LjY0NiAyLjU2IEEgMTAuMTc5IDEwLjE3OSAwIDAgMSA3LjY4IDIuNTYgUSAxMC43ODggMi41NiAxMi44OTEgNC40NTggQSA3Ljg3MSA3Ljg3MSAwIDAgMSAxMy4xODQgNC43MzYgQSA3LjUyNSA3LjUyNSAwIDAgMSAxNC4wNTggNS43ODEgUSAxNS4zNTEgNy42NTMgMTUuMzYgMTAuMjA2IEEgMTAuMTc5IDEwLjE3OSAwIDAgMSAxNS4zNiAxMC4yNCBaIE0gMjgxLjg1NiAxMzguNDk2IEwgMzc0LjI3MiAxMzguNDk2IEwgMzI3LjkzNiAyNy45MDQgTCAyODEuODU2IDEzOC40OTYgWiBNIDQ1OC4yNCAxMDcuNzc2IEwgNDk5LjQ1NiAxMDcuNzc2IFEgNTEwLjQxOCAxMDcuNzc2IDUxOS41MTkgMTA0LjM2MiBBIDQ4LjE3NSA0OC4xNzUgMCAwIDAgNTI0LjU0NCAxMDIuMTQ0IEEgNDcuNDcxIDQ3LjQ3MSAwIDAgMCA1MjcuMDU5IDEwMC43NjEgUSA1MzQuNzUgOTYuMjE5IDUzOS44NzggODkuMTgzIEEgNDMuNjc4IDQzLjY3OCAwIDAgMCA1NDEuODI0IDg2LjI3MiBRIDU0Ny40MzYgNzcuMTA5IDU0OC4wMjcgNjUuODk2IEEgNTAuNjczIDUwLjY3MyAwIDAgMCA1NDguMDk2IDYzLjIzMiBRIDU0OC4wOTYgNTAuMTc2IDU0MS44MjQgMzkuODA4IFEgNTM1LjU1MiAyOS40NCA1MjQuNTQ0IDIzLjY4IFEgNTEzLjUzNiAxNy45MiA0OTkuNDU2IDE3LjkyIEwgNDU4LjI0IDE3LjkyIEwgNDU4LjI0IDEwNy43NzYgWiIgdmVjdG9yLWVmZmVjdD0ibm9uLXNjYWxpbmctc3Ryb2tlIi8+CiAgICA8L2c+Cjwvc3ZnPg==" alt="CodingBox技术博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/tags/%E5%AE%8C%E6%88%90%E7%BC%96%E5%86%99/">已写完的文章</a><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">存档</a><a class="navbar-item" href="/wiki">个人知识库</a><a class="navbar-item" href="/readings">阅读与摘抄</a><a class="navbar-item" href="/blogrol">友链</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><h1 class="title is-3 is-size-4-mobile"> </h1><div class="content"><link rel="stylesheet" type="text&#x2F;css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.2.1/css/hint.min.css"><h1 id="活动剧情：骑兵与猎人"><a href="# 活动剧情：骑兵与猎人" class="headerlink" title="活动剧情：骑兵与猎人"></a>活动剧情：骑兵与猎人 </h1><h2 id="第一关（前）"><a href="# 第一关（前）" class="headerlink" title="第一关（前）"></a> 第一关（前）</h2><p>？？？：   ……</p>
+<p>？？？：   ……好热……</p>
+<p>？？？：   好痛……</p>
+<p>赏金猎人：   这女人，还不肯说吗？</p>
+<p>？？？：   好渴……喉咙像是被火烤着……</p>
+<p>？？？：   ……究竟有多长时间了……？</p>
+<p>赏金猎人：   真厉害啊，都被吊在这一天多了，真亏她能忍得住啊。</p>
+<p>粗暴的赏金猎人：   喂，你们可别把她搞死了，宝藏的位置她还没说呢！</p>
+<p>可萝尔：   ……我不会….. 不会告诉你的……</p>
+<p>赏金猎人：   别给她水喝，直到她说了为止！</p>
+<p>可萝尔：   我会死……吗？</p>
+<p>？？？：   ……</p>
+<p>？？？：   没想到就算到了卡西米尔。</p>
+<p>？？？：   胡作非为的歹徒也是哪里都有。</p>
+<p>赏金猎人：   嗯？哪里来的家伙，不想活了吗？</p>
+<p>粗暴的赏金猎人：   喂，小子，你赶紧给我——</p>
+<p>粗暴的赏金猎人：   唔，好，好疼。</p>
+<p>粗暴的赏金猎人：   仔细看，他这身装扮……不像是当地人啊。</p>
+<p>赏金猎人：   管他是哪里来的！他就一个人，不过是来送死的！</p>
+<p>？？？：   所以，得把你们全部解决掉才行？</p>
+<p>粗暴的赏金猎人：   噗啊！</p>
+<p>赏金猎人：   咕……</p>
+<p>？？？：   好了，他们一时半会还醒不过来，我们赶紧离开这里。</p>
+<p>可萝尔：   你……你是……</p>
+<p>？？？：   别怕，没有人能再伤害你了，我会带你离开。</p>
+<p>可萝尔：   ——</p>
+<p>可萝尔：   抱歉，我、我的头……好晕……</p>
+<p>？？？：   你脸色不太好。没关系，让我抱着你。</p>
+<p>？？？：   请抓紧了。</p>
+<p>可萝尔：   嗯…..</p>
+<p>：   晴 \ 能见度 14 公里 </p>
+<p>：   某村庄内</p>
+<p>赏金猎人：   你有没有看到一个拿长枪的小子？</p>
+<p>村民：   我一直待在家里，外面发生什么我不知道。</p>
+<p>赏金猎人：   要是让我知道你窝藏了他们，有你好看的！</p>
+<p>村民：   ————</p>
+<p>村民：   那群家伙已经离开了，格拉尼骑警小姐，你们可以从壁橱里出来了。</p>
+<p>格拉尼：  嘿~！</p>
+<p>格拉尼：  又被大叔帮了大忙啊。</p>
+<p>村民：   可萝尔你没事吧？真是苦了你了。</p>
+<p>可萝尔：   卢克大叔，多谢你，我现在好多了。</p>
+<p>格拉尼：  因为有大家的帮助，我才能救出你。</p>
+<p>村民：   可萝尔，不要担心！</p>
+<p>村民：   骑士小姐已经和我们商量好了！她一定会拯救整个村子的！</p>
+<p>可萝尔：   啊？小姐？</p>
+<p>格拉尼：   这，是啊，我是女孩子啊。</p>
+<p>可萝尔：   啊？</p>
+<p>格拉尼：   唔！就算是我，也是有女孩子的自尊心的！</p>
+<p>可萝尔：   欸、欸，对不起。</p>
+<p>可萝尔：   ……</p>
+<p>可萝尔：   虽然看穿着不像……</p>
+<p>可萝尔：   请问，您是……新受封的卡西米尔骑士大人吗？</p>
+<p>可萝尔：   在您解救我们村子之后，会向我们征税吗？</p>
+<p>格拉尼：   不不不，我可并不是卡西米尔人，更不是什么骑士。</p>
+<p>格拉尼：   虽然维多利亚也有骑士，但我之前是骑警啦！</p>
+<p>格拉尼：   骑警和骑士不一样，是公务治安职务。骑警做事，不图回报，可不会向你们征什么税！</p>
+<p>可萝尔：   维多利亚？</p>
+<p>格拉尼：   是在卡西米尔外面的地方，我的祖辈也都是从卡西米尔迁到那里去的库兰塔人。</p>
+<p>格拉尼：   这次接到了你们的委托，也是想来卡西米尔看一看，父母的家乡是什么样……没想到会是这么严重的事态。</p>
+<p>可萝尔：   ……我本来以为，交给信使的那些委托信都石沉大海了。</p>
+<p>可萝尔：   毕竟那些民间互助组织从来不会在意我们这偏僻的地方。</p>
+<p>格拉尼：   不过，为什么卡西米尔政府没有伸出援手？</p>
+<p>可萝尔：  哼……首都的骑士大人们怎么会关注我们这种偏远的村子？</p>
+<p>可萝尔：  正因如此，许多年来，我们反而过得很安稳，城市里动荡不安的生活也不怎么吸引我们。</p>
+<p>可萝尔：  滴水村的人们世世代代都在这片山区附近居住。</p>
+<p>可萝尔：  尽管生活没那么富裕，但至少我们可以自给自足。</p>
+<p>可萝尔：  虽然有时候会为了躲避天灾暂时迁走村庄，但这里毕竟还是我们的家园。</p>
+<p>可萝尔：  所以，我们无法割舍这片土地……</p>
+<p>格拉尼：   但是现在，村子却被那些赏金猎人破坏得满目疮痍——</p>
+<p>可萝尔：   ……都是因为那个骑士宝藏。</p>
+<p>可萝尔：   最近几年，附近的几个村落都成了赏金猎人们常常光顾的地方。</p>
+<p>可萝尔：   好像是，卡西米尔北部控制区常有动乱什么的，所以不断有赏金猎人去那里寻找发财的机会，而我们滴水村位于通往北方的必经之路上。</p>
+<p>可萝尔：   本来村子就经常会有赏金猎人出入，但是也没有造成什么危害。</p>
+<p>可萝尔：   直到一个月前，有一伙赏金猎人在山中挖出了一位随从骑士的石棺，还翻出了一小箱陪葬的金币……</p>
+<p>格拉尼：   是这种印着卡西米尔徽章的金币吧？</p>
+<p>格拉尼：   我刚来这里就有赏金猎人跑来找麻烦，这几枚金币，算做他们举止粗鲁的赔礼。</p>
+<p>可萝尔：   嗯……就是这些金币，在赏金猎人之间带出了一段传说，也给我们带来了大麻烦。</p>
+<p>可萝尔：   “卡西米尔的每位古代骑士会带着他们的精神与财富，下葬于其家乡的无名之地，并永世保护着这片土地。”</p>
+<p>可萝尔：   “只有来自不惧牺牲，无畏艰险的卡西米尔血脉才能破除所有的阻碍。”</p>
+<p>可萝尔：   这样的传说被传得越来越远，附近的赏金猎人变得越来越多。</p>
+<p>可萝尔：   最初，赏金猎人还只是讨论如何寻找更大的骑士宝藏，可后来“滴水村有人知道骑士宝藏下落”的消息却不知怎么的越传越开——</p>
+<p>格拉尼：   ————嘘！大家先别说话！</p>
+<p>赏金猎人：   不行，找不到他们，给我从头再搜一遍！</p>
+<p>格拉尼：   继续待在这里不太安全，不能拖累这位大叔。</p>
+<p>格拉尼：   总之，我们先离开这里。</p>
+<p>村民：   你们要小心点自己的安全，骑士……不对，骑警小姐，村长就交给你了！</p>
+<p>格拉尼：   大叔，你放心，我一定保护好——</p>
+<p>格拉尼：   啊？村长？</p>
+<p>可萝尔：   ……滴水村村长可萝尔，虽然上任才半年，就算是我，也是有村长的自尊心的哦。</p>
+<h2 id="第一关（后）"><a href="# 第一关（后）" class="headerlink" title="第一关（后）"></a>第一关（后）</h2><p>格拉尼：   走廊好黑！而且好挤！</p>
+<p>可萝尔：   不、不好意思，虽然方便藏身，可毕竟这里只是个小阁楼而已！</p>
+<p>可萝尔：   磨坊，粮仓，电房，村子里的很多设施都被赏金猎人破坏了，他们不会在乎这种小地方的。</p>
+<p>格拉尼：   是这样没错……唔，我们两个居然刚好能挤进这种缝隙里？！</p>
+<p>格拉尼：   可萝尔，脸是不是贴的太近了！</p>
+<p>可萝尔：   抱歉……那个，骑警大人？</p>
+<p>格拉尼：   别叫我骑警大人啦，叫我格拉尼就好。</p>
+<p>可萝尔：   那，格拉尼，你刚才说你接到了我们村子希望找到骑士宝藏的委托……</p>
+<p>格拉尼：   对，而且委托里还提到，你确实已经拥有完整的宝藏信息了？</p>
+<p>可萝尔：   打开宝藏必要的钥匙和宝藏的位置，都是历代村长口口相传的秘密。</p>
+<p>可萝尔：   具体的我暂时还不能说……抱歉，我不是有意要向你隐瞒。</p>
+<p>格拉尼：   没问题的，至少等到你完全相信我之后再说吧。</p>
+<p>可萝尔：   那些赏金猎人得知了这些情报，就一直在威胁着村民们。</p>
+<p>可萝尔：   他们破坏村子的田地，抢走越冬的储粮，骚扰村民——如果那时我不站出来，村子就真的要完了。</p>
+<p>可萝尔：   只要让他们知道宝藏的情报在我这里，至少他们不再去伤害其他村民们了。</p>
+<p>格拉尼：   但就算你受了那样的苦……</p>
+<p>可萝尔：   ……嗯，我很清楚，这不过是权宜之计。</p>
+<p>可萝尔：   还好，你来了。</p>
+<p>格拉尼：   呜，可萝尔小姐……</p>
+<p>可萝尔：   虽然委托内容是希望有人能来帮我们找到宝藏，但其实我们希望的也只是驱逐那些赏金猎人、让村子恢复安宁。</p>
+<p>可萝尔：   宝藏对我们来说，是现在唯一的解决手段而已。</p>
+<p>可萝尔：   金币什么的，总会有花光的一天，但我们一直要在这片土地上生活下去，土地是我们唯一的故乡……</p>
+<p>格拉尼：   用宝藏去雇佣别人驱逐赏金猎人，也可以。</p>
+<p>格拉尼：   有足够的活动资金的话，甚至能雇佣一小支佣军呢！</p>
+<p>可萝尔：   嗯。</p>
+<p>格拉尼：   既然目的已经明确，那当务之急，果然还是要先离开这个满是流氓的村子。</p>
+<p>格拉尼：   这边有窗子，能看到外——呃，好像有点高。</p>
+<p>格拉尼：   可萝尔小姐，你能试试从这个窗户看到外面吗，赏金猎人还在找我们吗？</p>
+<p>可萝尔：   我，我也够不到，窗户还是太高了……</p>
+<p>格拉尼：   让我抱你起来……</p>
+<p>格拉尼：   嘿！现在能看到了吗？</p>
+<p>可萝尔：   好的，我能看到了————</p>
+<p>可萝尔：   咦？！</p>
+<p>格拉尼：   可萝尔小姐！别乱动呀！</p>
+<p>可萝尔：   可、可那个，那是什么呀……</p>
+<p>可萝尔：   刚才，有个人，从窗户外飞了过去……?</p>
+<h2 id="第二关（前）"><a href="# 第二关（前）" class="headerlink" title="第二关（前）"></a>第二关（前）</h2><p>赏金猎人：   拦住她！</p>
+<p>粗暴的赏金猎人：   拦什么啊！你没看到他们全部被干掉了吗！</p>
+<p>赏金猎人：   你上啊，你平常不是很厉害吗！</p>
+<p>粗暴的赏金猎人：   我，我不行！这家伙可是那个灾星啊！</p>
+<p>？？？：   ……</p>
+<p>？？？：   （阿戈尔语）拦住我的都会死。</p>
+<p>？？？：   （阿戈尔语）向我挥出武器的都粉身碎骨。</p>
+<p>？？？：   （阿戈尔语）想死的，向前踏出一步。</p>
+<p>“上尉”：   你究竟在说些什么？</p>
+<p>赏金猎人：   唉？上尉？上尉怎么消失了？</p>
+<p>粗暴的赏金猎人：   上尉掉进河里了……！</p>
+<p>赏金猎人：   这、这家伙一击就……</p>
+<p>？？？：   啊，忘了他们听不懂……算了。</p>
+<p>？？？：   说，她在哪？</p>
+<p>赏金猎人：   她？你指谁？别问我，我什么不知道啊！</p>
+<p>赏金猎人：   呃啊！！！</p>
+<p>粗暴的赏金猎人：   给、给我记住！</p>
+<p>粗暴的赏金猎人：   喂！你们别急着撤退！先把上尉捞起来！</p>
+<p>格拉尼：   那、那个人是——</p>
+<p>可萝尔：   你认识她？</p>
+<p>格拉尼：   她可能是我的同事……</p>
+<p>格拉尼：   不过，接到这项委托的应该是我啊？我可是好不容易才从陨星姐手里抢到这项任务的……</p>
+<p>格拉尼：   唔唔唔……也许她是为别的任务来的？</p>
+<p>可萝尔：   唔，赏金猎人好像溃退了？</p>
+<p>格拉尼：   事不宜迟，我们趁现在溜出村子吧。</p>
+<p>格拉尼：   既然还有其他干员在这个村子里，说不定事情会好办一些。</p>
+<p>格拉尼：   可萝尔，楼梯很黑，你要扶紧我。</p>
+<p>可萝尔：   那个，你要和她联络一下吗？</p>
+<p>格拉尼：   嗯，如果可能的话，我想——</p>
+<p>？？？：   噗啊————————！</p>
+<p>格拉尼：   哇——————！</p>
+<p>赏金猎人：   我、我的鼻子！这个门怎么自己弹开——</p>
+<p>格拉尼：   欸？这里怎么会蹲着人——</p>
+<p>可萝尔：   格拉尼！发生了什——</p>
+<p>粗暴的赏金猎人：   你们全都给我闭嘴！嘘！</p>
+<p>格拉尼：   ……嘘？</p>
+<p>赏金猎人：   唉，你们这些干农活的肯定什么都不懂。没看到那个灾星吗！</p>
+<p>赏金猎人：   无论是哪个赏金猎人，都不会想和她碰面的！敢在她面前昂首挺胸的，多半是没见过她毁掉整座城市的样子吧！</p>
+<p>格拉尼：   这么夸张吗！那不是靠她一个人就可以把————</p>
+<p>粗暴的赏金猎人：   声音轻点，别被她发现！</p>
+<p>格拉尼：   唔，可是我还要找她——</p>
+<p>粗暴的赏金猎人：   说了小声点！</p>
+<p>格拉尼：   好，好……</p>
+<p>格拉尼：   感觉比罗德岛里流传的版本更离谱……</p>
+<p>赏金猎人：   那、那个怪物走了吗？</p>
+<p>粗暴的赏金猎人：   好，好像走了……！</p>
+<p>赏金猎人：   总算走了，啊哟，吓死我了。</p>
+<p>格拉尼：   是，是啊。</p>
+<p>粗暴的赏金猎人：  原以为这点活我们一队就能搞定，怎么会碰上这种麻烦事。那种家伙都来了的话，得做好准备才能——</p>
+<p>粗暴的赏金猎人：   ——等等！</p>
+<p>格拉尼：   啊。</p>
+<p>粗暴的赏金猎人：   哈！拿枪的小子！居然在这里碰见你！</p>
+<p>粗暴的赏金猎人：   还有村长！你真是送上门来了！</p>
+<p>可萝尔：   格拉尼，你难道是故意……</p>
+<p>格拉尼：   不，只是他们态度那么好，我也没回过神来啊！</p>
+<p>赏金猎人：   废话少说，把村长交给我们！不然我手里这把刀保证就让你吃足苦头！</p>
+<p>格拉尼：   就用那把断刀？</p>
+<p>赏金猎人：   ……这，这小子什么时候出的枪？！</p>
+<p>粗暴的赏金猎人：   用暗号召集附近还在的人！</p>
+<p>粗暴的赏金猎人：   还有，去把之前用来毁掉农田的虫子都赶出来，让她们尝尝厉害！</p>
+<h2 id="第二关（后）"><a href="# 第二关（后）" class="headerlink" title="第二关（后）"></a>第二关（后）</h2><p>格拉尼：   可恶，这些赏金猎人真是缠人！</p>
+<p>可萝尔：   呀！虫子！！</p>
+<p>可萝尔：   好恶心！</p>
+<p>格拉尼：   呜呃，黏黏糊糊的……</p>
+<p>赏金猎人：   快把她们包围起来！别让她们又逃了！</p>
+<p>赏金猎人：   打不过那个小个子没所谓！缠住他，然后把那个村长小姑娘抓回来！</p>
+<p>格拉尼：   可萝尔！别离开我身边！</p>
+<p>可萝尔：   唔——！</p>
+<p>？？？：   你们两个，捂住耳朵！</p>
+<p>赏金猎人：   啊？你是谁？哪冒出来的大胖子啊！</p>
+<p>赏金猎人：   噗啊啊啊啊——！</p>
+<p>？？？：   哼，胖子？我只是壮而已。</p>
+<p>格拉尼：   那是什么炸弹爆炸了吗？！</p>
+<p>？？？：   震撼弹而已，声音很大，没杀伤力的！不过用来驱散这些虫子还有野兽都很有效！</p>
+<p>？？？：   趁虫子和那些家伙都被爆炸吓跑，快走！先转移到安全的地方！</p>
+<p>格拉尼：   可萝尔！这次可别再是小阁楼什么的了！</p>
+<p>可萝尔：   那，来这边！</p>
+<p>：   晴 \ 能见度 14 公里 </p>
+<p>：   村外树林</p>
+<p>可萝尔：   这片树林非常偏僻，只有我和我小时候的玩伴知道这里……</p>
+<p>格拉尼：   等下，可萝尔，先别放松。</p>
+<p>？？？：   哼。</p>
+<p>？？？：   锯子，弹药，爆破物。</p>
+<p>？？？：   我把这些全放在地上了。这样可以好好谈谈宝藏了吗？</p>
+<p>？？？：   我也是个赏金猎人，但我没有刚才那些家伙那么贪心。刚才那些充其量只是来跑腿的杂鱼，也不够聪明。</p>
+<p>？？？：   比起冒着风险抢夺这位村长姑娘，不如主动与你们合作来的更有效率。</p>
+<p>格拉尼：   谢谢你刚才帮了我们，但现在不是谈宝藏的时候。</p>
+<p>？？？：   你不是赏金猎人，不是干这行的，我看得出来。</p>
+<p>？？？：   而我，对这行当了如指掌。</p>
+<p>格拉尼：   滴水村周遭的赏金猎人情况，你也很清楚吗？</p>
+<p>？？？：   托伦团、佛罗茨团、卢布林团、瓦各斯克团——</p>
+<p>？？？：   所有的赏金猎人都在整个区域进行地毯式搜索，已经好几天了。说实话，宝藏被他们找到也只是时间问题。</p>
+<p>？？？：   无论哪个赏金猎人找到宝藏，不同派系的赏金猎人绝对会为了争夺宝藏，在这片地区争得头破血流。</p>
+<p>？？？：   那时滴水村不但什么好处都拿不到，说不定还会被摧毁得一干二净，你们明白得很。</p>
+<p>格拉尼：   ……</p>
+<p>格拉尼：   那么，你能为我们提供些什么？</p>
+<p>？？？：   野外向导，猎人经验，暗号识别，陷阱拆解，以及多一个的战力。</p>
+<p>？？？：   不管哪个，都是你们现在急缺的东西。</p>
+<p>格拉尼：   那，请问我该怎么称呼你？</p>
+<p>大鲍勃：   叫我大鲍勃。</p>
+<p>格拉尼：   嗯，请你稍等，我需要和村长商量一下。</p>
+<p>格拉尼：   这个位置，大鲍勃不会听到我们的谈话。</p>
+<p>可萝尔：   我……我信不过一个赏金猎人……</p>
+<p>可萝尔：   把我们骗进陷阱，或者和其他赏金猎人串通，这些都是我们没法承受的……</p>
+<p>格拉尼：   可萝尔，你见过这位大鲍勃吗？</p>
+<p>可萝尔：   倒是没有……每个破坏过村庄，甚至来过的赏金猎人，他们的样子，我都记得清清楚楚……</p>
+<p>格拉尼：   和他合作，肯定会有风险的。</p>
+<p>格拉尼：   接下来的情况会随时间的推移变得更加复杂。</p>
+<p>格拉尼：   为了早点找到宝藏，我们也许必须借用他的力量。</p>
+<p>可萝尔：   那格拉尼，你说的那个同事也能帮上忙吗？</p>
+<p>格拉尼：   不太好说。她不是那么好相处的人，而且她同样也是个赏金猎人。</p>
+<p>格拉尼：   如果可以的话，我想先搞清楚情况，再去找她。</p>
+<p>可萝尔：   让我想想。</p>
+<p>可萝尔：   我不能告诉他埋藏宝藏的地方。我可以分几次告诉他大概的方向，就像在牧兽的脑袋前面挂上粮食一样。</p>
+<p>可萝尔：   这样行吗？</p>
+<p>格拉尼：   嗯，这样做是对的。</p>
+<p>格拉尼：   我会盯紧他的。情况不对的话，我会立刻把你送出森林。</p>
+<p>格拉尼：   可萝尔，你的安全，交给我。</p>
+<p>大鲍勃：   如何？先给我一个方向吧。</p>
+<p>格拉尼：   我们需要一条能够迅速前往塔拉特山的道路。</p>
+<p>大鲍勃：   想要前往塔拉特山，就必须穿过北方这片森林。</p>
+<p>大鲍勃：   那片森林，也是赏金猎人互相争夺的战场。</p>
+<p>大鲍勃：   想必已经有很多赏金猎人埋伏在那里了。但是我会带你们从安全的路过去。</p>
+<p>格拉尼：   鲍勃大叔，想要合作的话，我们是有条件的。</p>
+<p>大鲍勃：   当然，这是我们接下来要谈的重点，不是吗？</p>
+<p>大鲍勃：   你只要先告诉我，几几分成。</p>
+<p>“上尉”：   我不渴！不用给我水！</p>
+<p>赏金猎人：   好，好，我说上尉，那两个小孩我们还找不找了？</p>
+<p>“上尉”：   怎么可能不找？我们是为了什么才走到今天的？忘了？</p>
+<p>“上尉”：   这边离城市远得很，通讯信号也和没有一样，虽然支援会来得晚，但是这对其他团也一样的。这可是大好的机会！</p>
+<p>赏金猎人：   可那个怪物也往那个方向去了，我们……</p>
+<p>“上尉”：   怕什么？虽然那家伙是有点厉害，但是别忘了那边可是我们的地盘。那么多陷阱，有她好受的！</p>
+<p>“上尉”：   宝藏，我们要拿！怪物，我们也要狩猎！</p>
+<p>“上尉”：   老子全都要！</p>
+<h2 id="第三关（前）"><a href="# 第三关（前）" class="headerlink" title="第三关（前）"></a>第三关（前）</h2><p>赏金猎人：   咕……</p>
+<p>赏金猎人：   你，你把我的同伴，全干掉了？</p>
+<p>赏金猎人：   ……别、别过来啊！求你了！</p>
+<p>赏金猎人：   我、我把金币都给你！我把我的武器给你！你要什么我都——</p>
+<p>？？？：    那个女孩子在哪里。</p>
+<p>赏金猎人：   你在说什么——？？</p>
+<p>赏金猎人：   别靠近我——！</p>
+<p>赏金猎人：   你这个——</p>
+<p>：   晴 \ 能见度 14 公里 </p>
+<p>：   塔拉特山前森林 </p>
+<p>大鲍勃：   ……这块石头……</p>
+<p>大鲍勃：   你们两个，跟上。小心脚底，跟着我的脚印走，手也不要到处摸。</p>
+<p>大鲍勃：   这片森林，恐怕比你我想的还要危险。</p>
+<p>格拉尼：   石头上是不是刻了什么？</p>
+<p>大鲍勃：   这是赏金猎人留下的符号。不按照符号指示行动的话，就会踩进设置好的陷阱。</p>
+<p>格拉尼：   我们要直接躲开陷阱吗？</p>
+<p>大鲍勃：   看我的吧。</p>
+<p>大鲍勃：   ——绊索加捕兽夹，老土的小把戏。</p>
+<p>大鲍勃：   树丛恰好挡住了摆锤，一旦贸然前进就会被击中。</p>
+<p>大鲍勃：   那里，可萝尔小姐，小心点。</p>
+<p>可萝尔：   嗯，嗯？</p>
+<p>大鲍勃：   你再向前走一步，大概就会掉进满是尖头的深坑了。</p>
+<p>可萝尔：   啊……！</p>
+<p>格拉尼：   不愧是赏金猎人，很擅长这些嘛。</p>
+<p>大鲍勃：   那当然，毕竟我以前——</p>
+<p>大鲍勃：   ……</p>
+<p>大鲍勃：   想要绕开陷阱是不现实的。果然，还是要全部解除掉才方便行动。</p>
+<p>大鲍勃：   毕竟他们最危险的道路，马上就会变成对我们来说最安全的那种了。</p>
+<p>大鲍勃：   走吧。</p>
+<p>大鲍勃：   停下。</p>
+<p>大鲍勃：   不太对劲。</p>
+<p>格拉尼：   是陷阱？</p>
+<p>大鲍勃：   不。</p>
+<p>大鲍勃：   沾血的符号……</p>
+<p>大鲍勃：   “——怪物？”</p>
+<p>大鲍勃：   这什么意思？这么多年来，我都没见过有人用过这个符号。</p>
+<p>格拉尼：   ……啊。</p>
+<p>格拉尼：   不会吧……</p>
+<p>赏金猎人：   怪物，怪物！</p>
+<p>赏金猎人：   别，别过来！</p>
+<p>？？？：   ……</p>
+<p>格拉尼：   ……</p>
+<p>？？？：   ……</p>
+<p>格拉尼：   真的是你啊！</p>
+<p>格拉尼：   斯卡蒂，你是斯卡蒂，没错吧？</p>
+<p>斯卡蒂：   ——原来滴水村村长是和你在一起？</p>
+<p>格拉尼：   啊，什么？你认识可萝尔…..</p>
+<p>斯卡蒂：   把她交给我。现在。</p>
+<p>大鲍勃：   格拉尼，她的眼神，不太对啊。</p>
+<p>格拉尼：   那可不行，我们应该谈——</p>
+<p>格拉尼：   欸，欸？</p>
+<p>格拉尼：   呜啊！</p>
+<p>斯卡蒂：   这只是警告。</p>
+<p>格拉尼：   不，可萝尔小姐，鲍勃大叔…..</p>
+<p>大鲍勃：   她，她怎么会攻击你？</p>
+<p>大鲍勃：   你不是认识她，她怎么就——</p>
+<p>格拉尼：   别问那么多了！快，快跑！</p>
+<p>格拉尼：   哈，哈，她还在追着我们跑吗？？</p>
+<p>可萝尔：   格，格拉尼，我，我跑不动了……</p>
+<p>大鲍勃：   那个女人，真的，是怪物吧？她甚至，都没在喘气啊！</p>
+<p>斯卡蒂：   为什么我要陪你们浪费时间？</p>
+<p>格拉尼：   她真的要砍了我，啊不，她要拿可萝尔小姐干什么！</p>
+<p>可萝尔：   她的眼睛，好，好红….. 格，格拉尼！</p>
+<p>格拉尼：   不行了不行了，为什么还会有这种事啊！</p>
+<p>格拉尼：   停！</p>
+<p>大鲍勃：   埋伏！</p>
+<p>“上尉”：   就是现在！放箭！</p>
+<p>斯卡蒂：   嗯？</p>
+<p>“上尉”：   就是她，那个突袭我们的灾星！快，快射她！</p>
+<p>格拉尼：   你们给我住手！</p>
+<p>“上尉”：   你小子想干什么？</p>
+<p>格拉尼：   虽然不知道为什么她要追我，但好歹也是我的同事！</p>
+<p>“上尉”：   为、为什么要坏我的事！混账——！</p>
+<p>斯卡蒂：   ……</p>
+<p>格拉尼：   趁现在，快点走！</p>
+<p>大鲍勃：   ——向东突围！走！</p>
+<p>赏金猎人：   别想逃出去！受死吧怪物！！</p>
+<p>斯卡蒂：   （阿戈尔语）滚开!</p>
+<h2 id="第三关（后）"><a href="# 第三关（后）" class="headerlink" title="第三关（后）"></a>第三关（后）</h2><p>格拉尼：   干掉了！</p>
+<p>格拉尼：   大鲍勃，你没事——</p>
+<p>格拉尼：   咦？你腿上的伤口……</p>
+<p>赏金猎人：   那里有漏网的！可能是瓦各斯克团的人！</p>
+<p>大鲍勃：   这个我自己能处理！先击退敌人！</p>
+<p>格拉尼：   好。</p>
+<p>赏金猎人：   嗯？</p>
+<p>赏金猎人：   这小个子……</p>
+<p>赏金猎人：   喂，喂，你那是什么眼神？</p>
+<p>赏金猎人：   别，别过来，不怕我在你身上开个窟窿吗！</p>
+<p>赏金猎人：   唉？</p>
+<p>大鲍勃：   你都解决了？</p>
+<p>格拉尼：   是。</p>
+<p>大鲍勃：   真厉害。这么小的个子，本事倒是不小。</p>
+<p>格拉尼：   坐在那里别动。我来给你包扎。</p>
+<p>大鲍勃：   不碍事，让我起来。</p>
+<p>格拉尼：   不行。</p>
+<p>大鲍勃：   你看到了吧。</p>
+<p>格拉尼：   嗯。</p>
+<p>大鲍勃：   你看到我身上的结晶了吧？你难道想被感染吗？！</p>
+<p>格拉尼：   感染者，本来就是我们罗德岛的救助对象。</p>
+<p>大鲍勃：   罗德岛……</p>
+<p>可萝尔：   罗德岛是……？不是维多利亚……？</p>
+<p>格拉尼：   以前是维多利亚的骑警，不过现在，是罗德岛的干员。</p>
+<p>大鲍勃：   离我远一点，小姑娘。我是感染者。</p>
+<p>可萝尔：   我……</p>
+<p>格拉尼：   可萝尔小姐，这可能有点血腥，你稍稍回避下吧？</p>
+<p>格拉尼：   好啦，已经止血了。</p>
+<p>大鲍勃：   你经常这么做吗，给感染者？</p>
+<p>大鲍勃：   你就不怕……</p>
+<p>格拉尼：   我的同事有很多都感染了矿石病，但我分不出究竟有谁感染了。</p>
+<p>大鲍勃：   啊？</p>
+<p>格拉尼：   也就洗澡的时候能看得出来吧？</p>
+<p>大鲍勃：   ——哼。</p>
+<p>大鲍勃：   多谢你了，没戒心的小个子。</p>
+<p>大鲍勃：   ……</p>
+<h2 id="第四关（前）"><a href="# 第四关（前）" class="headerlink" title="第四关（前）"></a>第四关（前）</h2><p>：   晴 \ 能见度 14 公里 </p>
+<p>：   塔拉特山坑道</p>
+<p>大鲍勃：   进了这个坑道就安全了。前面出去就是莫蒂卡山，从那里开始赏金猎人的数量会明显减少。</p>
+<p>大鲍勃：   至于斯卡蒂————以前听到其他人把她形容成山崩，我一直都笑得很大声。结果我今天才见识到。</p>
+<p>大鲍勃：   本来以为只是一个比一般人强一点点的家伙，真没想到那些风言风语竟然不是在开玩笑。</p>
+<p>大鲍勃：   难怪在酒吧里，我笑的时候他们都一脸惊恐地看着我。</p>
+<p>大鲍勃：   现在轮到我惊恐了，哈。</p>
+<p>格拉尼：   是真的！在罗德岛的时候，大家也都是这么传来传去的啊。</p>
+<p>格拉尼：   我也没和她一起出过任务，只知道她很厉害就是了，根本没想到会变成今天这样……</p>
+<p>格拉尼：   我是头次知道她是赏金猎人。</p>
+<p>大鲍勃：   赏金猎人中的大明星之一了。</p>
+<p>大鲍勃：   这次，就连她也是冲着宝藏来的，就真的太麻烦了。</p>
+<p>大鲍勃：   我们两个能不能从她嘴里抢到一成，都很难说。</p>
+<p>可萝尔：   那样的话，我的村子岂不是……</p>
+<p>大鲍勃：   别担心，我觉得她会赶走所有赏金猎人的。</p>
+<p>大鲍勃：   顺带，再毁掉几个村子吧。</p>
+<p>可萝尔：   呜……</p>
+<p>格拉尼：   我觉得她并不是冲着宝藏来的，我不能让这种事发生。</p>
+<p>大鲍勃：   所以，你们这个什么罗德岛，收人也是来者不拒啊？</p>
+<p>格拉尼：   没有一个罗德岛干员会为了私人的利益，去毫无顾忌地伤害别人。</p>
+<p>大鲍勃：   哼，你帮过我，谢谢你。但是你们罗德岛又养着斯卡蒂这种只懂得破坏的灾星，我看也未必真的是为感染者好。</p>
+<p>大鲍勃：   而且，我一个得了矿石病的人，也没见你们罗德岛做了啥能给我们好处的事，还不是四处被人追打。</p>
+<p>格拉尼：   鲍勃大叔……</p>
+<p>大鲍勃：   怎么，哑口无言了？我是不知道你到底相信你们那个罗德岛什么地方。</p>
+<p>大鲍勃：   照我看来，嘴上说着为感染者争取这个那个的，到头来，都是见钱眼开。</p>
+<p>大鲍勃：   哼，什么罗德岛，在这个世上，再没有比我手上这个小小金币更重要的东西！</p>
+<p>格拉尼：   抱歉。</p>
+<p>大鲍勃：   抱什么歉？你还是个小孩子，弄不清理想和现实的年纪，不知道自己究竟几斤几两，这无所谓，都很正常。</p>
+<p>格拉尼：   不，我不是要说这个。我知道自己的力量还不足。</p>
+<p>格拉尼：   不管是作为骑警，还是作为罗德岛干员，我都接触过很多感染者。</p>
+<p>格拉尼：   ……我没能救下他们所有人，这都是我力量还不足的缘故。</p>
+<p>格拉尼：   罗德岛也是一样的。</p>
+<p>大鲍勃：   也就是没什么用？哈!</p>
+<p>大鲍勃：   也是，感染者们在地下城里受苦的时候，被关进隔离城区，被人无端杀害的时候，罗德岛人在哪儿呢？</p>
+<p>格拉尼：   我也好，罗德岛也好，就算有时候拼劲全力，也总有力不能及的地方。</p>
+<p>格拉尼：   但就算这样，我依然不会放弃任何一位我见到的无辜感染者。</p>
+<p>格拉尼：   罗德岛，也是一样的。</p>
+<p>大鲍勃：   哼。</p>
+<p>格拉尼：   抱歉……鲍勃大叔。</p>
+<p>大鲍勃：  ……我说了，你还是个小孩子，我刁难你有什么用？</p>
+<p>大鲍勃：  可那个斯卡蒂，你的同事，现在不惜对你刀剑相向也要抓走可萝尔夺走宝藏。</p>
+<p>大鲍勃：  你肯定这种人也会相信你们拯救感染者那一套，甚至去帮你们做这种事？</p>
+<p>格拉尼：   我还不了解斯卡蒂究竟想做什么，所以我不能在这里下结论。</p>
+<p>格拉尼：   但我相信，罗德岛接受了她，她肯定也有自己的理由才这样做的。</p>
+<p>大鲍勃：   我刚才话太多了，你忘了吧。</p>
+<p>格拉尼：   没关系。</p>
+<p>格拉尼：   总之当务之急，果然还是要快点帮可萝尔小姐拿到宝藏。</p>
+<p>大鲍勃：   我伤了腿，已经是你们的累赘了。真没想到我居然要拖两个小姑娘的后腿，呿。</p>
+<p>格拉尼：   鲍勃大叔，只有一种情况会让你拖累我们。</p>
+<p>格拉尼：   那就是你不想把宝藏给我们。</p>
+<p>大鲍勃：   哼，哈哈哈哈。</p>
+<p>可萝尔：   鲍勃先生，我没有嫌恶你的意思，只是我刚才……还是有些害怕。</p>
+<p>可萝尔：   我是个乡下人，没有亲眼见过感染者，但我多少还是能看出来……你是有苦衷的人。</p>
+<p>可萝尔：   如果我之前有什么冒犯的地方，请见谅。</p>
+<p>大鲍勃：   没关系。哈，小姑娘，你只要在拿到宝藏后，付给我我需要的那份报酬就够了。</p>
+<p>可萝尔：   嗯……宝藏对我们村子来说很重要。但只要能解决我们的问题，鲍勃先生是一定可以拿到应有的酬劳的。</p>
+<p>可萝尔：   所以，我和格拉尼，既需要你的协助，也会帮助你。</p>
+<p>可萝尔：   对吧，格拉尼？</p>
+<p>格拉尼：   那当然。不管怎么样，我们也该动身了。</p>
+<p>大鲍勃：   小姑娘，下个目标地点，差不多是莫蒂卡山了吧，那座山的名字，是某个死了不知道多少年的骑士的封号。</p>
+<p>大鲍勃：   如果我没猜错，这个什么骑士宝藏，就是在那里吧？</p>
+<p>可萝尔：   可上面的洞窟也够找上好几个星期了。</p>
+<p>大鲍勃：   那当然了。所以没有你，不行。我们可不会把你交给那个红眼女啊。</p>
+<p>可萝尔：   就麻烦你带路了。</p>
+<p>大鲍勃：   就这么办。</p>
+<p>大鲍勃：   等等。</p>
+<p>大鲍勃：   出口有动静——</p>
+<p>？？？：   啊——</p>
+<p>“上尉”：   谁……救救……我……</p>
+<p>“上尉”：   是……感染……者……</p>
+<p>整合运动 A：   ……. 你下手那么重？</p>
+<p>整合运动 B：   我什么都没做呀，他自己跌倒……</p>
+<p>整合运动 B：   啊。</p>
+<p>整合运动 A：   ————</p>
+<p>格拉尼：   他们是……整合运动？</p>
+<p>大鲍勃：   你们——</p>
+<p>格拉尼：   大鲍勃，你要干什么？</p>
+<p>格拉尼：   这些家伙可不是一般的——</p>
+<p>大鲍勃：   别多说，开战！</p>
+<p>整合运动：   ……</p>
+<p>整合运动：   快，快把他们全都抓起来！</p>
+<h2 id="第四关（后）"><a href="# 第四关（后）" class="headerlink" title="第四关（后）"></a>第四关（后）</h2><p>大鲍勃：   咕……</p>
+<p>整合运动：   这家伙是个瘸的！先解决掉他！</p>
+<p>大鲍勃：   格拉尼！继续耗下去，我们全得交代在这儿了！</p>
+<p>格拉尼：   就算你这么说！</p>
+<p>大鲍勃：   快！带着可萝尔走！</p>
+<p>大鲍勃：   我受了伤，会拖慢你们的速度！</p>
+<p>大鲍勃：   之后我会找办法和你们会合的！走！</p>
+<p>格拉尼：   ——</p>
+<p>格拉尼：   说好了，记得要来拿你的那份！</p>
+<p>大鲍勃：   ……哼。</p>
+<p>大鲍勃：   快走！</p>
+<p>整合运动：   她们跑了！</p>
+<p>大鲍勃：   你们的敌人是我！</p>
+<p>格拉尼：   ……交战的声音似乎平息下来了。</p>
+<p>格拉尼：   但是抱歉，可萝尔，现在我们没有休息的时间，还得快走才行。</p>
+<p>可萝尔：   没事……那个，鲍勃先生他，不知道怎么样了……！</p>
+<p>格拉尼：   可能，要给他一些时间吧。</p>
+<p>可萝尔：   给他些时间……？你是说——</p>
+<p>可萝尔：   啊！</p>
+<p>格拉尼：   可萝尔！你没事吧？</p>
+<p>可萝尔：   抱歉，被这个树根绊了一下……</p>
+<p>格拉尼：   来，拉住我的手。</p>
+<p>可萝尔：   ……谢谢你。</p>
+<p>格拉尼：   能走吗？</p>
+<p>可萝尔：   ……没事的，只是擦伤。就像你说的，我们还是别停下脚步比较好……</p>
+<p>可萝尔：   只要穿过森林就是莫拉蒂山的山脚下了，我们得进入半山腰第二个洞窟。</p>
+<p>格拉尼：   只能从洞口进去吗？</p>
+<p>可萝尔：   是的，里面还有很多岔路和暗道，不过我知道该怎么走。宝藏就在洞窟的最深处。</p>
+<p>格拉尼：   嗯。这样的话……</p>
+<p>可萝尔：   咦？好、好可怕的声音……远处有什么爆炸了吗……？</p>
+<p>格拉尼：   仔细听，还有呐喊和惨叫。</p>
+<p>格拉尼：   是战斗的声音。还没结束。</p>
+<p>格拉尼：   ……可萝尔，你害怕吗？</p>
+<p>可萝尔：   我——</p>
+<p>可萝尔：   ……我很害怕。</p>
+<p>可萝尔：   但是，为了让我的村子平静下来，让我们的土地重归安宁……我也有一定要去做的事。</p>
+<p>格拉尼：   是吗……</p>
+<p>格拉尼：   你真坚强啊。</p>
+<p>可萝尔：   欸？</p>
+<p>格拉尼：   没事。事不宜迟，我们继续前进吧。</p>
+<h2 id="第五关（前）"><a href="# 第五关（前）" class="headerlink" title="第五关（前）"></a>第五关（前）</h2><p>格拉尼：   果然只有这个洞口可以出入，对吧？</p>
+<p>可萝尔：   嗯。洞窟里面虽然有很多岔路，不过村里的大人带我来过几次，包括继任村长那天……</p>
+<p>可萝尔：   ……那个，不知道是不是我的错觉，那边，森林里面的喊声是不是更多了……</p>
+<p>格拉尼：   再拖延下去，情况只会更加恶化。</p>
+<p>格拉尼：   可萝尔，你知道山洞中的道路，我想让你马上进入洞窟，沿着暗道去提前拿到宝藏。</p>
+<p>可萝尔：   欸？你是要……</p>
+<p>格拉尼：   我留在这个洞口。</p>
+<p>可萝尔：   不行！</p>
+<p>格拉尼：   唉？可萝尔……</p>
+<p>可萝尔：   你要一个人面对那么多的赏金猎人？太危险了！你，你这样会——</p>
+<p>格拉尼：   如果不能帮你拿到宝藏，我既对不起村子，也辜负了你。</p>
+<p>可萝尔：   ……可我不想失去你。</p>
+<p>可萝尔：   这里，这里也不是你该逞英雄的场合……！</p>
+<p>格拉尼：   逞英雄又有什么不好呢。</p>
+<p>格拉尼：   “即便心脏被敌寇的利刃刺穿，国王的骑兵亦不解下手中长枪。”</p>
+<p>格拉尼：   我绝不会在这里逃走。</p>
+<p>可萝尔：   格拉尼……</p>
+<p>格拉尼：   而且可萝尔，这不只是我一个人的战斗。</p>
+<p>格拉尼：   你也有你的战斗。也许你会因此遭遇危险，但只要能让这片土地回归平静……</p>
+<p>格拉尼：   我们就必须去做这些。</p>
+<p>格拉尼：   宝藏那边就交给你了。</p>
+<p>可萝尔：   可是……我一个人的话……</p>
+<p>可萝尔：   宝藏……</p>
+<p>格拉尼：   相信我。</p>
+<p>格拉尼：   何况，我一定会照顾好你的。在广场救下你之后我就已经下定决心，绝不会让任何人再从你这夺走什么。</p>
+<p>格拉尼：   哪怕只是根头发。</p>
+<p>可萝尔：   ……你明明还是一个小孩子……</p>
+<p>格拉尼：   我可不是什么……我只是个子不高而已啊！</p>
+<p>可萝尔：   呵呵。</p>
+<p>可萝尔：   ……嗯，我会和你一起行动的，格拉尼。</p>
+<p>赏金猎人：   该死的白面具，怎么连你们都要来碍事！</p>
+<p>整合运动：   乌合之众。</p>
+<p>整合运动：   没有资格和我们争夺宝藏。</p>
+<p>赏金猎人：   啊？你在说什么？这里早就被我们占下来了，你们还是夹着尾巴滚蛋吧！</p>
+<p>格拉尼：   （这个角度能恰好看到南面的战场，看来赏金猎人和整合运动已经展开了混战。）</p>
+<p>格拉尼：   （接下来，无论哪一方的人接近这个洞口，我只要——）</p>
+<p>赏金猎人：   趁他们在那边打成一团，我们冲进去！</p>
+<p>赏金猎人：   等等，有个小个子站在那里！</p>
+<p>格拉尼：   没人可以通过这里。</p>
+<p>赏金猎人：   咕哇——</p>
+<p>赏金猎人：   你、你——</p>
+<p>斯卡蒂：   你们，全都给我让开。</p>
+<p>斯卡蒂：   我现在心情很差。</p>
+<h2 id="第五关（后）"><a href="# 第五关（后）" class="headerlink" title="第五关（后）"></a>第五关（后）</h2><p>格拉尼：   呃……！</p>
+<p>赏金猎人：   你，你这个碍事的混蛋小子！</p>
+<p>赏金猎人：   都、都头破血流成这样了，还敢在这挡我们的好事——！</p>
+<p>格拉尼：   区区这点伤，连日常训练都算不上！</p>
+<p>赏金猎人：   咕——</p>
+<p>格拉尼：   还剩多少人？</p>
+<p>格拉尼：   算了，记不清了，反正已经全都挡住——</p>
+<p>格拉尼：   发、发生地震了？</p>
+<p>格拉尼：   欸？那边的山岩怎么崩塌了？</p>
+<p>斯卡蒂：   ……</p>
+<p>格拉尼：   骗人的吧？她居然打破了那么厚的石壁？</p>
+<p>赏金猎人：   入口被打开了一条新的路！赶紧进去！</p>
+<p>格拉尼：   糟了，那些人一定会从斯卡蒂打出的通道涌进来！</p>
+<p>格拉尼：   得赶快去帮可——</p>
+<p>斯卡蒂：   站住。</p>
+<p>格拉尼：   斯卡蒂——</p>
+<p>格拉尼：   ……</p>
+<p>格拉尼：   居然能直接破坏山体，强行穿过去，罗德岛的异闻果然是真的啊。</p>
+<p>斯卡蒂：   那个女孩在哪？</p>
+<p>格拉尼：   我不能告诉你。</p>
+<p>斯卡蒂：   盯上那东西的人不止我一个。</p>
+<p>斯卡蒂：   难道我非要把你好好教训一顿，你才不会碍事？</p>
+<p>格拉尼：   你突然就要带走可萝尔，我怎么也不能轻易把她交给你啊！</p>
+<p>斯卡蒂：   你要……阻碍罗德岛的任务？</p>
+<p>格拉尼：   你也没告诉我罗德岛给你分配了什么任务啊！</p>
+<p>格拉尼：   除非你……</p>
+<p>格拉尼：   不要突然攻击同伴啊！</p>
+<p>斯卡蒂：   谁是你的同伴？</p>
+<p>斯卡蒂：   我最后一次问，带我去见那个女孩。</p>
+<p>格拉尼：   只要她还是我的委托人，我就绝不会这么做。</p>
+<p>斯卡蒂：   ……</p>
+<p>格拉尼：   呜呃……</p>
+<p>格拉尼：   可恶，她只是用剑随手碰了下我的枪而已啊，可我的胳膊好像要断了……</p>
+<p>斯卡蒂：   只凭你这种能力，你真的认为自己保护得了她？</p>
+<p>格拉尼：   能不能做到，和去不去做是两回事！</p>
+<p>斯卡蒂：   ————</p>
+<p>格拉尼：   嗯？先等等！</p>
+<p>格拉尼：   小心！</p>
+<p>赏金猎人：   嘁，这下总该打中了吧！</p>
+<p>粗暴的赏金猎人：   好像有，不对，好像没有！那家伙还好好的！</p>
+<p>斯卡蒂：   ……又来？</p>
+<p>赏金猎人：   呃……！</p>
+<p>粗暴的赏金猎人：   灾、灾星！把上尉打伤的，就是你吧！你今天就别想从这里——</p>
+<p>格拉尼：   好机会，趁现在！</p>
+<p>赏金猎人：   你也别想过去！</p>
+<p>格拉尼：   你们还是想想办法先拦住她吧！</p>
+<p>赏金猎人：   ——咦？</p>
+<p>赏金猎人：   什么情况？！那个小个子，从我们头上跳过去了？</p>
+<p>格拉尼：   斯卡蒂，我先走一步了！</p>
+<p>斯卡蒂：   你……</p>
+<p>格拉尼：   不好意思！等你想清楚，准备告诉我事实了，我再考虑可萝尔的事！</p>
+<p>斯卡蒂：   站住，你去哪里！</p>
+<p>格拉尼：   抱歉！</p>
+<p>粗暴的赏金猎人：   你怎么就放她走了！</p>
+<p>赏金猎人：   她跑得太快了，我们追不上她啊！</p>
+<p>斯卡蒂：   ……</p>
+<p>粗暴的赏金猎人：   没事，这不是还有一个吗。</p>
+<p>粗暴的赏金猎人：   你个子那么大，不可能也跳过去吧？</p>
+<p>斯卡蒂：   你们完蛋了。</p>
+<p>格拉尼：   岔路好多啊。这里就是可萝尔所说的墓穴了吧。</p>
+<p>格拉尼：   呃，赏金猎人——</p>
+<p>赏金猎人：   咕……救命……</p>
+<p>赏金猎人：   ……</p>
+<p>格拉尼：   太惨了吧？</p>
+<p>格拉尼：   就像是被罗德岛号来回碾压过好几遍……</p>
+<p>格拉尼：   可、可斯卡蒂不是还没进来吗？</p>
+<p>格拉尼：   这个看上去像炸开的洞是？</p>
+<p>格拉尼：   也就是说——</p>
+<p>格拉尼：   你已经想明白了。</p>
+<p>？？？：   ……</p>
+<p>？？？：   我哪里演得不好吗？</p>
+<p>格拉尼：   你果然是————</p>
+<h2 id="第六关（前）"><a href="# 第六关（前）" class="headerlink" title="第六关（前）"></a>第六关（前）</h2><p>大鲍勃：   几年之前，我们成了感染者。</p>
+<p>大鲍勃：   我们躲躲藏藏，平稳的生活一夜之间就变成了奢侈。</p>
+<p>大鲍勃：   原本，我们以为整合运动能使我们的生活有所改观，可……</p>
+<p>大鲍勃：   仍旧没有一家店肯卖给我们面包，没有任何地方能容纳我们落脚。</p>
+<p>大鲍勃：   所以我和兄弟们离开了那里，四处流浪，直到听说了宝藏的消息，来到了这里。</p>
+<p>大鲍勃：   只要这次，只要我们能夺下这份宝藏——</p>
+<p>大鲍勃：   我们就能前往哥伦比亚。虽然那是一片遥远的土地，但在那里，感染者还能拥有自己的城镇和田地。</p>
+<p>大鲍勃：   所以，格拉尼，为了我所有的兄弟，这份宝藏我一定会拿到手。</p>
+<p>大鲍勃：   宝藏不远了，我知道。你做得很好，但是很遗憾————</p>
+<p>整合运动：   女人！你——</p>
+<p>斯卡蒂：   别挡路。</p>
+<p>整合运动：   呜啊！</p>
+<p>大鲍勃：   ……</p>
+<p>斯卡蒂：   我不管你们是什么人，要做什么事。</p>
+<p>斯卡蒂：   你们所有人，马上从我的视线里消失。</p>
+<p>大鲍勃：   如果一定要和你为敌，斯卡蒂……今天我们会死战到底。</p>
+<p>斯卡蒂：   所以这种人就是格拉尼你找来的同伴？</p>
+<p>格拉尼：   你们拿了宝藏，那滴水村怎么办？</p>
+<p>大鲍勃：   不管怎么样，他们都还能活下去，我们却已经无路可走了。</p>
+<p>大鲍勃：   虽然我认识你没多久，但我知道你是什么样的人。</p>
+<p>大鲍勃：   你跟你身边那个怪物不一样，你没把我们感染者当成外人。</p>
+<p>格拉尼：   (我觉得斯卡蒂也只是一视同仁地把我们全都干掉而已，她大概也没把谁当成外人吧……)</p>
+<p>大鲍勃：   格拉尼，告诉我可萝尔在哪里！</p>
+<p>大鲍勃：   你知道这些宝藏对我们意味着什么！</p>
+<p>格拉尼：   抱歉大鲍勃，我已经接下委托了。</p>
+<p>格拉尼：   我只有一个任务，就是把这份宝藏交给可萝尔，帮助她让村子恢复平静。</p>
+<p>斯卡蒂：   别的与我无关，把可萝尔交给我。</p>
+<p>大鲍勃：   那你要那个女孩干什么，怪物？</p>
+<p>大鲍勃：   你难道想要剥掉她的皮，喝掉她的血吗？</p>
+<p>大鲍勃：   在这之前，你也听这个小个子说过了，不管怎么样，她都不会把村长交给你的！</p>
+<p>大鲍勃：   但我不一样，我只要宝藏。我根本不会伤害她！</p>
+<p>斯卡蒂：   我真的受够了……格拉尼，可萝尔在哪？</p>
+<p>格拉尼：   可萝尔只是想保护这个村子。她其实也不在乎宝藏。</p>
+<p>大鲍勃：   那就把宝藏给我！</p>
+<p>斯卡蒂：   整合运动和赏金猎人也没什么不同。</p>
+<p>大鲍勃：   我跟你们赏金猎人根本不是一路人！</p>
+<p>大鲍勃：   我曾经也是斯卡蒂你这样的混蛋，但现在我全都看清楚了。</p>
+<p>大鲍勃：   眼下这个世道，什么财富，地位，都是狗屁。</p>
+<p>大鲍勃：   我们只想靠那笔宝藏活下去，仅此而已！</p>
+<p>斯卡蒂：   我再说一遍，把可萝尔给我。</p>
+<p>格拉尼：   无论是可萝尔还是宝藏，我都不会交给你们。</p>
+<p>格拉尼：   这可是我的委托。</p>
+<p>大鲍勃：   格拉尼！你还有机会！我不想和你打这场对谁都没好处的架！</p>
+<p>大鲍勃：   我只要拿到宝藏，谁都不会吃苦头！</p>
+<p>格拉尼：   这份宝藏里本来就有你那一份，大鲍勃！</p>
+<p>大鲍勃：   我还有我的兄弟们！我要先见到宝藏再说！</p>
+<p>斯卡蒂：   如果要用武力的话，我们之间的差距，你们自己心里明白。</p>
+<p>格拉尼：   虽然没什么自信，但如果要同时和你们开战，我能做到。</p>
+<p>大鲍勃：   至少我们之间的问题是可以解决的，格拉尼！</p>
+<p>格拉尼：   不。</p>
+<p>大鲍勃：   那我们就先解决她！</p>
+<p>斯卡蒂：   说完了没？</p>
+<p>格拉尼：   如果在这里开战，就真的没有回头路可走了！</p>
+<p>大鲍勃：   我们————</p>
+<p>？？？：   格拉尼！</p>
+<p>？？？：   太好了，我找到了！我找到宝藏了！</p>
+<p>可萝尔：   我好不容易都把整箱都拖出———</p>
+<p>可萝尔：   鲍勃先生！</p>
+<p>可萝尔：   你平安无事就——</p>
+<p>格拉尼：   别过来！</p>
+<p>可萝尔：   欸？！</p>
+<p>斯卡蒂：   ……啧！</p>
+<p>大鲍勃：   哈……哈……</p>
+<p>大鲍勃：   我们……早就没有回头路了!</p>
+<p>格拉尼：   诶？可萝尔！</p>
+<p>格拉尼：   斯卡蒂！</p>
+<p>斯卡蒂：   你为什么要用这种没有威力的爆破物？</p>
+<p>大鲍勃：   还给她的人情。</p>
+<p>大鲍勃：   接下来，就要用真的了。</p>
+<p>格拉尼：   斯卡蒂。</p>
+<p>格拉尼：   你不关心宝藏。而且，你也不想伤害可萝尔小姐。</p>
+<p>斯卡蒂：   ……</p>
+<p>格拉尼：   否则，在爆炸的那一瞬间，你就会出手掳走她并抢走宝藏，而不是保护她了吧。</p>
+<p>斯卡蒂：   我不要宝藏。我要的答案在可萝尔身上。</p>
+<p>格拉尼：   早说出来不就好了！</p>
+<p>格拉尼：   实话说，强装坏人也很累吧？坦率一点也好嘛。</p>
+<p>斯卡蒂：   我不想让其他人卷进我的……任务里。</p>
+<p>斯卡蒂：   但这次的任务目标对我而言，真的很重要。</p>
+<p>格拉尼：   那当然，我知道。虽然我们任务不同，但方向是一致的不是吗？</p>
+<p>格拉尼：   帮助其他干员完成任务，理所应当的吧！</p>
+<p>斯卡蒂：   哼。</p>
+<p>格拉尼：   只能用武力来裁定宝藏的归属了。</p>
+<p>格拉尼：   斯卡蒂，下手一定要轻一点，轻一点哦！</p>
+<p>大鲍勃：   格 拉 尼！</p>
+<p>格拉尼：   鲍勃大叔，抱歉，可能会有点疼！</p>
+<h2 id="第六关（后）"><a href="# 第六关（后）" class="headerlink" title="第六关（后）"></a>第六关（后）</h2><p>大鲍勃：   哈，果然……</p>
+<p>整合运动：   鲍勃！你，你在流血！</p>
+<p>整合运动：   我们不能在这里白白流血！我还能——</p>
+<p>大鲍勃：   够了。</p>
+<p>整合运动：   鲍勃……</p>
+<p>大鲍勃：   我们流过的血还少吗？</p>
+<p>斯卡蒂：   还要打吗？</p>
+<p>大鲍勃：   哼，我们为了活命而战斗，为什么要在战斗中送命？</p>
+<p>大鲍勃：   我不够强，我认命了。</p>
+<p>格拉尼：   ……</p>
+<p>可萝尔：   鲍勃，抱歉……没有这箱宝藏，我们的村子就完了。</p>
+<p>斯卡蒂：   离那箱东西远一点。把钥匙交给我。</p>
+<p>可萝尔：   呜，呜?</p>
+<p>斯卡蒂：   在你用那把钥匙打开宝箱的一瞬间，你会没命的。</p>
+<p>可萝尔：   我————</p>
+<p>可萝尔：   这可是家里历代流传的贵重物品，父亲说我们最重要的职责之一就是要负责保管这枚钥匙——</p>
+<p>斯卡蒂：   ——钥匙使用后会割破你的手，吸走你的血。如果不是你这样的库兰塔人的血的话，钥匙就毁了。</p>
+<p>斯卡蒂：   把钥匙给我！</p>
+<p>可萝尔：   不行，这是村子里的所有人的未来。</p>
+<p>格拉尼：   唔。</p>
+<p>格拉尼：   这些都是真的吗，斯卡蒂？</p>
+<p>斯卡蒂：   藏匿了骑士宝藏的人，为了守护骑士的秘密，不择手段。只有——</p>
+<p>可萝尔：   ——只有来自卡西米尔的血脉才能破除所有的阻碍。</p>
+<p>可萝尔：   “只有来自不惧牺牲，无畏艰险的卡西米尔血脉才能破除所有的阻碍。”</p>
+<p>可萝尔：   虽然也知道可能会要付出一些代价，但没有想到结果会是这样。</p>
+<p>格拉尼：   ……</p>
+<p>可萝尔：   为了村子的所有人，我也早就做好觉悟了。我必须打开这个箱子！</p>
+<p>可萝尔：   格拉尼，如果我出了意外，请把这些宝藏换来的钱带回给村民们！</p>
+<p>可萝尔：   对不起，父亲……</p>
+<p>格拉尼：   等等！</p>
+<p>可萝尔：   诶？</p>
+<p>格拉尼：   可萝尔。能把钥匙给我看看吗？</p>
+<p>可萝尔：   我……好。</p>
+<p>格拉尼：   这个钥匙也不是很大不是吗？</p>
+<p>斯卡蒂：   虽然它不大，但是它吸走的血液量，一般人恐怕撑不住——</p>
+<p>格拉尼：   所以，这个怪物钥匙，吸走的血是有限的吧？</p>
+<p>格拉尼：   可萝尔。</p>
+<p>格拉尼：   我来打开箱子。</p>
+<p>斯卡蒂：   ！！</p>
+<p>可萝尔：   咦？可是这样一来，格拉尼你就。</p>
+<p>格拉尼：   没关系。</p>
+<p>格拉尼：   抱歉了，可萝尔。</p>
+<p>格拉尼：   斯卡蒂啊，如果我晕过去了的话，请接住我的身体哦。</p>
+<p>可萝尔：   格拉尼你快住手！别这么做！</p>
+<p>格拉尼：   唔！！！</p>
+<p>可萝尔：   格拉尼！</p>
+<p>：   数日后</p>
+<p>：   晴 \ 能见度 12 公里 </p>
+<p>：   赏金猎人营地外</p>
+<p>“上尉”：  ……你们是……你们竟然还敢回来！</p>
+<p>“上尉”：  集合！所有人都给我过来！</p>
+<p>斯卡蒂：   真是麻烦，为什么我要来帮忙处理这些赏金猎人呢？</p>
+<p>格拉尼：   没办法，既然你得到了钥匙，就要帮我做这件事情。</p>
+<p>格拉尼：   其实之前只要有你在的，也就不用雇佣其他的人来帮助村子了不是吗。</p>
+<p>斯卡蒂：   啧。明明不关我的事。</p>
+<p>斯卡蒂：   人数不少。才刚捡回一条命的你，能对付得过来吗？</p>
+<p>格拉尼：   不是还有你在吗？</p>
+<p>斯卡蒂：   动作快点。我赶着回罗德岛。</p>
+<p>格拉尼：   好啊，那么动手吧！</p>
+<p>格拉尼：   可萝尔还在等我们呢！</p>
+<p>大鲍勃：   抱歉，最后还是没能帮上忙——</p>
+<p>可萝尔：   没关系，村子里的人也害怕感染者……</p>
+<p>可萝尔：   这些事情只有我们自己知道就好。</p>
+<p>大鲍勃：   总之, 谢谢你们。</p>
+<p>大鲍勃：   谢谢你和格拉尼做这个决定……</p>
+<p>格拉尼：   没关系！</p>
+<p>斯卡蒂：   所以这个事情终于告一段落了吗，我要走了。</p>
+<p>格拉尼：   诶，等等我！</p>
+<p>格拉尼：   抱歉，可萝尔！我们先回村子吧，村子还有好多事情需要我帮忙……</p>
+<p>可萝尔：   嗯！</p>
+<p>格拉尼：   还有，鲍勃大叔，要保重身体！需要治疗的时候，记得来罗德岛！</p>
+<p>大鲍勃：   小个子，等等！</p>
+<p>大鲍勃：   这枚金币，接好了！</p>
+<p>格拉尼：   嘿！</p>
+<p>格拉尼：   我会好好珍惜这份纪念品的！</p>
+<p>数月后</p>
+<p>【大鲍勃的信件】</p>
+<p>敬启。</p>
+<p>我是鲍勃。</p>
+<p>我正在哥伦比亚的一处偏僻的庄园里，给你写下这封信。</p>
+<p>大家都过得很好。感染者的身份还是有些不便，但阳光下的生活，比想象中还要美好。</p>
+<p>多亏那个叫可萝尔的小姑娘和格拉尼在修缮完村子后，决定把多余的宝藏都留给我，我才能够顺利给这批弟兄们安居。</p>
+<p>我们已经可以自给自足了，甚至还打算试种啤酒花。</p>
+<p>这多亏了滴水村的那笔宝藏。</p>
+<p>那是一个有趣的故事，十分有趣。不是应该潦草地写在信里的故事。</p>
+<p>我稍微改变了一点想法。</p>
+<p>而我知道，你很早就有了自己的想法，整合运动并不是感染者唯一的归宿。</p>
+<p>你一定可以做出你自己的选择。</p>
+<p>我很想念你，希望能在哥伦比亚见到你。</p>
+<p>鲍勃</p>
+<p>致   泥岩</p>
+<p>？？？：   ……</p>
+<p>？？？：   那真是太好了。</p>
+<h2 id="EX-01"><a href="#EX-01" class="headerlink" title="EX-01"></a>EX-01</h2><p>……我们该把他塞进麻袋，</p>
+<p>在黎明时吊上桅杆……</p>
+<p>……我们该把他喉咙切断，</p>
+<p>在暴风雨里献给大海……</p>
+<p>幽灵鲨：   呃！</p>
+<p>幽灵鲨：   ……又是这个梦吗。</p>
+<p>？？？：   ……</p>
+<p>幽灵鲨：   是谁？</p>
+<p>幽灵鲨：   ——原来是你。唔，不过为什么我想不起来你叫什么名字了。</p>
+<p>？？？：   这不重要。你把我当成一个普通的罗德岛干员就可以了。</p>
+<p>？？？：   你看上去似乎很痛苦。</p>
+<p>幽灵鲨：   只是噩梦而已。</p>
+<p>幽灵鲨：   一些盘旋在意识里的黑色碎片，藏在那个破碎教堂的阴影之下。</p>
+<p>幽灵鲨：   在我接近它的时候，它们化为枷锁将我拖入深邃的海中。</p>
+<p>？？？：   ……</p>
+<p>？？？：   不过很快你就有办法脱离痛苦了。</p>
+<p>幽灵鲨：   是吗，呵呵，那可真是太好了。不过我为什么相信你呢？</p>
+<p>幽灵鲨：   哦。</p>
+<p>幽灵鲨：   你身上的气息……我很熟悉。</p>
+<p>幽灵鲨：   不，不是，是气味。浓烈的气味，血的气味，它们的气味。深邃的海中的气味。</p>
+<p>幽灵鲨：   熟悉，但又让人厌恶的气味。</p>
+<p>？？？：   是吗。</p>
+<p>幽灵鲨：   能告诉我你的名字吗？</p>
+<p>斯卡蒂：   斯卡蒂。</p>
+<p>幽灵鲨：   有趣。那么你为什么能出现在这里呢？</p>
+<p>幽灵鲨：   没有凯尔希的许可，你可没法到这个房间里来，除非你也不怕被失去控制的我撕成碎片。</p>
+<p>斯卡蒂：   害怕。所有人都害怕。只是我已经习惯了。</p>
+<p>斯卡蒂：   是时候出发了，回来的时候，情况也许会有所进展。不过，你也可以和以前一样，把我忘了。</p>
+<p>幽灵鲨：   你要去哪里？</p>
+<p>斯卡蒂：   秘密被埋葬的地方。</p>
+<p>斯卡蒂：   一个离你很远的地方。</p>
+<h2 id="EX-02"><a href="#EX-02" class="headerlink" title="EX-02"></a>EX-02</h2><p>亲爱的格拉尼：</p>
+<p>关于卡西米尔的骑士，我们已经谈论了很多。</p>
+<p>但有一些必要的信息，我没能向你交待清楚，而这事关你的任务，以及它涉及到的骑士宝藏。</p>
+<p>这次的任务地点附近，很可能藏有卡西米尔已故骑士的陵墓群。</p>
+<p>卡西米尔的骑士在近代仍然保留着一项传统。</p>
+<p>在去世之后，他们会将自己的大笔财产埋入陵墓。当然，前提是他们的拥趸确实替他们建立了陵墓。</p>
+<p>骑士埋入陵墓的财产，通常被称作“骑士宝藏”，它们的相关讯息，在赏金猎人与信使各自的信息网中不断传递。</p>
+<p>而这些财产之所以如此吸引匪类和盗墓贼，是因为骑士陪葬品可能不只是简单的贵金属和财物，还可能是骑士们秘密研制的武器与设备。</p>
+<p>或者是某些人想要穷尽一生去守护的秘密，甚至是更加危险的东西。</p>
+<p>这些陪葬品，即使是直接贩卖到回收商和黑市中都能换取巨额的财富。</p>
+<p>更不用说会有哥伦比亚这样的政治实体，高价委托他人收购或发掘这些遗物。</p>
+<p>这也是赏金猎人会在你任务所在地区格外活跃的原因。</p>
+<p>地下陵墓常会受到天灾的影响，被尘土永封，或是被躁动的大地碾碎在地底深处。</p>
+<p>但同样也有很多陵墓，尚未被人遗忘，就已被人发掘。</p>
+<p>这次的地点可能就是其中之一。卡西米尔智库中记载有一批远征骑士陵墓群，它们的位置与你的任务地点高度重合。</p>
+<p>如果这份记载并非伪作，他们陵墓中的宝藏，除了简单的钱财外，也许还藏有一些危险的东西。</p>
+<p>即使这些骑士有意将财产赠给有意之人，后人也无法理解这些骑士握有怎样的力量。</p>
+<p>同样，卡西米尔的城市最后一次经过那片区域，差不多也是二十年前了。</p>
+<p>这可不是一个好消息，利益越大，唤取的风险也越大。</p>
+<p>妄图瓜分这份财产的恶徒，相较当地的普通居民，嗅觉更敏锐，贪欲更旺盛。</p>
+<p>缺乏城市权威的干涉，这块区域纵然能免受压迫之苦，却也会因为缺乏法律管控，成为无法之地。</p>
+<p>如果可以，请帮我确定骑士遗物的真正内容。</p>
+<p>请多多小心。</p>
+<p>————临光</p>
+<p>临光：   ……是不是有些太长了？</p>
+<p>临光：   算了，还是不要给那孩子太多负担比较好。她一定能处理好的，嗯。</p>
+<p>临光：   我怎么又写这么沉重的东西，还是给她写封简单的吧。</p>
+<p>临光：   该说什么来着……</p>
+<p>临光：   糟了，必须得提醒格拉尼。</p>
+<p>临光：   格拉尼，一定要收到这段话……！</p>
+<h2 id="EX-03"><a href="#EX-03" class="headerlink" title="EX-03"></a>EX-03</h2><p>可萝尔：   格拉尼，你要走了吗？那位斯卡蒂小姐呢？</p>
+<p>格拉尼：   嗯，我该回罗德岛复命了，会找时间回来看你的。斯卡蒂说喜欢独处，一个人先走了。</p>
+<p>格拉尼：   有斯卡蒂的名声在，不会有赏金猎人再来骚扰你们了。</p>
+<p>可萝尔：   嘻嘻，是啊，恢复生产可能还需要一点时间，但……这是新生活的开始。</p>
+<p>可萝尔：   路上小心。下次就到丰收的季节再来吧，让我好好招待你。</p>
+<p>格拉尼：   嘿嘿，那说定了！</p>
+<p>可萝尔：   对了，信使刚刚送来这封信。虽然说是发给滴水村的，但收信人写的是你。</p>
+<p>格拉尼：   啊，这是罗德岛的信封，应该是从联络处的通讯转录过来的吧。这里几乎收不到讯号，也难为大家了。</p>
+<p>格拉尼：   我看看……</p>
+<p>（格拉尼启，斯卡蒂已擅自前往滴水村，未任命其任何任务，小心对待。）</p>
+<p>（祝一切顺利     临光）</p>
+<p>格拉尼：   哎呀，这个，我早就清楚啦……</p>
+<p>可萝尔：   唔，你在干什么，格拉尼？</p>
+<p>格拉尼：   折纸飞机啊。</p>
+<p>格拉尼：   罗德岛的信纸材料很好，能飞很远呢。</p>
+<h2 id="EX-04"><a href="#EX-04" class="headerlink" title="EX-04"></a>EX-04</h2><p>斯卡蒂：   站住，凯尔希。</p>
+<p>凯尔希：   你回来了。</p>
+<p>凯尔希：   现在你是想通了，还是怎么？</p>
+<p>斯卡蒂：   你想要这个对吧，拿去。</p>
+<p>凯尔希：   你私自出动了。</p>
+<p>凯尔希：   我不干涉干员的私事，也不会过问他们做了些什么，只要他们没有损害罗德岛的利益。</p>
+<p>凯尔希：   希望你的行为不要有失你在罗德岛的身份，斯卡蒂。</p>
+<p>斯卡蒂：   冷嘲热讽就免了。规矩我很清楚，一物换一物。</p>
+<p>凯尔希：   你想要从我这里换到什么？</p>
+<p>斯卡蒂：   信息。</p>
+<p>凯尔希：   我所拥有的信息的价值，真有这么轻贱？</p>
+<p>斯卡蒂：   我可以立刻就把这块石头捏成碎片，你不想这样。</p>
+<p>凯尔希：   但我知道你假称任务，去了卡西米尔的滴水村，还和其他干员发生了冲突。</p>
+<p>凯尔希：   那个孩子无论是在滴水村还是在罗德岛，都替你保守了秘密。但我绝没有向你发布过任何类似的任务。</p>
+<p>凯尔希：   嗯？血已经注满了融芯。这不是你的血，你不敢在大地上流血。</p>
+<p>斯卡蒂：   是格拉尼的。</p>
+<p>凯尔希：   你已经做了这种事。</p>
+<p>斯卡蒂：   我会回报她，这不用你提醒。</p>
+<p>斯卡蒂：   我知道你需要这东西，钥匙、核心、记忆块，随便它是什么。我必须弄到手。</p>
+<p>斯卡蒂：   “颅腔”，“火肺”，“黄烟”，我全都解决了。</p>
+<p>斯卡蒂：   否则，这东西早已落到他们手上了。而和他们交易的绝不会是你，因为你给不出他们要的东西，你不会做那种事。</p>
+<p>斯卡蒂：   你需要这块“石头”，我需要知道我想知道的东西。</p>
+<p>凯尔希：   你和你的种群让我感到可笑，我并不依赖任何一个零件去拼凑出大地的全貌。</p>
+<p>凯尔希：   你与罗德岛由契约相连，你与我也当如是。</p>
+<p>斯卡蒂：   一物换一物。</p>
+<p>凯尔希：   难得看见你恼怒的样子。只有在这种时候，你才会一改平常的慵懒和颓废。</p>
+<p>凯尔希：   你想知道幽灵鲨身上源石神经剂的来源。</p>
+<p>斯卡蒂：   ——你是怎么知道的？</p>
+<p>凯尔希：   （阿戈尔语）“深海猎人血脉相连”。</p>
+<p>凯尔希：   我无所不知。</p>
+<p>斯卡蒂：   ……告诉我。</p>
+<p>凯尔希：   可以。只要你听我的命令，我甚至会主动帮助你。前提是，你必须听从命令。</p>
+<p>斯卡蒂：   我只相信可信之人。</p>
+<p>凯尔希：   我言而有信。</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p><a href="https://zhouweitong3.github.io/readings/游戏剧情/明日方舟/骑兵与猎人.html">https://zhouweitong3.github.io/readings/游戏剧情/明日方舟/骑兵与猎人.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Zhou Weitong</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-06-15</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-06-15</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icon" rel="noopener" target="_blank" title="知识共享(Creative Commons)" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="知识共享-署名 4.0 国际许可协议(Attribution 4.0 International)" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p></div></div></div></div></div><div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a><a class="a2a_button_facebook"></a><a class="a2a_button_twitter"></a><a class="a2a_button_telegram"></a><a class="a2a_button_whatsapp"></a><a class="a2a_button_reddit"></a></div><script src="https://static.addtoany.com/menu/page.js" defer></script></article></div><!--!--><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script>new Valine({
+            el: '#valine-thread' ,
+            appId: "xFF1y8N0rb2Tmyw7o0VfpqNV-gzGzoHsz",
+            appKey: "qe2G1D7EpJhJeXuKr8hkv32a",
+            
+            avatar: "mm",
+            
+            meta: ["nick","mail","link"],
+            pageSize: 10,
+            lang: "zh-CN",
+            
+            highlight: true,
+            
+            
+            
+            
+            
+            requiredFields: [],
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/images/git-avatar.jpg" alt="Zhou Weitong"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Zhou Weitong</p><p class="is-size-6 is-block">思维改变世界</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>杭州市, 浙江省, 中国</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">20</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">20</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://blog.csdn.net/weixin_44911246" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/zhouweitong3"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Docker" href="https://hub.docker.com/u/zhouweitong"><i class="fab fa-docker"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com/weitong_zhou"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="mailto:xml@live.com"><i class="fas fa-at"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS源" href="/rss.xml"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://zhouweitong3.github.io/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">博客GitHub镜像</span></span><span class="level-right"><span class="level-item tag">zhouweitong3.github.io</span></span></a></li><li><a class="level is-mobile" href="https://github.com/zhouweitong3/small-creation" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">杂物堆</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://gitee.com/zhouweitong3" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Gitee主页</span></span><span class="level-right"><span class="level-item tag">gitee.com</span></span></a></li><li><a class="level is-mobile" href="/notebook.html" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">生词本</span></span><span class="level-right"><span class="level-item tag">/notebook.html</span></span></a></li><li><a class="level is-mobile" href="http://direct.zhouweitong.site:40804/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">书库（受邀访问）</span></span><span class="level-right"><span class="level-item tag">direct.zhouweitong.site</span></span></a></li><li><a class="level is-mobile" href="http://direct.zhouweitong.site:40801/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">笔记速记（受邀访问）</span></span><span class="level-right"><span class="level-item tag">direct.zhouweitong.site</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-06-19T10:00:00.000Z">2021-06-19</time></p><p class="title"><a href="/2021/06/19/011-rime-1-intro/">【WIP】Rime（1）：介绍与安装</a></p><p class="categories"><a href="/categories/%E8%BE%93%E5%85%A5%E6%B3%95/">输入法</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-30T05:00:00.000Z">2021-03-30</time></p><p class="title"><a href="/2021/03/30/027-cmu-cg-note-1/">【WIP】CMU 15-462 笔记 Part.1</a></p><p class="categories"><a href="/categories/CG/">CG</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-29T08:30:00.000Z">2021-03-29</time></p><p class="title"><a href="/2021/03/29/020-asus-c302-linux-installation/">ASUS C302CA Chromebook 安装 Linux 和 Windows</a></p><p class="categories"><a href="/categories/%E8%87%AA%E7%94%B1%E6%8E%A2%E7%B4%A2/">自由探索</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-26T07:00:00.000Z">2021-03-26</time></p><p class="title"><a href="/2021/03/26/028-c-programming-gaps-filling/">【WIP】C 语言拾遗 Part.1</a></p><p class="categories"><a href="/categories/%E5%BC%80%E5%8F%91%E4%B8%8E%E4%BB%A3%E7%A0%81/">开发与代码</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-26T05:00:00.000Z">2021-03-26</time></p><p class="title"><a href="/2021/03/26/031-dip-note/">【WIP】数字图像处理 笔记 Part.1</a></p><p class="categories"><a href="/categories/%E5%BC%80%E5%8F%91%E4%B8%8E%E4%BB%A3%E7%A0%81/">开发与代码</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/06/"><span class="level-start"><span class="level-item">六月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/03/"><span class="level-start"><span class="level-item">三月 2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/12/"><span class="level-start"><span class="level-item">十二月 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/11/"><span class="level-start"><span class="level-item">十一月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/10/"><span class="level-start"><span class="level-item">十月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/07/"><span class="level-start"><span class="level-item">七月 2019</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/06/"><span class="level-start"><span class="level-item">六月 2019</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/04/"><span class="level-start"><span class="level-item">四月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/02/"><span class="level-start"><span class="level-item">二月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/01/"><span class="level-start"><span class="level-item">一月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CG/"><span class="tag">CG</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSAPP/"><span class="tag">CSAPP</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CTF/"><span class="tag">CTF</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/IDS/"><span class="tag">IDS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/IPS/"><span class="tag">IPS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/PHP%E7%9B%B8%E5%85%B3/"><span class="tag">PHP相关</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Rime/"><span class="tag">Rime</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Snort/"><span class="tag">Snort</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/WIP/"><span class="tag">WIP</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/WriteUp/"><span class="tag">WriteUp</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8E%8B%E5%88%B6%E6%8A%80%E6%9C%AF/"><span class="tag">压制技术</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AA%92%E4%BD%93%E5%88%86%E4%BA%AB/"><span class="tag">媒体分享</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AE%8C%E6%88%90%E7%BC%96%E5%86%99/"><span class="tag">完成编写</span><span class="tag">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%B0%8Ftricks/"><span class="tag">小tricks</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%90%9E%E6%9C%BA%E7%8E%A9%E5%AE%B6/"><span class="tag">搞机玩家</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%B8%B8%E6%88%8F%E8%A7%A3%E5%8C%85/"><span class="tag">游戏解包</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AC%94%E8%AE%B0/"><span class="tag">笔记</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag">1</span></a></div></div></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#活动剧情：骑兵与猎人"><span class="level-left"><span class="level-item">1</span><span class="level-item">活动剧情：骑兵与猎人 </span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#第一关（前）"><span class="level-left"><span class="level-item">1.1</span><span class="level-item"> 第一关（前）</span></span></a></li><li><a class="level is-mobile" href="#第一关（后）"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">第一关（后）</span></span></a></li><li><a class="level is-mobile" href="#第二关（前）"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">第二关（前）</span></span></a></li><li><a class="level is-mobile" href="#第二关（后）"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">第二关（后）</span></span></a></li><li><a class="level is-mobile" href="#第三关（前）"><span class="level-left"><span class="level-item">1.5</span><span class="level-item">第三关（前）</span></span></a></li><li><a class="level is-mobile" href="#第三关（后）"><span class="level-left"><span class="level-item">1.6</span><span class="level-item">第三关（后）</span></span></a></li><li><a class="level is-mobile" href="#第四关（前）"><span class="level-left"><span class="level-item">1.7</span><span class="level-item">第四关（前）</span></span></a></li><li><a class="level is-mobile" href="#第四关（后）"><span class="level-left"><span class="level-item">1.8</span><span class="level-item">第四关（后）</span></span></a></li><li><a class="level is-mobile" href="#第五关（前）"><span class="level-left"><span class="level-item">1.9</span><span class="level-item">第五关（前）</span></span></a></li><li><a class="level is-mobile" href="#第五关（后）"><span class="level-left"><span class="level-item">1.10</span><span class="level-item">第五关（后）</span></span></a></li><li><a class="level is-mobile" href="#第六关（前）"><span class="level-left"><span class="level-item">1.11</span><span class="level-item">第六关（前）</span></span></a></li><li><a class="level is-mobile" href="#第六关（后）"><span class="level-left"><span class="level-item">1.12</span><span class="level-item">第六关（后）</span></span></a></li><li><a class="level is-mobile" href="#EX-01"><span class="level-left"><span class="level-item">1.13</span><span class="level-item">EX-01</span></span></a></li><li><a class="level is-mobile" href="#EX-02"><span class="level-left"><span class="level-item">1.14</span><span class="level-item">EX-02</span></span></a></li><li><a class="level is-mobile" href="#EX-03"><span class="level-left"><span class="level-item">1.15</span><span class="level-item">EX-03</span></span></a></li><li><a class="level is-mobile" href="#EX-04"><span class="level-left"><span class="level-item">1.16</span><span class="level-item">EX-04</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/CG/"><span class="level-start"><span class="level-item">CG</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%AA%92%E4%BD%93%E6%8A%80%E6%9C%AF/"><span class="level-start"><span class="level-item">媒体技术</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%BC%80%E5%8F%91%E4%B8%8E%E4%BB%A3%E7%A0%81/"><span class="level-start"><span class="level-item">开发与代码</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%9D%82%E8%B0%88/"><span class="level-start"><span class="level-item">杂谈</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"><span class="level-start"><span class="level-item">网络安全</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/%E8%87%AA%E7%94%B1%E6%8E%A2%E7%B4%A2/"><span class="level-start"><span class="level-item">自由探索</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/%E8%BE%93%E5%85%A5%E6%B3%95/"><span class="level-start"><span class="level-item">输入法</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="data:image/svg+xml;base64,PHN2ZwogICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI5NDkiIGhlaWdodD0iMjU2IiB2aWV3Ym94PSIwIDAgOTQ5IDI1NiI+CiAgICA8cGF0aCBmaWxsPSIjMjM2NmQxIiBkPSJNMTEwLjg1MTI1MTY4NDQwODE0IDEyOEwyMjEuNzAyNTAzMzY4ODE2MjggMTkyTDExMC44NTEyNTE2ODQ0MDgxNCAyNTZMMCAxOTJaIi8+CiAgICA8cGF0aCBmaWxsPSIjNjA5ZGZmIiBkPSJNMTEwLjg1MTI1MTY4NDQwODE0IDY0TDIyMS43MDI1MDMzNjg4MTYyOCAxMjhMMTEwLjg1MTI1MTY4NDQwODE0IDE5MkwwIDEyOFoiLz4KICAgIDxwYXRoIGZpbGw9IiNhNGM3ZmYiIGQ9Ik0xMTAuODUxMjUxNjg0NDA4MTQgMEwyMjEuNzAyNTAzMzY4ODE2MjggNjRMMTEwLjg1MTI1MTY4NDQwODE0IDEyOEwwIDY0WiIvPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzAwLCA1NS42OTUpLCBzY2FsZSgwLjcpIiBmaWxsPSIjMzMzIj4KICAgICAgICA8cGF0aCBkPSJNIDYxMy44ODggMTAuMjQgTCA2MTMuODg4IDEzNy4yMTYgQSA2MC43MDUgNjAuNzA1IDAgMCAwIDYxMy45NTQgMTQwLjA1NSBRIDYxNC41NTMgMTUyLjg0NyA2MjAuNjAyIDE2My4zMTYgQSA1MC4xMzUgNTAuMTM1IDAgMCAwIDYyMS42OTYgMTY1LjEyIEEgNTEuNTk4IDUxLjU5OCAwIDAgMCA2MjQuNTYyIDE2OS4xODUgUSA2MzEuMzU3IDE3Ny44OTcgNjQxLjc2MiAxODMuNDQ5IEEgNjMuMTEgNjMuMTEgMCAwIDAgNjQzLjQ1NiAxODQuMzIgQSA2MS42NDkgNjEuNjQ5IDAgMCAwIDY0OC4zNjkgMTg2LjQ5MiBRIDY1OS40NjcgMTkwLjgzMyA2NzIuODQ2IDE5MS4xOTggQSA5MC44MDkgOTAuODA5IDAgMCAwIDY3NS4zMjggMTkxLjIzMiBBIDkwLjU2MyA5MC41NjMgMCAwIDAgNjc4LjEwNCAxOTEuMTkgUSA2OTIuNzggMTkwLjc0IDcwNC43IDE4NS40ODkgQSA2MS4yNTkgNjEuMjU5IDAgMCAwIDcwNy4yIDE4NC4zMiBRIDcyMS4xNTIgMTc3LjQwOCA3MjkuMDg4IDE2NS4xMiBBIDQ5LjUwMiA0OS41MDIgMCAwIDAgNzMxLjMyMiAxNjEuMjk5IFEgNzM2LjYzIDE1MS4yMDMgNzM2Ljk5NyAxMzkuMDM2IEEgNjAuMzM1IDYwLjMzNSAwIDAgMCA3MzcuMDI0IDEzNy4yMTYgTCA3MzcuMDI0IDEwLjI0IEEgMTAuODU3IDEwLjg1NyAwIDAgMSA3MzcuMDYyIDkuMzE1IFEgNzM3LjMxMyA2LjM4NCA3MzkuMiA0LjYwOCBBIDcuMjU2IDcuMjU2IDAgMCAxIDc0MS45MjUgMi45ODEgUSA3NDMuMTk2IDIuNTYgNzQ0LjcwNCAyLjU2IFEgNzQ2Ljk1NiAyLjU2IDc0OC42MDIgMy4zNjkgQSA2LjQ3MiA2LjQ3MiAwIDAgMSA3NTAuMzM2IDQuNjA4IFEgNzUyLjE2NyA2LjQzOSA3NTIuMzYxIDkuNDk5IEEgMTEuNzI5IDExLjcyOSAwIDAgMSA3NTIuMzg0IDEwLjI0IEwgNzUyLjM4NCAxMzcuMjE2IFEgNzUyLjM4NCAxNTYuODA3IDc0My4xMzUgMTcyLjE5NCBBIDY0LjA3NyA2NC4wNzcgMCAwIDEgNzQyLjUyOCAxNzMuMTg0IFEgNzMyLjY3MiAxODguOTI4IDcxNS4xMzYgMTk3Ljc2IFEgNjk4LjkxMiAyMDUuOTMxIDY3OC42MzUgMjA2LjU0MyBBIDEwOS43MSAxMDkuNzEgMCAwIDEgNjc1LjMyOCAyMDYuNTkyIFEgNjUzLjA1NiAyMDYuNTkyIDYzNS41MiAxOTcuNzYgQSA3Ny44MzUgNzcuODM1IDAgMCAxIDYzMi44MjggMTk2LjMzOCBRIDYxOC45NjMgMTg4LjY2MSA2MTAuMzM3IDE3Ni4zNDYgQSA2NS43NzggNjUuNzc4IDAgMCAxIDYwOC4yNTYgMTczLjE4NCBRIDU5OC41MjggMTU3LjQ0IDU5OC41MjggMTM3LjIxNiBMIDU5OC41MjggMTAuMjQgQSAxMC44NTcgMTAuODU3IDAgMCAxIDU5OC41NjYgOS4zMTUgUSA1OTguODE3IDYuMzg0IDYwMC43MDQgNC42MDggQSA3LjI1NiA3LjI1NiAwIDAgMSA2MDMuNDI5IDIuOTgxIFEgNjA0LjcgMi41NiA2MDYuMjA4IDIuNTYgUSA2MDguNDYgMi41NiA2MTAuMTA2IDMuMzY5IEEgNi40NzIgNi40NzIgMCAwIDEgNjExLjg0IDQuNjA4IFEgNjEzLjY3MSA2LjQzOSA2MTMuODY1IDkuNDk5IEEgMTEuNzI5IDExLjcyOSAwIDAgMSA2MTMuODg4IDEwLjI0IFogTSA4OTUuNDg4IDguOTYgQSA2OS41MDcgNjkuNTA3IDAgMCAwIDg5NC44OCA4LjYxNSBRIDg3OS41MDkgMCA4NjEuMTg0IDAgQSAxMDAuMDA1IDEwMC4wMDUgMCAwIDAgODU4Ljc5IDAuMDI4IFEgODQyLjM0MiAwLjQyMiA4MjkuNTY4IDYuMjcyIEEgNjEuNzUgNjEuNzUgMCAwIDAgODI4LjA3OCA2Ljk3OSBRIDgxNS40NTYgMTMuMTcyIDgwOC4zMiAyMy45MzYgUSA4MDAuNzY4IDM1LjMyOCA4MDAuNzY4IDUwLjE3NiBRIDgwMC43NjggNjkuNjk3IDgxNS4xNzUgODMuNjU5IEEgNTkuMjIyIDU5LjIyMiAwIDAgMCA4MTcuMDI0IDg1LjM3NiBBIDYwLjYzIDYwLjYzIDAgMCAwIDgxOS42OCA4Ny42MDYgUSA4MzQuNzI3IDk5LjUyNiA4NTkuMDU5IDEwMy41MjkgQSAxMzMuOTEgMTMzLjkxIDAgMCAwIDg2MS42OTYgMTAzLjkzNiBRIDg4NC4xMTYgMTA3LjAwNCA4OTYuNDE5IDExNi45MjUgQSA0MS42MSA0MS42MSAwIDAgMSA4OTguNDMyIDExOC42NTYgQSA0My41OTIgNDMuNTkyIDAgMCAxIDg5OS4yOCAxMTkuNDU1IFEgOTEwLjg0OCAxMzAuNjUzIDkxMC44NDggMTQ3LjQ1NiBRIDkxMC44NDggMTY3LjY4IDg5OC4xNzYgMTc4LjY4OCBBIDM5LjI4MSAzOS4yODEgMCAwIDEgODkzLjcyIDE4Mi4wMzQgUSA4ODIuNTIyIDE4OS4yNjYgODY1LjUzMSAxODkuNjcyIEEgODUuNDgxIDg1LjQ4MSAwIDAgMSA4NjMuNDg4IDE4OS42OTYgQSAxMDIuMTggMTAyLjE4IDAgMCAxIDg2MS4zIDE4OS42NzMgUSA4NDUuNTY3IDE4OS4zMzYgODMzLjY1NCAxODQuMTEyIEEgNTUuMDk3IDU1LjA5NyAwIDAgMSA4MzAuNTkyIDE4Mi42NTYgQSA1Ni42MTkgNTYuNjE5IDAgMCAxIDgyOS4wNjYgMTgxLjg0MiBRIDgxOC4yNzQgMTc1Ljg3MSA4MTEuOTQgMTY2LjExNCBBIDQ3LjUyOCA0Ny41MjggMCAwIDEgODA5Ljk4NCAxNjIuODE2IEEgMTIuMTE1IDEyLjExNSAwIDAgMCA4MDkuODA4IDE2Mi40NiBRIDgwNy43MzQgMTU4LjQyOCA4MDMuNTcxIDE1OC4wMDIgQSA5Ljk0MiA5Ljk0MiAwIDAgMCA4MDIuNTYgMTU3Ljk1MiBBIDEyLjE5NCAxMi4xOTQgMCAwIDAgODAyLjIxNyAxNTcuOTU3IFEgNzk4Ljg3MSAxNTguMDUxIDc5Ni44IDE2MCBBIDcuNDQ5IDcuNDQ5IDAgMCAwIDc5Ni4xMTkgMTYwLjczMSBRIDc5NC45MzQgMTYyLjE5MSA3OTQuNjg4IDE2NC4wOTQgQSA4LjAwMyA4LjAwMyAwIDAgMCA3OTQuNjI0IDE2NS4xMiBBIDYuMjE4IDYuMjE4IDAgMCAwIDc5NC43MDggMTY2LjEzNyBRIDc5NC44MDMgMTY2LjcwOCA3OTUuMDA0IDE2Ny4yOCBBIDcuODk1IDcuODk1IDAgMCAwIDc5NS4zOTIgMTY4LjE5MiBBIDY1LjA0NCA2NS4wNDQgMCAwIDAgNzk2LjA5OSAxNjkuNTQ2IFEgODA0LjA5MSAxODQuNDE5IDgxOS4wNTUgMTkzLjYxNSBBIDc0LjQgNzQuNCAwIDAgMCA4MjEuNzYgMTk1LjIgUSA4MzkuNDI0IDIwNS4wNTYgODYzLjQ4OCAyMDUuMDU2IFEgODc5LjU0OCAyMDUuMDU2IDg5Mi4yOTkgMTk5Ljk1MSBBIDYyLjAzNiA2Mi4wMzYgMCAwIDAgODk2LjM4NCAxOTguMTQ0IFEgOTEwLjU5MiAxOTEuMjMyIDkxOC40IDE3OC4xNzYgQSA1MS4xODYgNTEuMTg2IDAgMCAwIDkyMC41MzMgMTc0LjIyNSBRIDkyNi4yMDggMTYyLjUxNSA5MjYuMjA4IDE0Ny40NTYgQSA3Mi44MTEgNzIuODExIDAgMCAwIDkyNi4xNzggMTQ1LjM1NCBRIDkyNS41OTIgMTI1LjA2MSA5MTMuNTg5IDExMS43NTUgQSA0OS44IDQ5LjggMCAwIDAgOTExLjM2IDEwOS40NCBRIDg5Ni41MTIgOTQuOTc2IDg2NC4yNTYgODkuNiBBIDE1Ny44ODIgMTU3Ljg4MiAwIDAgMSA4NjIuNDQ2IDg5LjI4OCBRIDgzOS4yNDIgODUuMTQyIDgyNy45MDQgNzUuNzc2IEEgNDEuMjE4IDQxLjIxOCAwIDAgMSA4MjYuOTc3IDc0Ljk4NyBRIDgxNi4xMjggNjUuNDcyIDgxNi4xMjggNTEuNzEyIEEgNDkuMjkzIDQ5LjI5MyAwIDAgMSA4MTYuMTI4IDUxLjU3OCBRIDgxNi4xNzUgMzQuNTIyIDgyOC4wMzIgMjQuOTYgQSAzNS4yMzQgMzUuMjM0IDAgMCAxIDgyOC44OTEgMjQuMjg5IFEgODQwLjExOCAxNS43OTQgODU5LjIxMyAxNS4zODEgQSA5MS4xOTQgOTEuMTk0IDAgMCAxIDg2MS4xODQgMTUuMzYgQSA3My4wNDQgNzMuMDQ0IDAgMCAxIDg2Mi4wMzcgMTUuMzY1IFEgODg4Ljc0NyAxNS42NzcgOTAzLjUxNCAzNS41OTMgQSA1OS4zNyA1OS4zNyAwIDAgMSA5MDQuOTYgMzcuNjMyIFEgOTA3LjIyIDQxLjAyMiA5MTEuMDc2IDQxLjQxOSBBIDEwLjI2MSAxMC4yNjEgMCAwIDAgOTEyLjEyOCA0MS40NzIgQSAxNC41NDMgMTQuNTQzIDAgMCAwIDkxMi43NDMgNDEuNDU5IFEgOTE0LjMzNiA0MS4zOTIgOTE1LjIgNDAuOTYgQSAxMC42NTUgMTAuNjU1IDAgMCAwIDkxNS4zMzYgNDAuODkxIFEgOTE2LjM0OCA0MC4zNjYgOTE3LjEzNSAzOS42ODEgQSA3LjYwNyA3LjYwNyAwIDAgMCA5MTguNCAzOC4yNzIgUSA5MTkuMTk3IDM3LjEyMiA5MTkuNDQyIDM1Ljc4NyBBIDYuNzYxIDYuNzYxIDAgMCAwIDkxOS41NTIgMzQuNTYgUSA5MTkuNTUyIDMyLjI1NiA5MTguNTI4IDMwLjQ2NCBRIDkxMS4xMDQgMTcuOTIgODk1LjQ4OCA4Ljk2IFogTSAxNjAuMzExIDAuMDY4IEEgMTEwLjY0OCAxMTAuNjQ4IDAgMCAwIDE1Ni40MTYgMCBRIDEzMS41NjUgMCAxMTAuNDAyIDExLjQ4MyBBIDk5LjM0MyA5OS4zNDMgMCAwIDAgMTA2LjExMiAxMy45NTIgQSAxMDkuMDA5IDEwOS4wMDkgMCAwIDAgMTA0LjU0MyAxNC45MjYgUSA4NC42NzcgMjcuNDg5IDcyLjE0IDQ3LjQ3OSBBIDExMS4zOTMgMTExLjM5MyAwIDAgMCA2OS43NiA1MS40NTYgUSA1Ni4zMiA3NS4wMDggNTYuMzIgMTAyLjQgUSA1Ni4zMiAxMjcuMzMxIDY3LjU2IDE0OS4xODcgQSAxMDcuNTkyIDEwNy41OTIgMCAwIDAgNjkuODg4IDE1My40NzIgUSA4My40NTYgMTc3LjE1MiAxMDYuNDk2IDE5MS4xMDQgQSAxMDMuNDQ0IDEwMy40NDQgMCAwIDAgMTA4LjA4MiAxOTIuMDQ1IFEgMTMwLjQ1OSAyMDUuMDU2IDE1Ni40MTYgMjA1LjA1NiBRIDE5Ny4zNzYgMjA1LjA1NiAyMTkuMzkyIDE4My4wNCBRIDIyMC45MTggMTgxLjI5NiAyMjEuMTQ1IDE3OC42MjQgQSAxMS4zNjQgMTEuMzY0IDAgMCAwIDIyMS4xODQgMTc3LjY2NCBRIDIyMS4xODQgMTc0LjkwNiAyMTkuNTE0IDE3Mi44NTIgQSA4LjYxNCA4LjYxNCAwIDAgMCAyMTguNzUyIDE3Mi4wMzIgQSAxMC41MDEgMTAuNTAxIDAgMCAwIDIxOC42MzggMTcxLjkyNSBRIDIxNi4yNDggMTY5LjcyOCAyMTMuMjQ4IDE2OS43MjggQSA2LjI0NCA2LjI0NCAwIDAgMCAyMTEuNTQ5IDE2OS45NjEgUSAyMTAuOTA2IDE3MC4xNDEgMjEwLjI5MSAxNzAuNDYzIEEgNy41MDggNy41MDggMCAwIDAgMjA5LjQwOCAxNzEuMDA4IFEgMTg2LjYyNCAxODkuNjk2IDE1Ni40MTYgMTg5LjY5NiBRIDEzNS43NjUgMTg5LjY5NiAxMTcuNzQzIDE4MC4wMjIgQSA4Ny4yMzcgODcuMjM3IDAgMCAxIDExNC4wNDggMTc3LjkyIFEgOTQuNDY0IDE2Ni4xNDQgODMuMDcyIDE0Ni4wNDggUSA3Mi43MDQgMTI3Ljc1OCA3MS43NzIgMTA2LjYwNCBBIDk1LjU0OSA5NS41NDkgMCAwIDEgNzEuNjggMTAyLjQgUSA3MS42OCA3OS42MTYgODMuMiA1OS41MiBBIDk3LjM0OCA5Ny4zNDggMCAwIDEgODMuMzUgNTkuMjYgUSA5NC44NDcgMzkuMzQ2IDExNC4zMDQgMjcuMzkyIEEgODguMDU2IDg4LjA1NiAwIDAgMSAxMTcuMTU1IDI1LjcxMyBRIDEzMy42NjMgMTYuNDA2IDE1Mi4yMTggMTUuNDY2IEEgODIuOTExIDgyLjkxMSAwIDAgMSAxNTYuNDE2IDE1LjM2IEEgMTE3LjIxMiAxMTcuMjEyIDAgMCAxIDE1Ni44MTcgMTUuMzYxIFEgMTgwLjE4NCAxNS40NDEgMTk2LjgyOSAyNC44NDggQSA2My4wMSA2My4wMSAwIDAgMSAyMDcuODcyIDMyLjc2OCBBIDIzLjAzNCAyMy4wMzQgMCAwIDAgMjA4LjMzOSAzMy4xNTggUSAyMTEuNjQxIDM1Ljg0IDIxNC4yNzIgMzUuODQgQSA5Ljk3NCA5Ljk3NCAwIDAgMCAyMTQuOTExIDM1LjgyIFEgMjE3LjM0MyAzNS42NjQgMjE5LjAwOSAzNC4yOTYgQSA2Ljg3MyA2Ljg3MyAwIDAgMCAyMTkuOTA0IDMzLjQwOCBBIDkuOTk0IDkuOTk0IDAgMCAwIDIyMC4xMzMgMzMuMTI2IFEgMjIxLjk1MiAzMC43OTkgMjIxLjk1MiAyNy45MDQgQSA4Ljk4OCA4Ljk4OCAwIDAgMCAyMjEuOTI5IDI3LjI1OSBRIDIyMS43MjQgMjQuMzk4IDIxOS42NDggMjIuNzg0IEEgMTEwLjg4MSAxMTAuODgxIDAgMCAwIDIxOS41NDMgMjIuNjk3IFEgMTkzLjY4NiAxLjI0NCAxNjAuMzExIDAuMDY4IFogTSA1NTEuMTY4IDE5OC40IEwgNTA0LjA2NCAxMjMuMTM2IEwgNDk5LjQ1NiAxMjMuMTM2IEwgNDU4LjI0IDEyMy4xMzYgTCA0NTguMjQgMTk0LjgxNiBRIDQ1OC4yNCAxOTguMTQ0IDQ1Ni4xOTIgMjAwLjMyIFEgNDU0LjIzMiAyMDIuNDAzIDQ1MC44NjUgMjAyLjQ5MiBBIDExLjQ4NyAxMS40ODcgMCAwIDEgNDUwLjU2IDIwMi40OTYgUSA0NDcuNDUyIDIwMi40OTYgNDQ1LjM0OSAyMDAuNTk4IEEgNy44NzEgNy44NzEgMCAwIDEgNDQ1LjA1NiAyMDAuMzIgQSA3LjUyNSA3LjUyNSAwIDAgMSA0NDQuMTgyIDE5OS4yNzUgUSA0NDIuODg5IDE5Ny40MDMgNDQyLjg4IDE5NC44NSBBIDEwLjE3OSAxMC4xNzkgMCAwIDEgNDQyLjg4IDE5NC44MTYgTCA0NDIuODggMTAuMjQgQSAxMC44NTcgMTAuODU3IDAgMCAxIDQ0Mi45MTggOS4zMTUgUSA0NDMuMTY5IDYuMzg0IDQ0NS4wNTYgNC42MDggQSA3LjI1NiA3LjI1NiAwIDAgMSA0NDcuNzgxIDIuOTgxIFEgNDQ5LjA1MiAyLjU2IDQ1MC41NiAyLjU2IEwgNDk5LjQ1NiAyLjU2IFEgNTE3Ljg4OCAyLjU2IDUzMi40OCAxMC4yNCBRIDU0NS45NTQgMTcuMzMyIDU1My45NzEgMjkuNjYyIEEgNTguOTY4IDU4Ljk2OCAwIDAgMSA1NTUuMjY0IDMxLjc0NCBBIDU2LjczNyA1Ni43MzcgMCAwIDEgNTYwLjQxNCA0My4xMyBRIDU2My40NTYgNTIuNDY4IDU2My40NTYgNjMuMjMyIFEgNTYzLjQ1NiA4Mi4yIDU1My45NDYgOTYuNDY1IEEgNTYuNjkyIDU2LjY5MiAwIDAgMSA1NTEuODA4IDk5LjQ1NiBBIDU4Ljg0OSA1OC44NDkgMCAwIDEgNTQ5LjIxMiAxMDIuNjE4IFEgNTM4LjYyMSAxMTQuNjM3IDUyMi4yNTMgMTE5Ljc3OSBBIDcyLjE5NSA3Mi4xOTUgMCAwIDEgNTIwLjQ0OCAxMjAuMzIgTCA1NjQuNDggMTkwLjcyIFEgNTY2LjUyOCAxOTQuMzA0IDU2Ni41MjggMTk2LjYwOCBBIDYuNTk5IDYuNTk5IDAgMCAxIDU2Ni40NzggMTk3LjQzNiBRIDU2Ni4yNTMgMTk5LjIwOCA1NjUuMDM1IDIwMC4zOTUgQSA1LjYyNSA1LjYyNSAwIDAgMSA1NjQuMzUyIDIwMC45NiBBIDYuNDczIDYuNDczIDAgMCAxIDU2My41NDcgMjAxLjQ0MyBRIDU2MS40NzIgMjAyLjQ5NiA1NTguMDggMjAyLjQ5NiBRIDU1NS43NTEgMjAyLjQ5NiA1NTQuMjcgMjAxLjY0OSBBIDQuOTExIDQuOTExIDAgMCAxIDU1My45ODQgMjAxLjQ3MiBRIDU1Mi42NTQgMjAwLjU4NSA1NTEuNTE1IDE5OC45MyBBIDE0LjQ0NyAxNC40NDcgMCAwIDEgNTUxLjE2OCAxOTguNCBaIE0gMzk5LjEwNCAxOTcuNjMyIEwgMzgwLjE2IDE1Mi4zMiBMIDI3NS45NjggMTUyLjMyIEwgMjU3LjAyNCAxOTcuNjMyIFEgMjU1LjMyNCAyMDIuMjQ4IDI1MC4zOTYgMjAyLjQ4MyBBIDExLjI5NyAxMS4yOTcgMCAwIDEgMjQ5Ljg1NiAyMDIuNDk2IEEgMTAuMjU4IDEwLjI1OCAwIDAgMSAyNDguOTMxIDIwMi40NTUgUSAyNDYuMTQzIDIwMi4yMDMgMjQ0LjQgMjAwLjM4MyBBIDYuOTk3IDYuOTk3IDAgMCAxIDI0NC4yMjQgMjAwLjE5MiBBIDguNjc4IDguNjc4IDAgMCAxIDI0My40NzcgMTk5LjIyNCBRIDI0Mi4xNzYgMTk3LjI2NCAyNDIuMTc2IDE5NC44MTYgQSA3LjgwNSA3LjgwNSAwIDAgMSAyNDIuMjgyIDE5My41MjEgQSA3LjE4MSA3LjE4MSAwIDAgMSAyNDIuOTQ0IDE5MS40ODggTCAzMjAuNTEyIDcuOTM2IEEgMTIuMTk2IDEyLjE5NiAwIDAgMSAzMjAuODUyIDcuMTI5IFEgMzIyLjgwNSAyLjkzNiAzMjcuMTQgMi41OTEgQSAxMC4wMzggMTAuMDM4IDAgMCAxIDMyNy45MzYgMi41NiBBIDkuMDA0IDkuMDA0IDAgMCAxIDMyOC45NDcgMi42MTUgUSAzMzMuMjkgMy4xMDYgMzM1LjM2IDcuOTM2IEwgNDEzLjE4NCAxOTEuNDg4IFEgNDEzLjk1MiAxOTMuMDI0IDQxMy45NTIgMTk0LjgxNiBBIDcuNjQgNy42NCAwIDAgMSA0MTMuODQ2IDE5Ni4xMDEgUSA0MTMuNDU3IDE5OC4zODMgNDExLjY0OCAyMDAuMTkyIEEgOS4wNDQgOS4wNDQgMCAwIDEgNDEwLjg3MSAyMDAuODg2IFEgNDA5LjA4MyAyMDIuMzAzIDQwNi44NzkgMjAyLjQ3MyBBIDcuOTA4IDcuOTA4IDAgMCAxIDQwNi4yNzIgMjAyLjQ5NiBBIDkuOTMgOS45MyAwIDAgMSA0MDUuMzM5IDIwMi40NTMgUSA0MDAuOTYgMjAyLjA0IDM5OS4xMDQgMTk3LjYzMiBaIE0gMTUuMzYgMTAuMjQgTCAxNS4zNiAxOTQuODE2IFEgMTUuMzYgMTk3LjkyNCAxMy40NjIgMjAwLjAyNyBBIDcuODcxIDcuODcxIDAgMCAxIDEzLjE4NCAyMDAuMzIgQSA3LjUyNSA3LjUyNSAwIDAgMSAxMi4xMzkgMjAxLjE5NCBRIDEwLjI2NyAyMDIuNDg3IDcuNzE0IDIwMi40OTYgQSAxMC4xNzkgMTAuMTc5IDAgMCAxIDcuNjggMjAyLjQ5NiBRIDQuNTcyIDIwMi40OTYgMi40NjkgMjAwLjU5OCBBIDcuODcxIDcuODcxIDAgMCAxIDIuMTc2IDIwMC4zMiBBIDcuNTI1IDcuNTI1IDAgMCAxIDEuMzAyIDE5OS4yNzUgUSAwLjAwOSAxOTcuNDAzIDAgMTk0Ljg1IEEgMTAuMTc5IDEwLjE3OSAwIDAgMSAwIDE5NC44MTYgTCAwIDEwLjI0IFEgMCA3LjEzMiAxLjg5OCA1LjAyOSBBIDcuODcxIDcuODcxIDAgMCAxIDIuMTc2IDQuNzM2IEEgNy41MjUgNy41MjUgMCAwIDEgMy4yMjEgMy44NjIgUSA1LjA5MyAyLjU2OSA3LjY0NiAyLjU2IEEgMTAuMTc5IDEwLjE3OSAwIDAgMSA3LjY4IDIuNTYgUSAxMC43ODggMi41NiAxMi44OTEgNC40NTggQSA3Ljg3MSA3Ljg3MSAwIDAgMSAxMy4xODQgNC43MzYgQSA3LjUyNSA3LjUyNSAwIDAgMSAxNC4wNTggNS43ODEgUSAxNS4zNTEgNy42NTMgMTUuMzYgMTAuMjA2IEEgMTAuMTc5IDEwLjE3OSAwIDAgMSAxNS4zNiAxMC4yNCBaIE0gMjgxLjg1NiAxMzguNDk2IEwgMzc0LjI3MiAxMzguNDk2IEwgMzI3LjkzNiAyNy45MDQgTCAyODEuODU2IDEzOC40OTYgWiBNIDQ1OC4yNCAxMDcuNzc2IEwgNDk5LjQ1NiAxMDcuNzc2IFEgNTEwLjQxOCAxMDcuNzc2IDUxOS41MTkgMTA0LjM2MiBBIDQ4LjE3NSA0OC4xNzUgMCAwIDAgNTI0LjU0NCAxMDIuMTQ0IEEgNDcuNDcxIDQ3LjQ3MSAwIDAgMCA1MjcuMDU5IDEwMC43NjEgUSA1MzQuNzUgOTYuMjE5IDUzOS44NzggODkuMTgzIEEgNDMuNjc4IDQzLjY3OCAwIDAgMCA1NDEuODI0IDg2LjI3MiBRIDU0Ny40MzYgNzcuMTA5IDU0OC4wMjcgNjUuODk2IEEgNTAuNjczIDUwLjY3MyAwIDAgMCA1NDguMDk2IDYzLjIzMiBRIDU0OC4wOTYgNTAuMTc2IDU0MS44MjQgMzkuODA4IFEgNTM1LjU1MiAyOS40NCA1MjQuNTQ0IDIzLjY4IFEgNTEzLjUzNiAxNy45MiA0OTkuNDU2IDE3LjkyIEwgNDU4LjI0IDE3LjkyIEwgNDU4LjI0IDEwNy43NzYgWiIgdmVjdG9yLWVmZmVjdD0ibm9uLXNjYWxpbmctc3Ryb2tlIi8+CiAgICA8L2c+Cjwvc3ZnPg==" alt="CodingBox技术博客" height="28"></a><p class="is-size-7"><span>&copy; 2021 Zhou Weitong</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>  ICP证： <a href="http://www.beian.miit.gov.cn/" target="_blank">浙ICP备19034170号</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="知识共享(Creative Commons)" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="知识共享-署名 4.0 国际许可协议(Attribution 4.0 International)" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
